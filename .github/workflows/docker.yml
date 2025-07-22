@@ -1,0 +1,356 @@
+name: 🐳 Docker Build & Validation
+
+# Este workflow valida que las imágenes de Docker se construyan correctamente
+# y que los servicios funcionen como se espera
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'docker-compose.yml'
+      - 'herramientas/docker/**'
+      - '.dockerignore'
+      - 'Dockerfile*'
+  pull_request:
+    paths:
+      - 'docker-compose.yml'
+      - 'herramientas/docker/**'
+      - '.dockerignore'
+      - 'Dockerfile*'
+  schedule:
+    # Ejecutar semanalmente para verificar actualizaciones de imágenes base
+    - cron: '0 6 * * 1'
+
+# Permisos necesarios
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  # 1. Validar archivos Docker
+  validate-docker:
+    name: 🔍 Validar Configuración Docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 🔍 Validar docker-compose.yml
+        run: |
+          echo "Validando sintaxis de docker-compose.yml..."
+          docker compose config --quiet
+
+          echo "✅ docker-compose.yml es válido"
+
+      - name: 🔍 Validar estructura de directorios
+        run: |
+          echo "Validando estructura de Docker..."
+
+          # Verificar que existen las carpetas esperadas
+          [ -d "herramientas/docker" ] || { echo "❌ Falta directorio herramientas/docker"; exit 1; }
+
+          echo "✅ Estructura de directorios correcta"
+
+      - name: 📋 Listar configuración de servicios
+        run: |
+          echo "## 📋 Configuración de Servicios"
+          docker compose config --services
+
+          echo ""
+          echo "## 🔧 Variables de entorno requeridas"
+          grep -E "^\s*[A-Z_]+=\$\{" docker-compose.yml | sed 's/.*\${\([^}]*\)}.*/\1/' | sort -u
+
+  # 2. Build de imágenes
+  build-images:
+    name: 🏗️ Build de Imágenes
+    runs-on: ubuntu-latest
+    needs: validate-docker
+
+    strategy:
+      matrix:
+        service: [bootcamp-dev, db]
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 🐳 Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: 📋 Crear archivo .env para testing
+        run: |
+          cp .env.example .env
+          echo "NODE_ENV=test" >> .env
+
+      - name: 🏗️ Build imagen de ${{ matrix.service }}
+        run: |
+          echo "Construyendo imagen para servicio: ${{ matrix.service }}"
+          docker compose build ${{ matrix.service }}
+
+      - name: 📊 Analizar tamaño de imagen
+        run: |
+          IMAGE_ID=$(docker compose images -q ${{ matrix.service }})
+          if [ ! -z "$IMAGE_ID" ]; then
+            echo "## 📊 Información de la imagen ${{ matrix.service }}"
+            docker images $IMAGE_ID --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}\t{{.CreatedAt}}"
+            
+            # Mostrar capas para análisis de optimización
+            echo ""
+            echo "## 📋 Historial de capas (últimas 10)"
+            docker history $IMAGE_ID --format "table {{.CreatedBy}}\t{{.Size}}" | head -11
+          fi
+
+  # 3. Test de servicios
+  test-services:
+    name: 🧪 Test de Servicios
+    runs-on: ubuntu-latest
+    needs: build-images
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📋 Preparar entorno de testing
+        run: |
+          cp .env.example .env
+
+          # Configurar credenciales de testing
+          sed -i 's/bootcamp_user/test_user/g' .env
+          sed -i 's/supersecretpassword/test_password/g' .env
+          sed -i 's/mcp_bootcamp_db/test_db/g' .env
+
+      - name: 🚀 Iniciar servicios
+        run: |
+          echo "Iniciando servicios..."
+          docker compose up -d
+
+          echo "Esperando que los servicios estén listos..."
+          sleep 30
+
+      - name: 🔍 Verificar estado de servicios
+        run: |
+          echo "## 📊 Estado de los servicios"
+          docker compose ps
+
+          echo ""
+          echo "## 📋 Logs de servicios"
+          docker compose logs --tail=20
+
+      - name: 🧪 Test de conectividad de base de datos
+        run: |
+          echo "Probando conexión a PostgreSQL..."
+
+          # Esperar hasta que PostgreSQL esté listo
+          timeout 60 bash -c 'until docker compose exec -T db pg_isready -U test_user; do sleep 2; done'
+
+          echo "✅ PostgreSQL está listo"
+
+          # Probar consulta básica
+          docker compose exec -T db psql -U test_user -d test_db -c "SELECT version();"
+
+          echo "✅ Consulta básica exitosa"
+
+      - name: 🧪 Test del entorno de desarrollo
+        run: |
+          echo "Probando entorno de desarrollo..."
+
+          # Verificar que Node.js está disponible
+          NODE_VERSION=$(docker compose exec -T bootcamp-dev node --version)
+          echo "Node.js version: $NODE_VERSION"
+
+          # Verificar que pnpm está disponible
+          PNPM_VERSION=$(docker compose exec -T bootcamp-dev pnpm --version 2>/dev/null || echo "pnpm no instalado")
+          echo "pnpm version: $PNPM_VERSION"
+
+          # Instalar pnpm si no está disponible
+          if [[ "$PNPM_VERSION" == "pnpm no instalado" ]]; then
+            echo "Instalando pnpm..."
+            docker compose exec -T bootcamp-dev npm install -g pnpm
+            PNPM_VERSION=$(docker compose exec -T bootcamp-dev pnpm --version)
+            echo "pnpm instalado: $PNPM_VERSION"
+          fi
+
+          echo "✅ Entorno de desarrollo funcional"
+
+      - name: 🧪 Test de volúmenes persistentes
+        run: |
+          echo "Probando persistencia de datos..."
+
+          # Crear un archivo de prueba en el volumen de datos
+          docker compose exec -T db touch /var/lib/postgresql/data/test-file
+
+          # Reiniciar servicio de BD
+          docker compose restart db
+          sleep 10
+
+          # Verificar que el archivo persiste
+          if docker compose exec -T db ls /var/lib/postgresql/data/test-file > /dev/null 2>&1; then
+            echo "✅ Volumen de datos persiste correctamente"
+          else
+            echo "❌ Problema con persistencia de volumen"
+            exit 1
+          fi
+
+      - name: 🔍 Test de logs y monitoreo
+        run: |
+          echo "Verificando logs de servicios..."
+
+          # Verificar que no hay errores críticos en los logs
+          if docker compose logs | grep -i "error\|fatal\|exception" | grep -v "INFO\|WARN"; then
+            echo "⚠️  Se encontraron errores en los logs:"
+            docker compose logs | grep -i "error\|fatal\|exception" | grep -v "INFO\|WARN"
+          else
+            echo "✅ No se encontraron errores críticos en los logs"
+          fi
+
+      - name: 🧹 Cleanup y verificación final
+        run: |
+          echo "Realizando cleanup..."
+
+          # Detener servicios
+          docker compose down
+
+          echo "✅ Servicios detenidos correctamente"
+
+        if: always()
+
+  # 4. Security scan de imágenes
+  security-scan:
+    name: 🔒 Security Scan
+    runs-on: ubuntu-latest
+    needs: build-images
+    if: github.event_name != 'schedule'
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📋 Preparar entorno
+        run: |
+          cp .env.example .env
+
+      - name: 🏗️ Build imágenes para scanning
+        run: |
+          docker compose build
+
+      - name: 🔒 Scan de seguridad con Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'node:18-alpine'
+          format: 'sarif'
+          output: 'trivy-node-results.sarif'
+
+      - name: 🔒 Scan de PostgreSQL
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'postgres:15-alpine'
+          format: 'sarif'
+          output: 'trivy-postgres-results.sarif'
+
+      - name: 📤 Subir resultados de seguridad
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: 'trivy-node-results.sarif'
+
+      - name: 📤 Subir resultados PostgreSQL
+        uses: github/codeql-action/upload-sarif@v2
+        if: always()
+        with:
+          sarif_file: 'trivy-postgres-results.sarif'
+
+  # 5. Performance benchmarks
+  performance:
+    name: ⚡ Performance Tests
+    runs-on: ubuntu-latest
+    needs: test-services
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📋 Preparar entorno
+        run: |
+          cp .env.example .env
+
+      - name: 🚀 Iniciar servicios para benchmark
+        run: |
+          docker compose up -d
+          sleep 30
+
+      - name: ⚡ Benchmark de base de datos
+        run: |
+          echo "Ejecutando benchmark de PostgreSQL..."
+
+          # Benchmark básico de conexiones
+          time docker compose exec -T db psql -U test_user -d test_db -c "SELECT 1;" > /dev/null
+
+          # Benchmark de inserción
+          START_TIME=$(date +%s%N)
+          for i in {1..100}; do
+            docker compose exec -T db psql -U test_user -d test_db -c "SELECT pg_sleep(0.001);" > /dev/null
+          done
+          END_TIME=$(date +%s%N)
+
+          DURATION=$(( (END_TIME - START_TIME) / 1000000 ))
+          echo "100 consultas simples: ${DURATION}ms"
+
+      - name: ⚡ Benchmark del entorno de desarrollo
+        run: |
+          echo "Ejecutando benchmark del entorno Node.js..."
+
+          # Tiempo de inicio de Node.js
+          START_TIME=$(date +%s%N)
+          docker compose exec -T bootcamp-dev node -e "console.log('Hello World')" > /dev/null
+          END_TIME=$(date +%s%N)
+
+          DURATION=$(( (END_TIME - START_TIME) / 1000000 ))
+          echo "Tiempo de inicio de Node.js: ${DURATION}ms"
+
+      - name: 📊 Guardar métricas
+        run: |
+          echo "## ⚡ Métricas de Performance" > performance-metrics.md
+          echo "- Fecha: $(date)" >> performance-metrics.md
+          echo "- Commit: ${{ github.sha }}" >> performance-metrics.md
+          echo "- Rama: ${{ github.ref_name }}" >> performance-metrics.md
+
+      - name: 📤 Subir métricas
+        uses: actions/upload-artifact@v3
+        with:
+          name: performance-metrics
+          path: performance-metrics.md
+
+      - name: 🧹 Cleanup
+        run: docker compose down
+        if: always()
+
+  # 6. Resumen final
+  summary:
+    name: 📊 Resumen de Docker Validation
+    runs-on: ubuntu-latest
+    needs:
+      [validate-docker, build-images, test-services, security-scan, performance]
+    if: always()
+
+    steps:
+      - name: 📊 Generar resumen
+        run: |
+          echo "## 🐳 Resumen de Validación Docker"
+          echo ""
+          echo "| Check | Estado |"
+          echo "|-------|--------|"
+          echo "| Validación de configuración | ${{ needs.validate-docker.result == 'success' && '✅' || '❌' }} |"
+          echo "| Build de imágenes | ${{ needs.build-images.result == 'success' && '✅' || '❌' }} |"
+          echo "| Test de servicios | ${{ needs.test-services.result == 'success' && '✅' || '❌' }} |"
+          echo "| Security scan | ${{ needs.security-scan.result == 'success' && '✅' || needs.security-scan.result == 'skipped' && '⏭️' || '❌' }} |"
+          echo "| Performance tests | ${{ needs.performance.result == 'success' && '✅' || needs.performance.result == 'skipped' && '⏭️' || '❌' }} |"
+
+          if [[ "${{ needs.validate-docker.result }}" == "success" && "${{ needs.build-images.result }}" == "success" && "${{ needs.test-services.result }}" == "success" ]]; then
+            echo ""
+            echo "🎉 ¡Todas las validaciones de Docker pasaron correctamente!"
+          else
+            echo ""
+            echo "❌ Algunas validaciones fallaron. Revisa los logs arriba."
+            exit 1
+          fi

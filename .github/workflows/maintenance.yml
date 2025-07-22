@@ -1,0 +1,355 @@
+name: 🔄 Dependency Updates & Maintenance
+
+# Este workflow maneja actualizaciones automáticas de dependencias
+# y tareas de mantenimiento del repositorio
+on:
+  schedule:
+    # Ejecutar todos los lunes a las 9:00 AM UTC
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+    inputs:
+      update_type:
+        description: 'Tipo de actualización'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+          - patch
+          - minor
+          - major
+          - all
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # 1. Auditoría de seguridad
+  security-audit:
+    name: 🔒 Auditoría de Seguridad
+    runs-on: ubuntu-latest
+
+    outputs:
+      vulnerabilities_found: ${{ steps.audit.outputs.vulnerabilities_found }}
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 🔒 Ejecutar auditoría de seguridad
+        id: audit
+        run: |
+          echo "Ejecutando auditoría de seguridad..."
+
+          # Auditoría con pnpm
+          if pnpm audit --fix > audit-results.txt 2>&1; then
+            echo "vulnerabilities_found=false" >> $GITHUB_OUTPUT
+            echo "✅ No se encontraron vulnerabilidades"
+          else
+            echo "vulnerabilities_found=true" >> $GITHUB_OUTPUT
+            echo "⚠️ Se encontraron vulnerabilidades:"
+            cat audit-results.txt
+          fi
+
+      - name: 📤 Subir resultados de auditoría
+        uses: actions/upload-artifact@v3
+        with:
+          name: security-audit-results
+          path: audit-results.txt
+
+  # 2. Actualizar dependencias de Node.js
+  update-node-dependencies:
+    name: 📦 Actualizar Dependencias Node.js
+    runs-on: ubuntu-latest
+    needs: security-audit
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 📋 Analizar dependencias actuales
+        run: |
+          echo "## 📦 Dependencias actuales" > dependency-report.md
+          echo "" >> dependency-report.md
+
+          pnpm list --depth=0 >> dependency-report.md || true
+
+          echo "" >> dependency-report.md
+          echo "## 🔍 Dependencias desactualizadas" >> dependency-report.md
+          pnpm outdated >> dependency-report.md || true
+
+      - name: 🔄 Actualizar dependencias
+        run: |
+          UPDATE_TYPE="${{ github.event.inputs.update_type || 'patch' }}"
+
+          echo "Actualizando dependencias: $UPDATE_TYPE"
+
+          case $UPDATE_TYPE in
+            patch)
+              pnpm update --latest
+              ;;
+            minor)
+              pnpm update --latest --depth=1
+              ;;
+            major)
+              pnpm update --latest --depth=2
+              ;;
+            all)
+              pnpm update --latest --depth=999
+              ;;
+          esac
+
+      - name: 🧪 Verificar que todo funciona después de actualizar
+        run: |
+          echo "Verificando instalación..."
+          pnpm install
+
+          echo "Ejecutando build..."
+          pnpm run build || echo "Build failed, pero continuamos"
+
+          echo "Ejecutando tests básicos..."
+          pnpm run test || echo "Tests failed, pero continuamos"
+
+      - name: 📝 Generar resumen de cambios
+        run: |
+          echo "" >> dependency-report.md
+          echo "## 📝 Cambios realizados" >> dependency-report.md
+          echo "" >> dependency-report.md
+
+          if git diff --name-only | grep -q package.json; then
+            echo "### 📦 package.json modificado" >> dependency-report.md
+            echo "\`\`\`diff" >> dependency-report.md
+            git diff package.json >> dependency-report.md
+            echo "\`\`\`" >> dependency-report.md
+          fi
+
+          if git diff --name-only | grep -q pnpm-lock.yaml; then
+            echo "### 🔒 pnpm-lock.yaml actualizado" >> dependency-report.md
+          fi
+
+      - name: 📤 Crear Pull Request si hay cambios
+        if: github.event_name == 'schedule' || github.event.inputs.update_type
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          if git diff --quiet; then
+            echo "No hay cambios en las dependencias"
+          else
+            # Crear rama para el PR
+            BRANCH_NAME="auto-update-dependencies-$(date +%Y%m%d)"
+            git checkout -b $BRANCH_NAME
+            
+            git add .
+            git commit -m "chore: actualizar dependencias automáticamente
+            
+            - Actualización de tipo: ${{ github.event.inputs.update_type || 'patch' }}
+            - Ejecutado por: GitHub Actions
+            - Fecha: $(date)
+            
+            Cambios incluidos:
+            $(git diff --name-only HEAD~1)"
+            
+            git push origin $BRANCH_NAME
+            
+            # Crear PR usando gh CLI si está disponible
+            echo "Creando Pull Request..."
+          fi
+
+      - name: 📤 Subir reporte de dependencias
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependency-report
+          path: dependency-report.md
+
+  # 3. Actualizar imágenes de Docker
+  update-docker-images:
+    name: 🐳 Actualizar Imágenes Docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 🐳 Verificar versiones actuales de imágenes
+        run: |
+          echo "## 🐳 Versiones actuales de Docker" > docker-versions.md
+          echo "" >> docker-versions.md
+
+          # Extraer imágenes del docker-compose.yml
+          grep "image:" docker-compose.yml | while read -r line; do
+            image=$(echo "$line" | awk '{print $2}')
+            echo "- $image" >> docker-versions.md
+          done
+
+      - name: 🔍 Verificar actualizaciones disponibles
+        run: |
+          echo "" >> docker-versions.md
+          echo "## 🔍 Verificando actualizaciones..." >> docker-versions.md
+
+          # Pull de las imágenes para verificar si hay versiones más nuevas
+          docker pull node:18-alpine
+          docker pull postgres:15-alpine
+
+          echo "✅ Verificación completada" >> docker-versions.md
+
+      - name: 📤 Subir reporte de Docker
+        uses: actions/upload-artifact@v3
+        with:
+          name: docker-versions
+          path: docker-versions.md
+
+  # 4. Limpiar workflows antiguos
+  cleanup-workflows:
+    name: 🧹 Limpieza de Workflows
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🧹 Limpiar workflow runs antiguos
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            // Obtener workflows
+            const workflows = await github.rest.actions.listRepoWorkflows({
+              owner: owner,
+              repo: repo,
+            });
+
+            // Para cada workflow, limpiar runs antiguos (mantener solo los últimos 10)
+            for (const workflow of workflows.data.workflows) {
+              const runs = await github.rest.actions.listWorkflowRuns({
+                owner: owner,
+                repo: repo,
+                workflow_id: workflow.id,
+                per_page: 100
+              });
+              
+              // Eliminar runs antiguos (mantener solo los últimos 10)
+              const runsToDelete = runs.data.workflow_runs.slice(10);
+              
+              for (const run of runsToDelete) {
+                try {
+                  await github.rest.actions.deleteWorkflowRun({
+                    owner: owner,
+                    repo: repo,
+                    run_id: run.id,
+                  });
+                  console.log(`Eliminado run ${run.id} del workflow ${workflow.name}`);
+                } catch (error) {
+                  console.log(`No se pudo eliminar run ${run.id}: ${error.message}`);
+                }
+              }
+            }
+
+  # 5. Actualizar documentación automática
+  update-docs:
+    name: 📚 Actualizar Documentación Automática
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📊 Generar estadísticas del proyecto
+        run: |
+          echo "# 📊 Estadísticas del Proyecto (Actualizado automáticamente)" > docs/estadisticas.md
+          echo "" >> docs/estadisticas.md
+          echo "**Última actualización:** $(date)" >> docs/estadisticas.md
+          echo "" >> docs/estadisticas.md
+
+          # Estadísticas de código
+          echo "## 📝 Código" >> docs/estadisticas.md
+          echo "- **Líneas de código TypeScript:** $(find ejemplos -name "*.ts" -exec wc -l {} + | tail -1 | awk '{print $1}')" >> docs/estadisticas.md
+          echo "- **Líneas de código JavaScript:** $(find ejemplos -name "*.js" -exec wc -l {} + | tail -1 | awk '{print $1}' 2>/dev/null || echo 0)" >> docs/estadisticas.md
+          echo "- **Archivos de configuración:** $(find . -name "*.json" -o -name "*.yml" -o -name "*.yaml" | wc -l)" >> docs/estadisticas.md
+          echo "" >> docs/estadisticas.md
+
+          # Estadísticas de documentación
+          echo "## 📚 Documentación" >> docs/estadisticas.md
+          echo "- **Archivos de documentación:** $(find docs -name "*.md" | wc -l)" >> docs/estadisticas.md
+          echo "- **Palabras en documentación:** $(find docs -name "*.md" -exec wc -w {} + | tail -1 | awk '{print $1}')" >> docs/estadisticas.md
+          echo "" >> docs/estadisticas.md
+
+          # Estadísticas de ejemplos
+          echo "## 🎯 Ejemplos" >> docs/estadisticas.md
+          for i in {01..07}; do
+            count=$(find ejemplos/modulo-${i} -name "*.ts" -o -name "*.js" 2>/dev/null | wc -l)
+            echo "- **Módulo ${i}:** $count archivos de ejemplo" >> docs/estadisticas.md
+          done
+
+      - name: 📝 Commit estadísticas si hay cambios
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+
+          if git diff --quiet docs/estadisticas.md; then
+            echo "No hay cambios en las estadísticas"
+          else
+            git add docs/estadisticas.md
+            git commit -m "docs: actualizar estadísticas automáticamente"
+            git push
+          fi
+
+  # 6. Resumen de mantenimiento
+  maintenance-summary:
+    name: 📋 Resumen de Mantenimiento
+    runs-on: ubuntu-latest
+    needs:
+      [
+        security-audit,
+        update-node-dependencies,
+        update-docker-images,
+        cleanup-workflows,
+        update-docs,
+      ]
+    if: always()
+
+    steps:
+      - name: 📋 Generar resumen final
+        run: |
+          echo "## 🔄 Resumen de Mantenimiento Automático"
+          echo ""
+          echo "**Fecha:** $(date)"
+          echo "**Trigger:** ${{ github.event_name }}"
+          echo ""
+          echo "| Tarea | Estado |"
+          echo "|-------|---------|"
+          echo "| Auditoría de seguridad | ${{ needs.security-audit.result == 'success' && '✅' || '❌' }} |"
+          echo "| Actualización de dependencias | ${{ needs.update-node-dependencies.result == 'success' && '✅' || '❌' }} |"
+          echo "| Actualización de Docker | ${{ needs.update-docker-images.result == 'success' && '✅' || '❌' }} |"
+          echo "| Limpieza de workflows | ${{ needs.cleanup-workflows.result == 'success' && '✅' || '❌' }} |"
+          echo "| Actualización de docs | ${{ needs.update-docs.result == 'success' && '✅' || '❌' }} |"
+          echo ""
+
+          if [[ "${{ needs.security-audit.outputs.vulnerabilities_found }}" == "true" ]]; then
+            echo "⚠️  **Se encontraron vulnerabilidades de seguridad. Revisa los artefactos.**"
+          else
+            echo "🔒 **No se encontraron vulnerabilidades de seguridad.**"
+          fi

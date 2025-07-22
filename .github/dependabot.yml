@@ -1,0 +1,111 @@
+# Configuración de Dependabot para actualizaciones automáticas de dependencias
+# Este archivo define cómo y cuándo Dependabot debe actualizar las dependencias del proyecto
+
+version: 2
+updates:
+  # 1. Dependencias de Node.js (package.json)
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+      timezone: 'Etc/UTC'
+    open-pull-requests-limit: 5
+    reviewers:
+      - 'maintainers'
+    assignees:
+      - 'maintainers'
+    commit-message:
+      prefix: 'chore'
+      prefix-development: 'chore'
+      include: 'scope'
+    labels:
+      - 'dependencies'
+      - 'automerge'
+    # Agrupar actualizaciones menores y patches
+    groups:
+      development-dependencies:
+        dependency-type: 'development'
+        update-types:
+          - 'minor'
+          - 'patch'
+      production-dependencies:
+        dependency-type: 'production'
+        update-types:
+          - 'patch'
+
+  # 2. Dependencias de cada módulo del bootcamp
+  - package-ecosystem: 'npm'
+    directory: '/ejemplos/modulo-01/calculadora-basica'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: 'chore(modulo-01)'
+    labels:
+      - 'dependencies'
+      - 'modulo-01'
+
+  - package-ecosystem: 'npm'
+    directory: '/ejemplos/modulo-01/servidor-inicial'
+    schedule:
+      interval: 'weekly'
+    open-pull-requests-limit: 3
+    commit-message:
+      prefix: 'chore(modulo-01)'
+    labels:
+      - 'dependencies'
+      - 'modulo-01'
+
+  # 3. GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'tuesday'
+      time: '10:00'
+      timezone: 'Etc/UTC'
+    open-pull-requests-limit: 3
+    reviewers:
+      - 'maintainers'
+    commit-message:
+      prefix: 'ci'
+      include: 'scope'
+    labels:
+      - 'github-actions'
+      - 'automerge'
+
+  # 4. Docker (Dockerfile y docker-compose.yml)
+  - package-ecosystem: 'docker'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'wednesday'
+      time: '11:00'
+      timezone: 'Etc/UTC'
+    open-pull-requests-limit: 3
+    reviewers:
+      - 'maintainers'
+    commit-message:
+      prefix: 'chore(docker)'
+    labels:
+      - 'docker'
+      - 'dependencies'
+    # Solo actualizar versiones patch para mayor estabilidad
+    ignore:
+      - dependency-name: '*'
+        update-types:
+          ['version-update:semver-major', 'version-update:semver-minor']
+
+  # 5. Herramientas Docker adicionales
+  - package-ecosystem: 'docker'
+    directory: '/herramientas/docker'
+    schedule:
+      interval: 'monthly'
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: 'chore(docker-tools)'
+    labels:
+      - 'docker'
+      - 'tools'

@@ -1,0 +1,276 @@
+name: 🏷️ Release & Changelog
+
+# Este workflow automatiza la creación de releases y actualización del changelog
+# Se ejecuta cuando se crea un tag que siga el patrón v*.*.* (ej: v1.0.0)
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Versión del release (ej: v1.0.0)'
+        required: true
+        type: string
+
+# Permisos necesarios
+permissions:
+  contents: write
+  discussions: write
+
+jobs:
+  # 1. Validar y preparar release
+  prepare-release:
+    name: 📋 Preparar Release
+    runs-on: ubuntu-latest
+
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      tag: ${{ steps.version.outputs.tag }}
+      is_prerelease: ${{ steps.version.outputs.is_prerelease }}
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Necesario para generar changelog completo
+
+      - name: 🏷️ Extraer información de versión
+        id: version
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ github.event.inputs.version }}"
+          else
+            TAG=${GITHUB_REF#refs/tags/}
+          fi
+
+          VERSION=${TAG#v}
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+
+          # Determinar si es pre-release
+          if [[ $VERSION == *"alpha"* ]] || [[ $VERSION == *"beta"* ]] || [[ $VERSION == *"rc"* ]]; then
+            echo "is_prerelease=true" >> $GITHUB_OUTPUT
+          else
+            echo "is_prerelease=false" >> $GITHUB_OUTPUT
+          fi
+
+          echo "🏷️ Preparando release $TAG (versión: $VERSION)"
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 📥 Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗️ Build del proyecto
+        run: pnpm run build
+
+      - name: 🧪 Ejecutar tests
+        run: pnpm run test
+
+      - name: ✅ Validar que todo está listo
+        run: |
+          echo "✅ Build completado"
+          echo "✅ Tests pasaron"
+          echo "✅ Listo para release"
+
+  # 2. Generar changelog automático
+  generate-changelog:
+    name: 📝 Generar Changelog
+    runs-on: ubuntu-latest
+    needs: prepare-release
+
+    outputs:
+      changelog: ${{ steps.changelog.outputs.changelog }}
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 📝 Generar changelog
+        id: changelog
+        run: |
+          # Usar nuestro script personalizado de changelog
+          ./scripts/update-changelog.sh
+
+          # Extraer las novedades desde el último tag
+          LAST_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || echo "")
+
+          if [ -z "$LAST_TAG" ]; then
+            echo "📝 Primer release - generando changelog completo"
+            CHANGELOG=$(git log --pretty=format:"- %s (%h)" --no-merges)
+          else
+            echo "📝 Generando changelog desde $LAST_TAG"
+            CHANGELOG=$(git log $LAST_TAG..HEAD --pretty=format:"- %s (%h)" --no-merges)
+          fi
+
+          # Organizar por tipo de commit
+          echo "## 🚀 Novedades en ${{ needs.prepare-release.outputs.tag }}" > release-notes.md
+          echo "" >> release-notes.md
+
+          # Features
+          FEATURES=$(echo "$CHANGELOG" | grep -E "^- feat|^- feature" | sed 's/^- feat/- ✨/' | sed 's/^- feature/- ✨/' || true)
+          if [ ! -z "$FEATURES" ]; then
+            echo "### ✨ Nuevas Funcionalidades" >> release-notes.md
+            echo "$FEATURES" >> release-notes.md
+            echo "" >> release-notes.md
+          fi
+
+          # Fixes
+          FIXES=$(echo "$CHANGELOG" | grep -E "^- fix|^- bugfix" | sed 's/^- fix/- 🐛/' | sed 's/^- bugfix/- 🐛/' || true)
+          if [ ! -z "$FIXES" ]; then
+            echo "### 🐛 Correcciones" >> release-notes.md
+            echo "$FIXES" >> release-notes.md
+            echo "" >> release-notes.md
+          fi
+
+          # Docs
+          DOCS=$(echo "$CHANGELOG" | grep -E "^- docs" | sed 's/^- docs/- 📚/' || true)
+          if [ ! -z "$DOCS" ]; then
+            echo "### 📚 Documentación" >> release-notes.md
+            echo "$DOCS" >> release-notes.md
+            echo "" >> release-notes.md
+          fi
+
+          # Chores
+          CHORES=$(echo "$CHANGELOG" | grep -E "^- chore|^- refactor|^- style" | sed 's/^- chore/- 🔧/' | sed 's/^- refactor/- ♻️/' | sed 's/^- style/- 💄/' || true)
+          if [ ! -z "$CHORES" ]; then
+            echo "### 🔧 Mantenimiento" >> release-notes.md
+            echo "$CHORES" >> release-notes.md
+            echo "" >> release-notes.md
+          fi
+
+          # Agregar información adicional
+          echo "---" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "### 📦 Instalación" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "\`\`\`bash" >> release-notes.md
+          echo "git clone https://github.com/\${{ github.repository }}.git" >> release-notes.md
+          echo "cd \$(basename \${{ github.repository }})" >> release-notes.md
+          echo "git checkout ${{ needs.prepare-release.outputs.tag }}" >> release-notes.md
+          echo "pnpm install" >> release-notes.md
+          echo "\`\`\`" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "### 🐳 Docker" >> release-notes.md
+          echo "" >> release-notes.md
+          echo "\`\`\`bash" >> release-notes.md
+          echo "docker compose up -d" >> release-notes.md
+          echo "\`\`\`" >> release-notes.md
+
+          # Guardar changelog para usar en el release
+          CHANGELOG_CONTENT=$(cat release-notes.md)
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          echo "$CHANGELOG_CONTENT" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: 📤 Subir release notes
+        uses: actions/upload-artifact@v3
+        with:
+          name: release-notes
+          path: release-notes.md
+
+  # 3. Crear release en GitHub
+  create-release:
+    name: 🚀 Crear Release
+    runs-on: ubuntu-latest
+    needs: [prepare-release, generate-changelog]
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📥 Descargar release notes
+        uses: actions/download-artifact@v3
+        with:
+          name: release-notes
+
+      - name: 🚀 Crear release en GitHub
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.prepare-release.outputs.tag }}
+          release_name: Release ${{ needs.prepare-release.outputs.tag }}
+          body_path: release-notes.md
+          draft: false
+          prerelease: ${{ needs.prepare-release.outputs.is_prerelease }}
+
+  # 4. Actualizar documentación post-release
+  update-docs:
+    name: 📚 Actualizar Documentación
+    runs-on: ubuntu-latest
+    needs: [prepare-release, create-release]
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📝 Actualizar versión en documentación
+        run: |
+          # Actualizar badges de versión en README
+          sed -i "s/version-[0-9]\+\.[0-9]\+\.[0-9]\+/version-${{ needs.prepare-release.outputs.version }}/g" README.md
+
+          # Actualizar referencias de versión en docs
+          find docs -name "*.md" -exec sed -i "s/version [0-9]\+\.[0-9]\+\.[0-9]\+/version ${{ needs.prepare-release.outputs.version }}/g" {} \;
+
+      - name: 📤 Commit cambios de documentación
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git diff --staged --quiet || git commit -m "docs: actualizar versión a ${{ needs.prepare-release.outputs.tag }}"
+          git push
+
+  # 5. Notificar en discusiones
+  notify:
+    name: 📢 Notificar Comunidad
+    runs-on: ubuntu-latest
+    needs: [prepare-release, create-release]
+    if: needs.prepare-release.outputs.is_prerelease == 'false'
+
+    steps:
+      - name: 📢 Crear discusión para el release
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: release } = await github.rest.repos.getReleaseByTag({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              tag: '${{ needs.prepare-release.outputs.tag }}'
+            });
+
+            const discussionBody = `¡Nueva versión disponible! 🎉
+
+            ## ${release.name}
+
+            ${release.body}
+
+            ### 💬 ¿Qué opinas?
+
+            - ¿Has probado las nuevas funcionalidades?
+            - ¿Tienes feedback sobre los cambios?
+            - ¿Hay algo que te gustaría ver en la próxima versión?
+
+            ¡Comparte tu experiencia en los comentarios! 👇`;
+
+            github.rest.teams.createDiscussionInOrg({
+              org: context.repo.owner,
+              team_slug: 'bootcamp-community',
+              title: `🚀 Release ${release.tag_name}`,
+              body: discussionBody
+            }).catch(() => {
+              console.log('No se pudo crear discusión en equipo, continuando...');
+            });

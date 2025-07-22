@@ -64,12 +64,96 @@ pnpm run dev
 
 ### 🐳 Desarrollo con Docker
 
+#### Configuración Inicial
+
+1. **Copiar las variables de entorno**:
+
 ```bash
-# Desarrollo completo en contenedores
+# Crear el archivo de configuración local
+cp .env.example .env
+```
+
+2. **Iniciar los servicios**:
+
+```bash
+# Levantar todos los servicios en background
 docker compose up -d
 
-# Acceder al entorno de desarrollo
+# Ver el estado de los contenedores
+docker compose ps
+```
+
+3. **Acceder al entorno de desarrollo**:
+
+```bash
+# Entrar al contenedor de desarrollo
 docker compose exec bootcamp-dev bash
+
+# Una vez dentro del contenedor, instalar dependencias
+pnpm install
+
+# Verificar que todo funciona
+pnpm run verify-setup
+```
+
+#### Comandos Útiles de Docker
+
+```bash
+# Ver logs de todos los servicios
+docker compose logs -f
+
+# Ver logs específicos del servicio de desarrollo
+docker compose logs -f bootcamp-dev
+
+# Ver logs de la base de datos
+docker compose logs -f db
+
+# Reiniciar los servicios
+docker compose restart
+
+# Detener todos los servicios
+docker compose down
+
+# Detener y eliminar volúmenes (¡CUIDADO! Esto borra los datos de la BD)
+docker compose down -v
+```
+
+#### Conectar a la Base de Datos
+
+Desde tu máquina local, puedes conectarte a PostgreSQL usando:
+
+- **Host**: `localhost`
+- **Puerto**: `5432`
+- **Usuario**: `bootcamp_user` (definido en `.env`)
+- **Contraseña**: `supersecretpassword` (definido en `.env`)
+- **Base de datos**: `mcp_bootcamp_db` (definido en `.env`)
+
+#### Desarrollo en el Contenedor
+
+```bash
+# Ejecutar comandos específicos en el contenedor
+docker compose exec bootcamp-dev pnpm install
+docker compose exec bootcamp-dev pnpm run dev
+docker compose exec bootcamp-dev pnpm test
+
+# Trabajar de forma interactiva
+docker compose exec bootcamp-dev bash
+# Ahora estás dentro del contenedor y puedes ejecutar cualquier comando
+```
+
+### 🛠️ Instalación Local (Alternativa)
+
+Si prefieres no usar Docker, puedes configurar el entorno localmente instalando las dependencias directamente en tu máquina. Asegúrate de tener instalados **Node.js**, **Python**, y **PostgreSQL**.
+
+```bash
+# Instalar dependencias de Node.js
+npm install
+
+# Instalar dependencias de Python (si es necesario)
+pip install -r requirements.txt
+
+# Iniciar el servidor
+npm run dev
 ```
 
 ## 📋 Módulos

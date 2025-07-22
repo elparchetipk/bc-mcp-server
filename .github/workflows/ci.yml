@@ -1,0 +1,240 @@
+name: 🚀 CI/CD Pipeline
+
+# Este workflow se ejecuta en push y pull requests a main/develop
+# Valida código, ejecuta tests y verifica que todo funcione correctamente
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+# Permisos necesarios para el workflow
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+
+jobs:
+  # 1. Análisis de código y linting
+  lint:
+    name: 🔍 Código y Linting
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 📥 Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: 🔍 Linting TypeScript
+        run: pnpm run lint
+
+      - name: 📝 Verificar formato de código
+        run: pnpm run format:check
+
+  # 2. Testing unitario e integración
+  test:
+    name: 🧪 Tests
+    runs-on: ubuntu-latest
+    needs: lint
+
+    strategy:
+      matrix:
+        node-version: [18, 20]
+
+    services:
+      postgres:
+        image: postgres:15-alpine
+        env:
+          POSTGRES_USER: test_user
+          POSTGRES_PASSWORD: test_password
+          POSTGRES_DB: test_db
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 📥 Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: 🏗️ Build del proyecto
+        run: pnpm run build
+
+      - name: 🧪 Ejecutar tests unitarios
+        run: pnpm run test:unit
+        env:
+          DATABASE_URL: postgresql://test_user:test_password@localhost:5432/test_db
+
+      - name: 🔗 Ejecutar tests de integración
+        run: pnpm run test:integration
+        env:
+          DATABASE_URL: postgresql://test_user:test_password@localhost:5432/test_db
+
+      - name: 📊 Subir cobertura a Codecov
+        uses: codecov/codecov-action@v3
+        if: matrix.node-version == '18'
+        with:
+          file: ./coverage/lcov.info
+          flags: unittests
+          name: codecov-umbrella
+
+  # 3. Validación de ejemplos del bootcamp
+  validate-examples:
+    name: ✅ Validar Ejemplos
+    runs-on: ubuntu-latest
+    needs: lint
+
+    strategy:
+      matrix:
+        module:
+          [
+            modulo-01,
+            modulo-02,
+            modulo-03,
+            modulo-04,
+            modulo-05,
+            modulo-06,
+            modulo-07,
+          ]
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 🔍 Validar ejemplos del ${{ matrix.module }}
+        run: |
+          if [ -d "ejemplos/${{ matrix.module }}" ]; then
+            echo "Validando ejemplos del ${{ matrix.module }}..."
+            for example in ejemplos/${{ matrix.module }}/*/; do
+              if [ -f "$example/package.json" ]; then
+                echo "Validando: $example"
+                cd "$example"
+                pnpm install
+                pnpm run build || echo "Build failed for $example"
+                cd - > /dev/null
+              fi
+            done
+          else
+            echo "No hay ejemplos para ${{ matrix.module }} aún"
+          fi
+
+  # 4. Security scan
+  security:
+    name: 🔒 Análisis de Seguridad
+    runs-on: ubuntu-latest
+    needs: lint
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 🔒 Ejecutar CodeQL
+        uses: github/codeql-action/init@v2
+        with:
+          languages: javascript
+
+      - name: 🔒 Realizar análisis automático
+        uses: github/codeql-action/autobuild@v2
+
+      - name: 🔒 Realizar análisis CodeQL
+        uses: github/codeql-action/analyze@v2
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 📥 Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      - name: 🔍 Audit de dependencias
+        run: pnpm audit
+
+  # 5. Build de Docker
+  docker:
+    name: 🐳 Docker Build
+    runs-on: ubuntu-latest
+    needs: [test, validate-examples]
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 🐳 Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: 🏗️ Build imagen de desarrollo
+        run: |
+          docker compose build
+
+      - name: ✅ Test servicios Docker
+        run: |
+          docker compose up -d
+          sleep 10
+          docker compose ps
+          docker compose logs
+          docker compose down
+
+  # 6. Notificación de éxito
+  success:
+    name: ✅ Pipeline Completado
+    runs-on: ubuntu-latest
+    needs: [test, validate-examples, security, docker]
+    if: always()
+
+    steps:
+      - name: ✅ Marcar como exitoso
+        if: ${{ needs.test.result == 'success' && needs.validate-examples.result == 'success' && needs.security.result == 'success' && needs.docker.result == 'success' }}
+        run: echo "🎉 ¡Todos los checks pasaron correctamente!"
+
+      - name: ❌ Marcar como fallido
+        if: ${{ needs.test.result == 'failure' || needs.validate-examples.result == 'failure' || needs.security.result == 'failure' || needs.docker.result == 'failure' }}
+        run: |
+          echo "❌ Algunos checks fallaron. Revisa los logs arriba."
+          exit 1

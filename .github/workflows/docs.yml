@@ -1,0 +1,250 @@
+name: 📚 Documentation Build & Deploy
+
+# Este workflow genera y despliega la documentación automáticamente
+# Se ejecuta cuando hay cambios en docs/ o en push a main
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'docs/**'
+      - 'README.md'
+      - '.github/workflows/docs.yml'
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'README.md'
+
+# Permisos para escribir en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Solo permitir un deployment concurrente
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
+
+jobs:
+  # 1. Validar estructura de documentación
+  validate-docs:
+    name: 🔍 Validar Documentación
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 📥 Instalar dependencias de docs
+        run: |
+          if [ -f "docs/package.json" ]; then
+            cd docs
+            pnpm install
+            cd ..
+          fi
+
+      - name: 🔍 Verificar enlaces rotos
+        run: |
+          # Instalar herramienta para verificar enlaces
+          pnpm add -g markdown-link-check
+
+          # Verificar enlaces en README principal
+          markdown-link-check README.md --config .github/markdown-link-check.json || true
+
+          # Verificar enlaces en documentación
+          find docs -name "*.md" -exec markdown-link-check {} --config .github/markdown-link-check.json \; || true
+
+      - name: 📋 Validar estructura de módulos
+        run: |
+          echo "Validando estructura de módulos..."
+
+          # Verificar que cada módulo tenga su README
+          for modulo in docs/modulos/modulo-*/; do
+            if [ -d "$modulo" ]; then
+              if [ ! -f "$modulo/README.md" ]; then
+                echo "❌ Falta README.md en $modulo"
+                exit 1
+              else
+                echo "✅ $modulo tiene README.md"
+              fi
+            fi
+          done
+
+      - name: 🎯 Validar rúbricas de evaluación
+        run: |
+          echo "Validando rúbricas..."
+
+          # Verificar que cada módulo tenga su rúbrica
+          for i in {01..07}; do
+            rubrica="docs/evaluaciones/rubricas/modulo-${i}.md"
+            if [ ! -f "$rubrica" ]; then
+              echo "⚠️  Falta rúbrica: $rubrica"
+            else
+              echo "✅ Rúbrica encontrada: $rubrica"
+            fi
+          done
+
+  # 2. Generar documentación estática
+  build-docs:
+    name: 🏗️ Construir Documentación
+    runs-on: ubuntu-latest
+    needs: validate-docs
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: 📦 Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: 🏗️ Construir sitio de documentación
+        run: |
+          # Crear directorio de build
+          mkdir -p _site
+
+          # Copiar archivos principales
+          cp README.md _site/index.md
+          cp -r docs/* _site/
+
+          # Copiar assets
+          if [ -d "docs/assets" ]; then
+            cp -r docs/assets _site/
+          fi
+
+          # Generar índice de contenidos
+          echo "# 📚 Documentación del MCP Server Bootcamp" > _site/README.md
+          echo "" >> _site/README.md
+          echo "Bienvenido a la documentación completa del bootcamp." >> _site/README.md
+          echo "" >> _site/README.md
+
+          # Crear configuración para GitHub Pages
+          echo "theme: minima" > _site/_config.yml
+          echo "title: MCP Server Bootcamp" >> _site/_config.yml
+          echo "description: Bootcamp completo para dominar servidores MCP" >> _site/_config.yml
+
+      - name: 📤 Subir artefacto de documentación
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '_site'
+
+  # 3. Generar métricas de documentación
+  docs-metrics:
+    name: 📊 Métricas de Documentación
+    runs-on: ubuntu-latest
+    needs: validate-docs
+
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v4
+
+      - name: 📊 Generar estadísticas
+        run: |
+          echo "## 📊 Métricas de Documentación" > docs-metrics.md
+          echo "" >> docs-metrics.md
+
+          # Contar archivos de documentación
+          total_docs=$(find docs -name "*.md" | wc -l)
+          echo "- **Total de archivos de documentación**: $total_docs" >> docs-metrics.md
+
+          # Contar palabras en documentación
+          total_words=$(find docs -name "*.md" -exec wc -w {} \; | awk '{sum += $1} END {print sum}')
+          echo "- **Total de palabras**: $total_words" >> docs-metrics.md
+
+          # Listar módulos
+          echo "- **Módulos disponibles**:" >> docs-metrics.md
+          for modulo in docs/modulos/modulo-*/; do
+            if [ -d "$modulo" ]; then
+              modulo_name=$(basename "$modulo")
+              echo "  - $modulo_name" >> docs-metrics.md
+            fi
+          done
+
+          # Verificar ejemplos
+          echo "- **Ejemplos por módulo**:" >> docs-metrics.md
+          for i in {01..07}; do
+            ejemplos=$(find ejemplos/modulo-${i} -name "package.json" 2>/dev/null | wc -l)
+            echo "  - Módulo ${i}: $ejemplos ejemplos" >> docs-metrics.md
+          done
+
+          cat docs-metrics.md
+
+      - name: 📤 Guardar métricas como artefacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: docs-metrics
+          path: docs-metrics.md
+
+  # 4. Deploy a GitHub Pages (solo en main)
+  deploy:
+    name: 🚀 Deploy a GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build-docs
+    if: github.ref == 'refs/heads/main'
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: 🚀 Deploy a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+
+  # 5. Comentar en PR con vista previa
+  preview-comment:
+    name: 💬 Comentario de Vista Previa
+    runs-on: ubuntu-latest
+    needs: [validate-docs, docs-metrics]
+    if: github.event_name == 'pull_request'
+
+    steps:
+      - name: 📥 Descargar métricas
+        uses: actions/download-artifact@v3
+        with:
+          name: docs-metrics
+
+      - name: 💬 Comentar en PR
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const fs = require('fs');
+            const metrics = fs.readFileSync('docs-metrics.md', 'utf8');
+
+            const comment = `## 📚 Vista Previa de Documentación
+
+            ¡Gracias por contribuir a la documentación del bootcamp! 🎉
+
+            ${metrics}
+
+            ### ✅ Checks Realizados
+            - 🔍 Validación de enlaces
+            - 📋 Estructura de módulos  
+            - 🎯 Rúbricas de evaluación
+            - 📊 Métricas de contenido
+
+            La documentación se desplegará automáticamente cuando se haga merge a \`main\`.
+            `;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
