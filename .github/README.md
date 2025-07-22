@@ -1,3 +1,7 @@
+<div align="center">
+<img src="../docs/assets/images/logo-bc-mcp-server.webp" alt="Logo del MCP Server Bootcamp" width="400"/>
+</div>
+
 # 📋 GitHub Templates y Configuración
 
 > **Documentación completa de todos los templates de GitHub para el bootcamp MCP Server**
