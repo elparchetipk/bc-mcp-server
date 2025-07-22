@@ -1,0 +1,94 @@
+# Docker Compose para testing
+# Configuración específica para ejecutar tests e2e
+version: "3.8"
+
+services:
+  # Servidor MCP para testing
+  mcp-server-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+      target: test
+    container_name: mcp-server-test
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=test
+      - LOG_LEVEL=error
+      - DATABASE_URL=postgresql://postgres:password@postgres-test:5432/mcp_test
+      - REDIS_URL=redis://redis-test:6379
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - postgres-test
+      - redis-test
+    networks:
+      - mcp-test-network
+    command: pnpm run test:e2e
+
+  # Base de datos PostgreSQL para testing
+  postgres-test:
+    image: postgres:15-alpine
+    container_name: mcp-postgres-test
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mcp_test
+    volumes:
+      - ./scripts/test-db-init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - mcp-test-network
+    tmpfs:
+      - /var/lib/postgresql/data # Usar tmpfs para mayor velocidad en tests
+
+  # Redis para testing
+  redis-test:
+    image: redis:7-alpine
+    container_name: mcp-redis-test
+    ports:
+      - "6380:6379"
+    networks:
+      - mcp-test-network
+    tmpfs:
+      - /data # Usar tmpfs para mayor velocidad
+
+  # Selenium para tests E2E web (si aplica)
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: mcp-selenium-test
+    ports:
+      - "4444:4444"
+      - "7900:7900" # VNC para debugging visual
+    shm_size: 2gb
+    networks:
+      - mcp-test-network
+
+  # Mock server para APIs externas
+  mock-server:
+    image: mockserver/mockserver:latest
+    container_name: mcp-mock-server
+    ports:
+      - "1080:1080"
+    environment:
+      - MOCKSERVER_LOG_LEVEL=INFO
+    networks:
+      - mcp-test-network
+
+  # Herramienta para testing de performance
+  k6:
+    image: grafana/k6:latest
+    container_name: mcp-k6-test
+    volumes:
+      - ./tests/performance:/scripts
+    networks:
+      - mcp-test-network
+    command: run /scripts/load-test.js
+    depends_on:
+      - mcp-server-test
+
+networks:
+  mcp-test-network:
+    driver: bridge

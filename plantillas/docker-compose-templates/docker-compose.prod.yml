@@ -1,0 +1,160 @@
+# Docker Compose para producción
+# Configuración optimizada para entornos de producción
+version: "3.8"
+
+services:
+  # Servidor MCP principal
+  mcp-server:
+    image: mcp-server:${VERSION:-latest}
+    container_name: mcp-server-prod
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - LOG_LEVEL=info
+      - DATABASE_URL=${DATABASE_URL}
+      - REDIS_URL=${REDIS_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - API_KEY=${API_KEY}
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - mcp-network
+    restart: always
+    deploy:
+      replicas: 3
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+        reservations:
+          cpus: "0.1"
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Base de datos PostgreSQL
+  postgres:
+    image: postgres:15-alpine
+    container_name: mcp-postgres-prod
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
+    networks:
+      - mcp-network
+    restart: always
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1G
+        reservations:
+          cpus: "0.2"
+          memory: 256M
+
+  # Redis para cache
+  redis:
+    image: redis:7-alpine
+    container_name: mcp-redis-prod
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    command: redis-server /usr/local/etc/redis/redis.conf
+    networks:
+      - mcp-network
+    restart: always
+
+  # Nginx como reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: mcp-nginx-prod
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - mcp-server
+    networks:
+      - mcp-network
+    restart: always
+
+  # Servicio de backup automático
+  backup:
+    image: postgres:15-alpine
+    container_name: mcp-backup
+    volumes:
+      - postgres_data:/data
+      - ./backups:/backups
+      - ./scripts/backup.sh:/backup.sh
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_HOST=postgres
+    command: sh -c "chmod +x /backup.sh && /backup.sh"
+    depends_on:
+      - postgres
+    networks:
+      - mcp-network
+    restart: unless-stopped
+    # Ejecutar backup cada 6 horas
+    deploy:
+      restart_policy:
+        condition: any
+        delay: 21600s
+
+  # Monitoreo con Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: mcp-prometheus-prod
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.prod.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - mcp-network
+    restart: always
+
+  # Grafana para visualización
+  grafana:
+    image: grafana/grafana:latest
+    container_name: mcp-grafana-prod
+    ports:
+      - "3001:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD}
+    networks:
+      - mcp-network
+    restart: always
+
+networks:
+  mcp-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
+  nginx_logs:
+  prometheus_data:
+  grafana_data:

@@ -1,0 +1,46 @@
+# Dockerfile para desarrollo - Servidor MCP
+# Imagen con herramientas de desarrollo incluidas
+
+FROM node:18-alpine
+
+# Instalar herramientas de desarrollo
+RUN apk add --no-cache \
+    git \
+    curl \
+    bash \
+    vim
+
+# Metadatos del contenedor
+LABEL maintainer="MCP Server Bootcamp"
+LABEL description="Servidor MCP para desarrollo"
+LABEL version="1.0.0"
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Instalar pnpm globalmente
+RUN npm install -g pnpm
+
+# Copiar archivos de configuración del package manager
+COPY package*.json ./
+COPY pnpm-lock.yaml ./
+
+# Instalar todas las dependencias (incluidas dev)
+RUN pnpm install --frozen-lockfile
+
+# Copiar código fuente
+COPY . .
+
+# Variables de entorno para desarrollo
+ENV NODE_ENV=development
+ENV LOG_LEVEL=debug
+
+# Exponer puerto para desarrollo
+EXPOSE 3000
+EXPOSE 9229
+
+# Comando para desarrollo con hot reload
+CMD ["pnpm", "run", "dev"]
+
+# Nota: En desarrollo, se recomienda usar volumes para
+# sincronizar cambios en tiempo real

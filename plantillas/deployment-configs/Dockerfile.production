@@ -1,0 +1,52 @@
+# Dockerfile para producción - Servidor MCP
+# Utiliza imagen alpine para minimizar el tamaño
+
+FROM node:18-alpine
+
+# Metadatos del contenedor
+LABEL maintainer="MCP Server Bootcamp"
+LABEL description="Servidor MCP para producción"
+LABEL version="1.0.0"
+
+# Crear usuario no-root para seguridad
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S mcpserver -u 1001
+
+# Establecer directorio de trabajo
+WORKDIR /app
+
+# Copiar archivos de configuración del package manager
+COPY package*.json ./
+COPY pnpm-lock.yaml ./
+
+# Instalar pnpm globalmente
+RUN npm install -g pnpm
+
+# Instalar dependencias (solo producción)
+RUN pnpm install --frozen-lockfile --prod
+
+# Copiar código fuente
+COPY --chown=mcpserver:nodejs . .
+
+# Construir la aplicación
+RUN pnpm run build
+
+# Limpiar archivos de desarrollo
+RUN rm -rf src/ tsconfig.json .eslintrc.json
+
+# Cambiar al usuario no-root
+USER mcpserver
+
+# Exponer puerto (si aplica)
+# EXPOSE 3000
+
+# Variables de entorno por defecto
+ENV NODE_ENV=production
+ENV LOG_LEVEL=info
+
+# Comando de inicio
+CMD ["node", "dist/index.js"]
+
+# Health check (opcional)
+# HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+#   CMD node healthcheck.js || exit 1
