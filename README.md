@@ -11,10 +11,12 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[📚 Comenzar Bootcamp](#-comenzar-el-bootcamp) • 
-[🎯 Módulos](#-módulos) • 
-[🛠️ Instalación](#️-instalación) • 
-[🤝 Contribuir](#-contribuir) • 
+[📚 Comenzar Bootcamp](#-comenzar-el-bootcamp) •
+[🎯 Módulos](#-módulos) •
+[🛠️ Instalación](#️-instalación) •
+[� Automatización](#-sistema-de-automatización) •
+[📑 Templates](#-templates-y-configuración) •
+[�🤝 Contribuir](#-contribuir) •
 [💬 Comunidad](#-comunidad)
 
 </div>
@@ -73,6 +75,7 @@ docker compose exec bootcamp-dev bash
 ## 📋 Módulos
 
 ### 📖 [Módulo 1: Fundamentos y Conceptos Base](docs/modulos/modulo-01-fundamentos/)
+
 **Semana 1** • Comprensión conceptual, configuración y primer servidor
 
 - 🎯 **Días 1-2**: Arquitectura MCP y casos de uso
@@ -80,6 +83,7 @@ docker compose exec bootcamp-dev bash
 - 🔍 **Días 5-7**: Anatomía completa de servidores MCP
 
 ### ⚡ [Módulo 2: Herramientas Avanzadas y Recursos](docs/modulos/modulo-02-herramientas-avanzadas/)
+
 **Semana 2** • Recursos dinámicos y contexto inteligente
 
 - 📊 **Días 8-10**: Sistema de recursos y gestión de datos
@@ -87,6 +91,7 @@ docker compose exec bootcamp-dev bash
 - 🌐 **Días 13-14**: Integración con APIs externas
 
 ### 🗄️ [Módulo 3: Persistencia y Bases de Datos](docs/modulos/modulo-03-persistencia/)
+
 **Semana 3** • Almacenamiento y optimización
 
 - 💾 **Días 15-17**: SQLite, PostgreSQL y patrones de acceso
@@ -94,6 +99,7 @@ docker compose exec bootcamp-dev bash
 - ⚡ **Días 20-21**: Cache distribuido y optimización
 
 ### 🔐 [Módulo 4: Seguridad y Autenticación](docs/modulos/modulo-04-seguridad/)
+
 **Semana 4** • Seguridad empresarial
 
 - 🛡️ **Días 22-24**: Fundamentos y autenticación robusta
@@ -101,6 +107,7 @@ docker compose exec bootcamp-dev bash
 - 📋 **Días 27-28**: Auditoría y logging estructurado
 
 ### 🧪 [Módulo 5: Testing y Calidad](docs/modulos/modulo-05-testing/)
+
 **Semana 5** • Calidad y automatización
 
 - ✅ **Días 29-31**: Testing integral y mocking
@@ -108,6 +115,7 @@ docker compose exec bootcamp-dev bash
 - 📊 **Días 34-35**: Monitoreo y observabilidad
 
 ### 🏗️ [Módulo 6: Arquitecturas Avanzadas](docs/modulos/modulo-06-arquitecturas-avanzadas/)
+
 **Semana 6** • Escalabilidad empresarial
 
 - 🔗 **Días 36-38**: Microservicios y sistemas distribuidos
@@ -115,6 +123,7 @@ docker compose exec bootcamp-dev bash
 - 🛡️ **Días 41-42**: Resilencia y alta disponibilidad
 
 ### 🎯 [Módulo 7: Proyecto Final](docs/modulos/modulo-07-proyecto-final/)
+
 **Semana 7** • Aplicación tu expertise
 
 - 📋 **Días 43-45**: Diseño de arquitectura completa
@@ -125,20 +134,130 @@ docker compose exec bootcamp-dev bash
 
 <div align="center">
 
-| Tecnología | Uso | Versión |
-|------------|-----|---------|
-| ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) | Desarrollo principal | 5.0+ |
-| ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white) | Runtime JavaScript | 18+ |
-| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) | Ejemplos FastAPI | 3.11+ |
-| ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) | Contenedorización | Latest |
-| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white) | Base de datos | 15+ |
-| ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=flat&logo=Prisma&logoColor=white) | ORM | 5.0+ |
+| Tecnología                                                                                               | Uso                  | Versión |
+| -------------------------------------------------------------------------------------------------------- | -------------------- | ------- |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) | Desarrollo principal | 5.0+    |
+| ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white)          | Runtime JavaScript   | 18+     |
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white)             | Ejemplos FastAPI     | 3.11+   |
+| ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)             | Contenedorización    | Latest  |
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white) | Base de datos        | 15+     |
+| ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=flat&logo=Prisma&logoColor=white)             | ORM                  | 5.0+    |
 
 </div>
+
+## 🤖 Sistema de Automatización
+
+Este bootcamp incluye un sistema completo de automatización para garantizar calidad y facilitar el desarrollo:
+
+### ⚡ Autocommit Inteligente
+
+```bash
+# El sistema ejecuta automáticamente cada 10 minutos:
+- Detección inteligente de cambios por módulo
+- Commits con Conventional Commits estándar
+- Actualización automática del CHANGELOG.md
+- Logs detallados con rotación automática
+```
+
+**Características:**
+
+- 🧠 **Detección Inteligente**: Categoriza cambios por tipo y módulo
+- 📝 **Conventional Commits**: Mensajes semánticos automáticos
+- 📋 **Changelog Automático**: Generación basada en commits
+- 🔒 **Ejecución Segura**: Sistema de locks y manejo de errores
+- 📊 **Logging Completo**: Auditoría detallada con rotación
+
+### 🔧 Scripts de Automatización
+
+| Script                        | Propósito                        | Uso                             |
+| ----------------------------- | -------------------------------- | ------------------------------- |
+| `scripts/setup.sh`            | Configuración inicial completa   | `./scripts/setup.sh`            |
+| `scripts/autocommit.sh`       | Commits automáticos inteligentes | Ejecuta vía cron                |
+| `scripts/update-changelog.sh` | Actualización del CHANGELOG      | `./scripts/update-changelog.sh` |
+| `scripts/build-all.sh`        | Build de todos los módulos       | `./scripts/build-all.sh`        |
+| `scripts/lint.sh`             | Linting y formato de código      | `./scripts/lint.sh`             |
+
+### 📋 Control y Configuración
+
+```bash
+# Gestión del sistema de autocommit
+./scripts/setup-autocommit.sh    # Activar autocommit
+./scripts/remove-autocommit.sh   # Desactivar autocommit
+./scripts/autocommit-config.sh   # Configurar parámetros
+
+# Logs y monitoreo
+tail -f .autocommit/autocommit.log        # Ver logs en tiempo real
+tail -f .autocommit/changelog-generator.log # Ver logs de changelog
+```
+
+## 📑 Templates y Configuración
+
+### 🔧 Configuración del Proyecto
+
+| Archivo                                                              | Propósito                             | Ubicación         |
+| -------------------------------------------------------------------- | ------------------------------------- | ----------------- |
+| [`.gitignore`](.gitignore)                                           | Exclusiones de Git para todo el stack | Raíz del proyecto |
+| [`pnpm-workspace.yaml`](pnpm-workspace.yaml)                         | Configuración del workspace           | Raíz del proyecto |
+| [`tsconfig.json`](tsconfig.json)                                     | Configuración TypeScript global       | Raíz del proyecto |
+| [`.github/copilot-instructions.md`](.github/copilot-instructions.md) | Directrices para GitHub Copilot       | `.github/`        |
+
+### 📋 Templates de Issues
+
+| Template                                                                        | Propósito                               | Ubicación                 |
+| ------------------------------------------------------------------------------- | --------------------------------------- | ------------------------- |
+| [🐛 Bug Report](.github/ISSUE_TEMPLATE/bug_report.md)                           | Reportar errores técnicos               | `.github/ISSUE_TEMPLATE/` |
+| [✨ Feature Request](.github/ISSUE_TEMPLATE/feature_request.md)                 | Solicitar nuevas funcionalidades        | `.github/ISSUE_TEMPLATE/` |
+| [❓ Question](.github/ISSUE_TEMPLATE/question.md)                               | Hacer preguntas técnicas o conceptuales | `.github/ISSUE_TEMPLATE/` |
+| [📚 Educational Improvement](.github/ISSUE_TEMPLATE/educational_improvement.md) | Mejorar contenido pedagógico            | `.github/ISSUE_TEMPLATE/` |
+| [📖 Documentation](.github/ISSUE_TEMPLATE/documentation.md)                     | Mejorar o agregar documentación         | `.github/ISSUE_TEMPLATE/` |
+| [⚙️ Config](.github/ISSUE_TEMPLATE/config.yml)                                  | Configuración de templates              | `.github/ISSUE_TEMPLATE/` |
+
+### 🔄 Templates de Pull Request
+
+| Template                                                     | Propósito                           | Ubicación  |
+| ------------------------------------------------------------ | ----------------------------------- | ---------- |
+| [📝 Pull Request Template](.github/PULL_REQUEST_TEMPLATE.md) | Guía para contribuciones de calidad | `.github/` |
+
+### 📋 Gobernanza del Proyecto
+
+| Documento                                             | Propósito                                | Ubicación         |
+| ----------------------------------------------------- | ---------------------------------------- | ----------------- |
+| [🤝 Code of Conduct](.github/CODE_OF_CONDUCT.md)      | Normas de convivencia en la comunidad    | `.github/`        |
+| [📋 Contributing Guidelines](.github/CONTRIBUTING.md) | Guía completa para contribuir            | `.github/`        |
+| [📊 Changelog](CHANGELOG.md)                          | Historial de cambios del proyecto        | Raíz del proyecto |
+| [🔒 Security Policy](SECURITY.md)                     | Política de seguridad y vulnerabilidades | Raíz del proyecto |
+
+### 🏗️ Plantillas de Desarrollo
+
+| Plantilla                                                           | Propósito                                  | Ubicación     |
+| ------------------------------------------------------------------- | ------------------------------------------ | ------------- |
+| [`servidor-base/`](plantillas/servidor-base/)                       | Estructura base para nuevos servidores MCP | `plantillas/` |
+| [`testing-setup/`](plantillas/testing-setup/)                       | Configuración de testing completa          | `plantillas/` |
+| [`docker-compose-templates/`](plantillas/docker-compose-templates/) | Templates para Docker Compose              | `plantillas/` |
+| [`deployment-configs/`](plantillas/deployment-configs/)             | Configuraciones de deployment              | `plantillas/` |
+
+### 🐳 Configuración Docker
+
+| Archivo                                                        | Propósito                   | Ubicación              |
+| -------------------------------------------------------------- | --------------------------- | ---------------------- |
+| [`node.Dockerfile`](herramientas/docker/node.Dockerfile)       | Imagen base para Node.js    | `herramientas/docker/` |
+| [`python.Dockerfile`](herramientas/docker/python.Dockerfile)   | Imagen base para Python     | `herramientas/docker/` |
+| [`compose-templates/`](herramientas/docker/compose-templates/) | Templates de Docker Compose | `herramientas/docker/` |
+
+### 🔍 Validadores y Herramientas
+
+| Herramienta                               | Propósito                       | Ubicación       |
+| ----------------------------------------- | ------------------------------- | --------------- |
+| [`validators/`](herramientas/validators/) | Scripts de validación de código | `herramientas/` |
+
+---
+
+**💡 Consejo**: Todos los templates están diseñados para ser pedagógicamente efectivos y técnicamente robustos, siguiendo las mejores prácticas de la industria y adaptados al contexto educativo del bootcamp.
 
 ## 📊 Evaluación y Certificación
 
 Cada módulo incluye:
+
 - ✅ **Rúbricas detalladas** con criterios claros
 - 🎯 **Ejercicios prácticos** con soluciones
 - 🏆 **Proyectos incrementales** que construyen expertise
@@ -146,7 +265,7 @@ Cada módulo incluye:
 
 ## 🤝 Contribuir
 
-¡Tu contribución hace que este bootcamp sea mejor para todos! 
+¡Tu contribución hace que este bootcamp sea mejor para todos!
 
 ### Formas de Contribuir
 

@@ -1,83 +1,199 @@
-# MCP Server Bootcamp - Autocommit System
+# MCP Server Bootcamp - Scripts de Automatización
 
-A comprehensive autocommit system that automatically commits changes every 10 minutes using conventional commit standards and best practices.
+Sistema completo de automatización que incluye autocommit inteligente, generación automática de changelog y herramientas de desarrollo para el bootcamp MCP Server.
 
-## 🚀 Features
+## 🚀 Características Principales
 
-- **Automated commits every 10 minutes**
-- **Conventional Commits standard** (feat, docs, chore, etc.)
-- **Intelligent commit message generation** based on file patterns
-- **Module-aware scoping** (detects which bootcamp module is being modified)
-- **Safe execution** with lock files to prevent concurrent runs
-- **Comprehensive logging** with rotation
-- **Easy setup and removal**
+### 🤖 Sistema de Autocommit
 
-## 📦 Installation
+- **Commits automáticos cada 10 minutos**
+- **Conventional Commits estándar** (feat, docs, chore, etc.)
+- **Generación inteligente de mensajes** basada en patrones de archivos
+- **Detección de módulos** (identifica qué módulo del bootcamp se está modificando)
+- **Ejecución segura** con archivos de bloqueo
+- **Logging completo** con rotación automática
 
-### Quick Setup
+### 📋 Generación Automática de Changelog
+
+- **Generación basada en git commits** siguiendo Conventional Commits
+- **Categorización automática** por tipo de cambio (Added, Fixed, Changed, etc.)
+- **Versionado semántico** automático basado en tipos de commit
+- **Integración con autocommit** para mantener el changelog actualizado
+- **Soporte para scopes específicos** del bootcamp (module-1, examples, etc.)
+
+### 🔧 Herramientas de Desarrollo
+
+- **Scripts de configuración** para setup inicial
+- **Validación de código** y linting
+- **Build automatizado** de todos los módulos
+- **Gestión fácil** de activación/desactivación
+
+## 📦 Instalación
+
+### Setup Rápido Completo
 
 ```bash
-# Navigate to bootcamp directory
+# Navegar al directorio del bootcamp
 cd /home/epti/Documentos/epti-dev/bootcamps/bc-mcp-server
 
-# Make setup script executable and run
+# Configurar todo el sistema de automatización
 chmod +x scripts/setup-autocommit.sh
 ./scripts/setup-autocommit.sh
 ```
 
-### Manual Setup
+### Setup Manual
 
 ```bash
-# Make autocommit script executable
-chmod +x scripts/autocommit.sh
+# Hacer ejecutables todos los scripts
+chmod +x scripts/*.sh
 
-# Add cron job (runs every 10 minutes)
+# Configurar autocommit
+./scripts/setup-autocommit.sh
+
+# O agregar cron job manualmente (runs every 10 minutes)
 (crontab -l 2>/dev/null; echo "*/10 * * * * /home/epti/Documentos/epti-dev/bootcamps/bc-mcp-server/scripts/autocommit.sh") | crontab -
 ```
 
-## 🔧 Usage
+## �️ Scripts Disponibles
 
-### Management Commands
+### 🤖 Autocommit y Changelog
+
+| Script                 | Propósito                        | Uso                                     |
+| ---------------------- | -------------------------------- | --------------------------------------- |
+| `autocommit.sh`        | Commits automáticos inteligentes | Ejecuta vía cron cada 10 min            |
+| `setup-autocommit.sh`  | Configurar autocommit y cron     | `./scripts/setup-autocommit.sh`         |
+| `remove-autocommit.sh` | Desactivar autocommit            | `./scripts/remove-autocommit.sh`        |
+| `autocommit-config.sh` | Archivo de configuración         | Editar para personalizar                |
+| `update-changelog.sh`  | Generar/actualizar CHANGELOG.md  | `./scripts/update-changelog.sh [--tag]` |
+
+### 🔧 Desarrollo y Build
+
+| Script         | Propósito                      | Uso                         |
+| -------------- | ------------------------------ | --------------------------- |
+| `setup.sh`     | Configuración inicial completa | `./scripts/setup.sh`        |
+| `build-all.sh` | Build de todos los módulos     | `./scripts/build-all.sh`    |
+| `lint.sh`      | Linting y formato de código    | `./scripts/lint.sh [--fix]` |
+
+## 🔧 Uso Detallado
+
+### Comandos de Gestión
 
 ```bash
-# View current cron jobs
+# Ver trabajos de cron actuales
 crontab -l
 
-# View autocommit logs
+# Ver logs de autocommit en tiempo real
 tail -f .autocommit/autocommit.log
 
-# Test autocommit manually
+# Ver logs de changelog
+tail -f .autocommit/changelog-generator.log
+
+# Probar autocommit manualmente
 ./scripts/autocommit.sh
+
+# Actualizar changelog manualmente
+./scripts/update-changelog.sh
+
+# Generar changelog y crear tag
+./scripts/update-changelog.sh --tag
 
 # Remove autocommit
 ./scripts/remove-autocommit.sh
 ```
 
+### 📋 Changelog Management
+
+```bash
+# Generar changelog para versión actual (sin crear tag)
+./scripts/update-changelog.sh
+
+# Generar changelog y crear tag git automáticamente
+./scripts/update-changelog.sh --tag
+
+# Ver qué cambios se incluirían (dry-run)
+./scripts/update-changelog.sh --dry-run
+
+# Ver ayuda completa del script
+./scripts/update-changelog.sh --help
+```
+
 ### Log Monitoring
 
 ```bash
-# Follow logs in real-time
+# Follow autocommit logs in real-time
 tail -f .autocommit/autocommit.log
+
+# Follow changelog logs in real-time
+tail -f .autocommit/changelog-generator.log
 
 # View recent commits
 git log --oneline -10
 
 # Check last autocommit status
 grep "completed successfully\|ERROR" .autocommit/autocommit.log | tail -1
+
+# Check changelog generation status
+grep "Changelog updated\|ERROR" .autocommit/changelog-generator.log | tail -1
 ```
 
-## 📝 Commit Message Format
+## � Sistema de Changelog Automático
 
-The system follows **Conventional Commits** specification:
+### 🎯 Características del Changelog
+
+- **Generación automática** basada en commits desde el último tag
+- **Categorización inteligente** por tipos de cambio:
+  - `Added` - Nuevas funcionalidades (feat)
+  - `Fixed` - Correcciones de bugs (fix)
+  - `Changed` - Cambios en funcionalidad existente (refactor)
+  - `Documentation` - Cambios en documentación (docs)
+  - `Testing` - Cambios en tests (test)
+  - `Performance` - Mejoras de rendimiento (perf)
+  - `Build System` - Cambios en build (build)
+  - `CI/CD` - Cambios en CI/CD (ci)
+  - `Maintenance` - Tareas de mantenimiento (chore)
+
+### 🔄 Versionado Semántico Automático
+
+El sistema determina automáticamente la siguiente versión basándose en los tipos de commits:
+
+- **MAJOR** (X.0.0): Commits con `BREAKING CHANGE` o `!:`
+- **MINOR** (0.X.0): Commits de tipo `feat`
+- **PATCH** (0.0.X): Commits de tipo `fix`, `docs`, `chore`, etc.
+
+### 📝 Formato de Scopes en Changelog
+
+El sistema reconoce y formatea automáticamente scopes específicos del bootcamp:
+
+- `module-1` → **MODULE-1**
+- `module-2` → **MODULE-2**
+- `examples` → **Examples**
+- `docs` → **Documentation**
+- `tooling` → **Tooling**
+- `config` → **Configuration**
+
+### 🔗 Integración con Autocommit
+
+El changelog se actualiza automáticamente como parte del flujo de autocommit:
+
+1. **Autocommit detecta cambios** importantes (no configs menores)
+2. **Genera commits** con Conventional Commits
+3. **Actualiza changelog** automáticamente
+4. **Incluye changelog** en el commit si fue modificado
+5. **Continúa con commit** normal
+
+## 📝 Formato de Mensajes de Commit
+
+El sistema sigue la especificación **Conventional Commits**:
 
 ```
 <type>(<scope>): <description>
 
-Examples:
+Ejemplos:
 feat(examples): add new calculator implementation for module 1
-docs(documentation): update module 2 exercise instructions
+docs(module-2): update exercise instructions for resources
 chore(config): update gitignore for better file handling
-test(testing): add integration tests for module 3 persistence
+test(module-3): add integration tests for persistence layer
+fix(autocommit): resolve changelog integration timing issue
 ```
 
 ### Commit Types
