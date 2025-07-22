@@ -1,0 +1,27 @@
+{
+  "folders": [
+    {
+      "name": "🏗️ MCP Server Bootcamp",
+      "path": ".",
+    },
+  ],
+  "settings": {
+    "workbench.tree.initiallyCollapsed": true,
+    "explorer.autoReveal": false,
+    "files.exclude": {
+      "**/.github": false,
+    },
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [],
+  },
+  "extensions": {
+    "recommendations": [
+      "ms-vscode.vscode-typescript-next",
+      "esbenp.prettier-vscode",
+      "ms-python.python",
+      "johnpapa.vscode-peacock",
+    ],
+  },
+}

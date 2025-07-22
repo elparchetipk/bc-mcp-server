@@ -1,0 +1,12 @@
+[
+  {
+    "key": "ctrl+shift+e",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "explorerViewletVisible && !inputFocus"
+  },
+  {
+    "key": "ctrl+shift+r",
+    "command": "workbench.files.action.refreshFilesExplorer",
+    "when": "explorerViewletVisible"
+  }
+]
