@@ -38,30 +38,30 @@
   <text x="450" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">• Recursos</text>
   <text x="450" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">• Prompts</text>
 
-  <text x="620" y="170" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">• stdio/http</text>
-  <text x="620" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">• Event listeners</text>
-  <text x="620" y="200" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">• Error handlers</text>
+  <text x="620" y="170" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">• stdio/http</text>
+  <text x="620" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">• Event listeners</text>
+  <text x="620" y="200" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">• Error handlers</text>
 
-  <!-- Flechas de conexión -->
-  <line x1="170" y1="110" x2="220" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <line x1="340" y1="110" x2="390" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <line x1="510" y1="110" x2="560" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Flechas de conexión - Tema Dark -->
+  <line x1="170" y1="110" x2="220" y2="110" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="340" y1="110" x2="390" y2="110" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="510" y1="110" x2="560" y2="110" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Estado final -->
-  <rect x="300" y="280" width="200" height="80" rx="10" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
-  <text x="400" y="310" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Servidor MCP</text>
-  <text x="400" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Listo para Usar</text>
-  <text x="400" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Estado: READY</text>
+  <!-- Estado final - Tema Dark -->
+  <rect x="300" y="280" width="200" height="80" rx="10" fill="#92400e" stroke="#f59e0b" stroke-width="2"/>
+  <text x="400" y="310" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fef3c7">Servidor MCP</text>
+  <text x="400" y="330" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fef3c7">Listo para Usar</text>
+  <text x="400" y="345" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#fde68a">Estado: READY</text>
 
-  <!-- Flecha hacia estado final -->
-  <line x1="620" y1="140" x2="620" y2="240" stroke="#34495e" stroke-width="2"/>
-  <line x1="620" y1="240" x2="450" y2="240" stroke="#34495e" stroke-width="2"/>
-  <line x1="450" y1="240" x2="450" y2="280" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- Flecha hacia estado final - Tema Dark -->
+  <line x1="620" y1="140" x2="620" y2="240" stroke="#64748b" stroke-width="2"/>
+  <line x1="620" y1="240" x2="450" y2="240" stroke="#64748b" stroke-width="2"/>
+  <line x1="450" y1="240" x2="450" y2="280" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
 
-  <!-- Marcador de flecha -->
+  <!-- Marcador de flecha - Tema Dark -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
     </marker>
   </defs>
 </svg>

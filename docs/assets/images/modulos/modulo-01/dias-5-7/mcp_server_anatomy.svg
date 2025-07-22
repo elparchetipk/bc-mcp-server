@@ -1,91 +1,91 @@
 <svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
-  <!-- Fondo -->
-  <rect width="800" height="600" fill="#f8f9fa"/>
-  
-  <!-- Título -->
-  <text x="400" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">Anatomía de un Servidor MCP</text>
-  
-  <!-- Cliente -->
-  <rect x="50" y="80" width="120" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-  <text x="110" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Cliente MCP</text>
-  <text x="110" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">(Claude, etc.)</text>
-  
-  <!-- Capa de Transporte -->
-  <rect x="250" y="80" width="300" height="40" rx="5" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-  <text x="400" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Capa de Transporte (JSON-RPC)</text>
-  
-  <!-- Servidor MCP Container -->
-  <rect x="250" y="150" width="300" height="400" rx="10" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
-  <text x="400" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Servidor MCP</text>
-  
-  <!-- Inicialización -->
-  <rect x="270" y="190" width="260" height="50" rx="5" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
-  <text x="400" y="210" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Inicialización</text>
-  <text x="400" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Configuración, Validación, Setup</text>
-  
-  <!-- Gestión de Herramientas -->
-  <rect x="270" y="260" width="120" height="70" rx="5" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
-  <text x="330" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Gestión de</text>
-  <text x="330" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Herramientas</text>
-  <text x="330" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Tools Registry</text>
-  
+  <!-- Fondo dark -->
+  <rect width="800" height="600" fill="#0f172a"/>
+
+  <!-- Título - Tema Dark -->
+  <text x="400" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Anatomía de un Servidor MCP</text>
+
+  <!-- Cliente - Tema Dark -->
+  <rect x="50" y="80" width="120" height="80" rx="10" fill="#1e40af" stroke="#3b82f6" stroke-width="2"/>
+  <text x="110" y="115" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#dbeafe">Cliente MCP</text>
+  <text x="110" y="135" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#bfdbfe">(Claude, etc.)</text>
+
+  <!-- Capa de Transporte - Tema Dark -->
+  <rect x="250" y="80" width="300" height="40" rx="5" fill="#7c2d12" stroke="#dc2626" stroke-width="2"/>
+  <text x="400" y="105" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fecaca">Capa de Transporte (JSON-RPC)</text>
+
+  <!-- Servidor MCP Container - Tema Dark -->
+  <rect x="250" y="150" width="300" height="400" rx="10" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+  <text x="400" y="175" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f1f5f9">Servidor MCP</text>
+
+  <!-- Inicialización - Tema Dark -->
+  <rect x="270" y="190" width="260" height="50" rx="5" fill="#581c87" stroke="#7c3aed" stroke-width="2"/>
+  <text x="400" y="210" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#e9d5ff">Inicialización</text>
+  <text x="400" y="225" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#ddd6fe">Configuración, Validación, Setup</text>
+
+  <!-- Gestión de Herramientas - Tema Dark -->
+  <rect x="270" y="260" width="120" height="70" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="330" y="285" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" fill="#d1fae5">Gestión de</text>
+  <text x="330" y="300" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold" fill="#d1fae5">Herramientas</text>
+  <text x="330" y="315" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="9" fill="#a7f3d0">Tools Registry</text>
+
   <!-- Gestión de Recursos -->
   <rect x="410" y="260" width="120" height="70" rx="5" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
   <text x="470" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Gestión de</text>
   <text x="470" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Recursos</text>
   <text x="470" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Resources Manager</text>
-  
+
   <!-- Gestión de Prompts -->
   <rect x="270" y="350" width="120" height="70" rx="5" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
   <text x="330" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Gestión de</text>
   <text x="330" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Prompts</text>
   <text x="330" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Prompts Manager</text>
-  
+
   <!-- Validación y Errores -->
   <rect x="410" y="350" width="120" height="70" rx="5" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
   <text x="470" y="375" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Validación y</text>
   <text x="470" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Errores</text>
   <text x="470" y="405" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="white">Error Handler</text>
-  
+
   <!-- Estado y Configuración -->
   <rect x="270" y="440" width="260" height="50" rx="5" fill="#34495e" stroke="#2c3e50" stroke-width="2"/>
   <text x="400" y="460" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Estado y Configuración</text>
   <text x="400" y="475" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">State Manager, Config, Logs</text>
-  
+
   <!-- Sistemas Externos -->
   <rect x="600" y="200" width="150" height="300" rx="10" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
   <text x="675" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Sistemas</text>
   <text x="675" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Externos</text>
-  
+
   <!-- APIs -->
   <rect x="620" y="270" width="110" height="40" rx="5" fill="#3498db"/>
   <text x="675" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">APIs Externas</text>
-  
+
   <!-- Base de Datos -->
   <rect x="620" y="330" width="110" height="40" rx="5" fill="#2ecc71"/>
   <text x="675" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Base de Datos</text>
-  
+
   <!-- Archivos -->
   <rect x="620" y="390" width="110" height="40" rx="5" fill="#f39c12"/>
   <text x="675" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Sistema Archivos</text>
-  
+
   <!-- Conexiones -->
   <!-- Cliente a Transporte -->
   <line x1="170" y1="120" x2="250" y2="100" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
-  
+
   <!-- Transporte a Servidor -->
   <line x1="400" y1="120" x2="400" y2="150" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
-  
+
   <!-- Servidor a Sistemas Externos -->
   <line x1="550" y1="350" x2="600" y2="350" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
-  
+
   <!-- Marcador de flecha -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
     </marker>
   </defs>
-  
+
   <!-- Flujo de datos -->
   <text x="200" y="110" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Solicitudes</text>
   <text x="420" y="140" font-family="Arial, sans-serif" font-size="10" fill="#7f8c8d">Procesar</text>
