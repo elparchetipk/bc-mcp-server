@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
+  "env": {
+    "node": true,
+    "es2022": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "@typescript-eslint/recommended",
+    "@typescript-eslint/recommended-requiring-type-checking",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "rules": {
+    // Prettier rules
+    "prettier/prettier": "error",
+    
+    // TypeScript específico
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/prefer-const": "error",
+    "@typescript-eslint/no-var-requires": "error",
+    
+    // Calidad de código general
+    "no-console": ["warn", { "allow": ["warn", "error", "info"] }],
+    "no-debugger": "error",
+    "no-duplicate-imports": "error",
+    "no-unused-expressions": "error",
+    "prefer-template": "error",
+    "object-shorthand": "error",
+    
+    // Mejores prácticas para MCP
+    "no-throw-literal": "error",
+    "prefer-promise-reject-errors": "error",
+    "require-await": "error"
+  },
+  "overrides": [
+    {
+      // Configuración específica para archivos de test
+      "files": ["**/*.test.ts", "**/*.spec.ts"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "no-console": "off"
+      }
+    },
+    {
+      // Configuración específica para scripts
+      "files": ["scripts/**/*.js", "scripts/**/*.mjs"],
+      "env": {
+        "node": true
+      },
+      "rules": {
+        "no-console": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      // Configuración específica para archivos de configuración
+      "files": ["*.config.js", "*.config.ts", "*.config.mjs"],
+      "rules": {
+        "no-console": "off",
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ],
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "coverage/",
+    "*.min.js",
+    "*.bundle.js"
+  ]
+}

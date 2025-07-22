@@ -1,0 +1,21 @@
+# Configuración del workspace de pnpm para el MCP Server Bootcamp
+# Este archivo define cómo pnpm gestiona los múltiples proyectos en el monorepo
+
+packages:
+  # Ejemplos por módulo del bootcamp
+  - "ejemplos/modulo-01/*"
+  - "ejemplos/modulo-02/*"
+  - "ejemplos/modulo-03/*"
+  - "ejemplos/modulo-04/*"
+  - "ejemplos/modulo-05/*"
+  - "ejemplos/modulo-06/*"
+  - "ejemplos/modulo-07/*"
+  
+  # Plantillas reutilizables
+  - "plantillas/*"
+  
+  # Herramientas de desarrollo
+  - "herramientas/*"
+  
+  # Documentación (si tiene package.json)
+  - "docs"

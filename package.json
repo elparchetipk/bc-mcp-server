@@ -1,0 +1,83 @@
+{
+  "name": "mcp-server-bootcamp",
+  "version": "1.0.0",
+  "description": "Un bootcamp completo y gratuito para dominar la creación de servidores MCP",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bootcamp",
+    "education",
+    "ai",
+    "anthropic",
+    "server",
+    "typescript",
+    "learning"
+  ],
+  "homepage": "https://github.com/tu-usuario/mcp-server-bootcamp#readme",
+  "bugs": {
+    "url": "https://github.com/tu-usuario/mcp-server-bootcamp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-usuario/mcp-server-bootcamp.git"
+  },
+  "license": "MIT",
+  "author": "The MCP Server Bootcamp Contributors",
+  "type": "module",
+  "workspaces": [
+    "ejemplos/modulo-01/*",
+    "ejemplos/modulo-02/*",
+    "ejemplos/modulo-03/*",
+    "ejemplos/modulo-04/*",
+    "ejemplos/modulo-05/*",
+    "ejemplos/modulo-06/*",
+    "ejemplos/modulo-07/*",
+    "plantillas/*",
+    "herramientas/*"
+  ],
+  "scripts": {
+    "build": "pnpm -r build",
+    "build:docs": "cd docs && pnpm build",
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "dev": "pnpm -r dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --ext .ts,.js,.tsx,.jsx --fix",
+    "lint:check": "eslint . --ext .ts,.js,.tsx,.jsx",
+    "prepare": "husky install",
+    "setup": "./scripts/setup.sh",
+    "test": "pnpm -r test",
+    "test:e2e": "pnpm -r test:e2e",
+    "test:integration": "pnpm -r test:integration",
+    "test:unit": "pnpm -r test:unit",
+    "typecheck": "pnpm -r typecheck",
+    "verify-setup": "node scripts/verify-setup.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.12.0",
+  "lint-staged": {
+    "*.{ts,js,tsx,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{md,json,yaml,yml}": [
+      "prettier --write"
+    ]
+  }
+}
