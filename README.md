@@ -14,9 +14,9 @@
 [📚 Comenzar Bootcamp](#-comenzar-el-bootcamp) •
 [🎯 Módulos](#-módulos) •
 [🛠️ Instalación](#️-instalación) •
-[� Automatización](#-sistema-de-automatización) •
-[📑 Templates](#-templates-y-configuración) •
-[�🤝 Contribuir](#-contribuir) •
+[🤖 Automatización](#-sistema-de-automatización) •
+[📑 GitHub Templates y Configuración](#-github-templates-y-configuración) •
+[🤝 Contribuir](#-contribuir) •
 [💬 Comunidad](#-comunidad)
 
 </div>
@@ -190,7 +190,17 @@ tail -f .autocommit/autocommit.log        # Ver logs en tiempo real
 tail -f .autocommit/changelog-generator.log # Ver logs de changelog
 ```
 
-## 📑 Templates y Configuración
+## 📑 GitHub Templates y Configuración
+
+Este proyecto está equipado con un conjunto completo de templates y archivos de configuración para estandarizar las contribuciones, facilitar la gestión y mantener una alta calidad en el código y la documentación.
+
+### 📂 Estructura de `.github`
+
+La carpeta `.github` centraliza toda la configuración relacionada con la comunidad y las contribuciones en GitHub.
+
+<div align="center">
+<img src="docs/assets/images/logo-bc-mcp-server.webp" alt="Logo del MCP Server Bootcamp" width="400"/>
+</div>
 
 ### 🔧 Configuración del Proyecto
 
