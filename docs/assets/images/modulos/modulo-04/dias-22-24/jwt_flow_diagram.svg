@@ -1,0 +1,115 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2a2a2a" stroke-width="1"/>
+    </pattern>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4ecdc4"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ff6b6b"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="700" fill="#1a1a1a"/>
+  <rect width="900" height="700" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" fill="#f0f0f0" font-size="24" font-weight="bold">
+    Flujo de Autenticación JWT en Servidor MCP
+  </text>
+  
+  <!-- Client -->
+  <rect x="50" y="80" width="120" height="80" fill="#45b7d1" rx="10"/>
+  <text x="110" y="115" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Cliente</text>
+  <text x="110" y="135" text-anchor="middle" fill="#ffffff" font-size="12">MCP Client</text>
+  
+  <!-- Auth Server -->
+  <rect x="300" y="80" width="120" height="80" fill="#f7b731" rx="10"/>
+  <text x="360" y="110" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Auth Server</text>
+  <text x="360" y="125" text-anchor="middle" fill="#ffffff" font-size="12">JWT Issuer</text>
+  <text x="360" y="140" text-anchor="middle" fill="#ffffff" font-size="12">& Validator</text>
+  
+  <!-- MCP Server -->
+  <rect x="600" y="80" width="120" height="80" fill="#5f27cd" rx="10"/>
+  <text x="660" y="115" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">MCP Server</text>
+  <text x="660" y="135" text-anchor="middle" fill="#ffffff" font-size="12">Protected API</text>
+  
+  <!-- Step 1: Login Request -->
+  <path d="M 170 120 L 290 120" stroke="#4ecdc4" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="230" y="115" text-anchor="middle" fill="#4ecdc4" font-size="12" font-weight="bold">1. Login Request</text>
+  <text x="230" y="135" text-anchor="middle" fill="#4ecdc4" font-size="10">(username/password)</text>
+  
+  <!-- Step 2: JWT Response -->
+  <path d="M 290 140 L 170 140" stroke="#4ecdc4" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="230" y="155" text-anchor="middle" fill="#4ecdc4" font-size="12" font-weight="bold">2. JWT Token</text>
+  <text x="230" y="170" text-anchor="middle" fill="#4ecdc4" font-size="10">(signed & encrypted)</text>
+  
+  <!-- Step 3: API Request with JWT -->
+  <path d="M 170 200 L 590 200" stroke="#4ecdc4" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="380" y="195" text-anchor="middle" fill="#4ecdc4" font-size="12" font-weight="bold">3. API Request + JWT</text>
+  <text x="380" y="215" text-anchor="middle" fill="#4ecdc4" font-size="10">(Authorization: Bearer token)</text>
+  
+  <!-- Step 4: JWT Validation -->
+  <path d="M 600 220 L 420 220" stroke="#f7b731" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="510" y="235" text-anchor="middle" fill="#f7b731" font-size="12" font-weight="bold">4. Validate JWT</text>
+  <text x="510" y="250" text-anchor="middle" fill="#f7b731" font-size="10">(verify signature)</text>
+  
+  <!-- Step 5: Validation Response -->
+  <path d="M 420 240 L 600 240" stroke="#f7b731" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)"/>
+  <text x="510" y="270" text-anchor="middle" fill="#f7b731" font-size="12" font-weight="bold">5. Validation Result</text>
+  
+  <!-- Step 6: API Response -->
+  <path d="M 590 280 L 170 280" stroke="#4ecdc4" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <text x="380" y="295" text-anchor="middle" fill="#4ecdc4" font-size="12" font-weight="bold">6. Protected Data</text>
+  <text x="380" y="310" text-anchor="middle" fill="#4ecdc4" font-size="10">(if authorized)</text>
+  
+  <!-- JWT Structure -->
+  <rect x="50" y="350" width="800" height="200" fill="#2a2a2a" stroke="#444" rx="10"/>
+  <text x="450" y="375" text-anchor="middle" fill="#f0f0f0" font-size="18" font-weight="bold">Estructura del JWT</text>
+  
+  <!-- Header -->
+  <rect x="80" y="400" width="220" height="120" fill="#ff6b6b" rx="5"/>
+  <text x="190" y="425" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">HEADER</text>
+  <text x="190" y="445" text-anchor="middle" fill="#ffffff" font-size="11">Algoritmo y Tipo</text>
+  <text x="90" y="470" fill="#ffffff" font-size="10">{</text>
+  <text x="100" y="485" fill="#ffffff" font-size="10">"alg": "HS256",</text>
+  <text x="100" y="500" fill="#ffffff" font-size="10">"typ": "JWT"</text>
+  <text x="90" y="515" fill="#ffffff" font-size="10">}</text>
+  
+  <!-- Payload -->
+  <rect x="340" y="400" width="220" height="120" fill="#4ecdc4" rx="5"/>
+  <text x="450" y="425" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">PAYLOAD</text>
+  <text x="450" y="445" text-anchor="middle" fill="#ffffff" font-size="11">Datos del Usuario</text>
+  <text x="350" y="470" fill="#ffffff" font-size="10">{</text>
+  <text x="360" y="485" fill="#ffffff" font-size="10">"sub": "user123",</text>
+  <text x="360" y="500" fill="#ffffff" font-size="10">"exp": 1640995200</text>
+  <text x="350" y="515" fill="#ffffff" font-size="10">}</text>
+  
+  <!-- Signature -->
+  <rect x="600" y="400" width="220" height="120" fill="#5f27cd" rx="5"/>
+  <text x="710" y="425" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">SIGNATURE</text>
+  <text x="710" y="445" text-anchor="middle" fill="#ffffff" font-size="11">Verificación</text>
+  <text x="610" y="470" fill="#ffffff" font-size="10">HMACSHA256(</text>
+  <text x="620" y="485" fill="#ffffff" font-size="10">base64(header) + "." +</text>
+  <text x="620" y="500" fill="#ffffff" font-size="10">base64(payload),</text>
+  <text x="620" y="515" fill="#ffffff" font-size="10">secret)</text>
+  
+  <!-- Connecting dots -->
+  <text x="190" y="540" text-anchor="middle" fill="#ff6b6b" font-size="24" font-weight="bold">.</text>
+  <text x="450" y="540" text-anchor="middle" fill="#4ecdc4" font-size="24" font-weight="bold">.</text>
+  <text x="710" y="540" text-anchor="middle" fill="#5f27cd" font-size="24" font-weight="bold">.</text>
+  
+  <!-- Security Features -->
+  <rect x="100" y="580" width="700" height="100" fill="#2a2a2a" stroke="#444" rx="5"/>
+  <text x="450" y="605" text-anchor="middle" fill="#f0f0f0" font-size="16" font-weight="bold">Características de Seguridad</text>
+  
+  <text x="120" y="630" fill="#4ecdc4" font-size="12">✓ Stateless (sin sesiones en servidor)</text>
+  <text x="120" y="650" fill="#4ecdc4" font-size="12">✓ Tamper-evident (detecta modificaciones)</text>
+  <text x="120" y="670" fill="#4ecdc4" font-size="12">✓ Expiration time (tiempo de vida limitado)</text>
+  
+  <text x="450" y="630" fill="#f7b731" font-size="12">✓ Self-contained (toda la info necesaria incluida)</text>
+  <text x="450" y="650" fill="#f7b731" font-size="12">✓ Digitally signed (integridad verificable)</text>
+  <text x="450" y="670" fill="#f7b731" font-size="12">✓ Claims-based (permisos específicos)</text>
+</svg>

@@ -1,0 +1,150 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .card { fill: #1e293b; stroke: #3b82f6; stroke-width: 2; }
+      .lb { fill: #7c3aed; stroke: #a855f7; stroke-width: 2; }
+      .server { fill: #059669; stroke: #10b981; stroke-width: 2; }
+      .db { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
+      .cache { fill: #f59e0b; stroke: #fbbf24; stroke-width: 2; }
+      .monitor { fill: #06b6d4; stroke: #0891b2; stroke-width: 2; }
+      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 10px; }
+      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+      .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .data-flow { stroke: #3b82f6; stroke-width: 1.5; fill: none; stroke-dasharray: 3,3; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <rect class="bg" width="900" height="700"/>
+  
+  <!-- Título -->
+  <text x="450" y="25" class="title" text-anchor="middle" font-size="16">Arquitectura Empresarial MCP Integrada</text>
+  
+  <!-- External Traffic -->
+  <rect x="400" y="50" width="100" height="40" class="card" rx="5"/>
+  <text x="450" y="65" class="title" text-anchor="middle">External</text>
+  <text x="450" y="80" class="title" text-anchor="middle">Traffic</text>
+  
+  <!-- Load Balancer -->
+  <rect x="375" y="120" width="150" height="60" class="lb" rx="5"/>
+  <text x="450" y="140" class="title" text-anchor="middle">Intelligent Load Balancer</text>
+  <text x="390" y="155" class="text">• Adaptive Algorithm</text>
+  <text x="390" y="170" class="text">• Circuit Breakers</text>
+  
+  <!-- MCP Server Instances -->
+  <rect x="50" y="220" width="140" height="80" class="server" rx="5"/>
+  <text x="120" y="240" class="title" text-anchor="middle">MCP Server 1</text>
+  <text x="70" y="255" class="text">• Connection Pool</text>
+  <text x="70" y="270" class="text">• Request Handler</text>
+  <text x="70" y="285" class="text">• Health: ✓</text>
+  
+  <rect x="250" y="220" width="140" height="80" class="server" rx="5"/>
+  <text x="320" y="240" class="title" text-anchor="middle">MCP Server 2</text>
+  <text x="270" y="255" class="text">• Connection Pool</text>
+  <text x="270" y="270" class="text">• Request Handler</text>
+  <text x="270" y="285" class="text">• Health: ✓</text>
+  
+  <rect x="450" y="220" width="140" height="80" class="server" rx="5"/>
+  <text x="520" y="240" class="title" text-anchor="middle">MCP Server 3</text>
+  <text x="470" y="255" class="text">• Connection Pool</text>
+  <text x="470" y="270" class="text">• Request Handler</text>
+  <text x="470" y="285" class="text">• Health: ✓</text>
+  
+  <!-- Sharding Router -->
+  <rect x="350" y="340" width="200" height="60" class="lb" rx="5"/>
+  <text x="450" y="360" class="title" text-anchor="middle">Intelligent Sharding Router</text>
+  <text x="370" y="375" class="text">• Adaptive Strategy</text>
+  <text x="370" y="390" class="text">• Cross-shard Aggregation</text>
+  
+  <!-- Cache Layer -->
+  <rect x="650" y="220" width="120" height="80" class="cache" rx="5"/>
+  <text x="710" y="240" class="title" text-anchor="middle">Distributed</text>
+  <text x="710" y="255" class="title" text-anchor="middle">Cache</text>
+  <text x="670" y="275" class="text">• LRU Eviction</text>
+  <text x="670" y="290" class="text">• Hit Ratio: 94%</text>
+  
+  <!-- Database Shards -->
+  <rect x="100" y="450" width="120" height="90" class="db" rx="5"/>
+  <text x="160" y="470" class="title" text-anchor="middle">PostgreSQL</text>
+  <text x="160" y="485" class="title" text-anchor="middle">Shard 0</text>
+  <text x="120" y="505" class="text">Users: 0-333</text>
+  <text x="120" y="520" class="text">Load: 45%</text>
+  <text x="120" y="535" class="text">Conn: 12/20</text>
+  
+  <rect x="300" y="450" width="120" height="90" class="db" rx="5"/>
+  <text x="360" y="470" class="title" text-anchor="middle">PostgreSQL</text>
+  <text x="360" y="485" class="title" text-anchor="middle">Shard 1</text>
+  <text x="320" y="505" class="text">Users: 334-666</text>
+  <text x="320" y="520" class="text">Load: 52%</text>
+  <text x="320" y="535" class="text">Conn: 15/20</text>
+  
+  <rect x="500" y="450" width="120" height="90" class="db" rx="5"/>
+  <text x="560" y="470" class="title" text-anchor="middle">PostgreSQL</text>
+  <text x="560" y="485" class="title" text-anchor="middle">Shard 2</text>
+  <text x="520" y="505" class="text">Users: 667-999</text>
+  <text x="520" y="520" class="text">Load: 38%</text>
+  <text x="520" y="535" class="text">Conn: 8/20</text>
+  
+  <!-- Monitoring Stack -->
+  <rect x="700" y="380" width="120" height="90" class="monitor" rx="5"/>
+  <text x="760" y="400" class="title" text-anchor="middle">Monitoring</text>
+  <text x="760" y="415" class="title" text-anchor="middle">Stack</text>
+  <text x="720" y="435" class="text">• Prometheus</text>
+  <text x="720" y="450" class="text">• Grafana</text>
+  <text x="720" y="465" class="text">• AlertManager</text>
+  
+  <!-- Performance Metrics -->
+  <rect x="50" y="580" width="800" height="100" class="card" rx="5"/>
+  <text x="450" y="605" class="title" text-anchor="middle">Sistema Performance Metrics</text>
+  
+  <text x="80" y="630" class="title">Latencia:</text>
+  <text x="80" y="645" class="text">• P50: 45ms</text>
+  <text x="80" y="660" class="text">• P95: 89ms</text>
+  <text x="80" y="675" class="text">• P99: 156ms</text>
+  
+  <text x="250" y="630" class="title">Throughput:</text>
+  <text x="250" y="645" class="text">• 12,500 req/s</text>
+  <text x="250" y="660" class="text">• 0.02% error rate</text>
+  <text x="250" y="675" class="text">• 99.97% uptime</text>
+  
+  <text x="420" y="630" class="title">Recursos:</text>
+  <text x="420" y="645" class="text">• CPU: 65% avg</text>
+  <text x="420" y="660" class="text">• Memory: 72% avg</text>
+  <text x="420" y="675" class="text">• Disk I/O: 45%</text>
+  
+  <text x="590" y="630" class="title">Escalabilidad:</text>
+  <text x="590" y="645" class="text">• 3 shards balanceados</text>
+  <text x="590" y="660" class="text">• Auto-rebalancing</text>
+  <text x="590" y="675" class="text">• Horizontal ready</text>
+  
+  <text x="750" y="630" class="title">Observabilidad:</text>
+  <text x="750" y="645" class="text">• 24 métricas</text>
+  <text x="750" y="660" class="text">• 12 alertas activas</text>
+  <text x="750" y="675" class="text">• Real-time dash</text>
+  
+  <!-- Arrows showing data flow -->
+  <line x1="450" y1="90" x2="450" y2="120" class="arrow"/>
+  
+  <line x1="400" y1="180" x2="120" y2="220" class="arrow"/>
+  <line x1="450" y1="180" x2="320" y2="220" class="arrow"/>
+  <line x1="500" y1="180" x2="520" y2="220" class="arrow"/>
+  
+  <line x1="120" y1="300" x2="450" y2="340" class="arrow"/>
+  <line x1="320" y1="300" x2="450" y2="340" class="arrow"/>
+  <line x1="520" y1="300" x2="450" y2="340" class="arrow"/>
+  
+  <line x1="450" y1="400" x2="160" y2="450" class="arrow"/>
+  <line x1="450" y1="400" x2="360" y2="450" class="arrow"/>
+  <line x1="450" y1="400" x2="560" y2="450" class="arrow"/>
+  
+  <!-- Cache connections -->
+  <line x1="590" y1="260" x2="650" y2="260" class="data-flow"/>
+  <line x1="520" y1="340" x2="650" y2="300" class="data-flow"/>
+  
+  <!-- Monitoring connections -->
+  <line x1="590" y1="240" x2="700" y2="420" class="data-flow"/>
+  <line x1="620" y1="495" x2="700" y2="450" class="data-flow"/>
+</svg>

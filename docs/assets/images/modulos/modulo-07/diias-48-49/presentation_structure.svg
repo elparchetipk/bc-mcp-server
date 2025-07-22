@@ -1,0 +1,209 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2a2a2a" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="slideGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2196f3;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#1976d2;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="700" fill="#1a1a1a"/>
+  <rect width="900" height="700" fill="url(#grid)"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">
+    Estructura de Presentación Técnica MCP Server
+  </text>
+  
+  <!-- Slide 1: Introducción -->
+  <g transform="translate(50, 60)">
+    <rect width="180" height="120" fill="url(#slideGradient)" stroke="#2196f3" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">1. Introducción</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Problema que resuelve</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Objetivos del proyecto</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Valor de negocio</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Audiencia objetivo</text>
+    <circle cx="170" cy="15" r="8" fill="#4caf50"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">3min</text>
+  </g>
+  
+  <!-- Slide 2: Arquitectura -->
+  <g transform="translate(260, 60)">
+    <rect width="180" height="120" fill="#7c2d4a" stroke="#e24a4a" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">2. Arquitectura</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Diagrama de sistema</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Componentes clave</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Flujo de datos</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Decisiones técnicas</text>
+    <circle cx="170" cy="15" r="8" fill="#ff9800"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">5min</text>
+  </g>
+  
+  <!-- Slide 3: Implementación -->
+  <g transform="translate(470, 60)">
+    <rect width="180" height="120" fill="#2d7c4a" stroke="#4ae24a" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">3. Implementación</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Stack tecnológico</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Patrones utilizados</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Código destacado</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Mejores prácticas</text>
+    <circle cx="170" cy="15" r="8" fill="#2196f3"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">7min</text>
+  </g>
+  
+  <!-- Slide 4: Demo -->
+  <g transform="translate(680, 60)">
+    <rect width="180" height="120" fill="#7c4a2d" stroke="#e2a04a" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">4. Demostración</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Casos de uso reales</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Funcionalidades clave</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Performance en vivo</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Integración con clientes</text>
+    <circle cx="170" cy="15" r="8" fill="#9c27b0"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">10min</text>
+  </g>
+  
+  <!-- Slide 5: Seguridad -->
+  <g transform="translate(50, 210)">
+    <rect width="180" height="120" fill="#424242" stroke="#757575" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">5. Seguridad</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Autenticación/Autorización</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Encriptación de datos</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Auditoría y logs</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Compliance</text>
+    <circle cx="170" cy="15" r="8" fill="#f44336"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">4min</text>
+  </g>
+  
+  <!-- Slide 6: Performance -->
+  <g transform="translate(260, 210)">
+    <rect width="180" height="120" fill="#37474f" stroke="#546e7a" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">6. Performance</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Métricas de rendimiento</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Optimizaciones</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Escalabilidad</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Monitoring en vivo</text>
+    <circle cx="170" cy="15" r="8" fill="#00bcd4"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">5min</text>
+  </g>
+  
+  <!-- Slide 7: Testing -->
+  <g transform="translate(470, 210)">
+    <rect width="180" height="120" fill="#4a2d7c" stroke="#6a4ae2" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">7. Testing</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Estrategia de testing</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Cobertura de código</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Tests de integración</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• CI/CD pipeline</text>
+    <circle cx="170" cy="15" r="8" fill="#8bc34a"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">4min</text>
+  </g>
+  
+  <!-- Slide 8: Deployment -->
+  <g transform="translate(680, 210)">
+    <rect width="180" height="120" fill="#2d4a7c" stroke="#4a90e2" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">8. Deployment</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Infraestructura como código</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Containerización</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Blue-Green deployment</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Monitoreo</text>
+    <circle cx="170" cy="15" r="8" fill="#ff5722"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">5min</text>
+  </g>
+  
+  <!-- Slide 9: Lessons Learned -->
+  <g transform="translate(50, 360)">
+    <rect width="180" height="120" fill="#795548" stroke="#8d6e63" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">9. Lecciones</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Desafíos enfrentados</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Soluciones encontradas</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Mejoras futuras</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Conocimiento adquirido</text>
+    <circle cx="170" cy="15" r="8" fill="#e91e63"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">4min</text>
+  </g>
+  
+  <!-- Slide 10: Roadmap -->
+  <g transform="translate(260, 360)">
+    <rect width="180" height="120" fill="#607d8b" stroke="#78909c" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">10. Roadmap</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Próximas funcionalidades</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Escalabilidad futura</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Integraciones planeadas</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Timeline</text>
+    <circle cx="170" cy="15" r="8" fill="#cddc39"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">3min</text>
+  </g>
+  
+  <!-- Slide 11: Q&A -->
+  <g transform="translate(470, 360)">
+    <rect width="180" height="120" fill="#009688" stroke="#00acc1" stroke-width="2" rx="10"/>
+    <text x="90" y="30" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">11. Q&amp;A</text>
+    <text x="90" y="50" text-anchor="middle" fill="#ffffff" font-size="11">• Preguntas técnicas</text>
+    <text x="90" y="65" text-anchor="middle" fill="#ffffff" font-size="11">• Discusión abierta</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="11">• Feedback</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="11">• Próximos pasos</text>
+    <circle cx="170" cy="15" r="8" fill="#3f51b5"/>
+    <text x="170" y="19" text-anchor="middle" fill="#ffffff" font-size="10">10min</text>
+  </g>
+  
+  <!-- Total Time -->
+  <g transform="translate(680, 360)">
+    <rect width="180" height="120" fill="#263238" stroke="#37474f" stroke-width="3" rx="10"/>
+    <text x="90" y="35" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">Tiempo Total</text>
+    <text x="90" y="60" text-anchor="middle" fill="#4caf50" font-size="24" font-weight="bold">60 min</text>
+    <text x="90" y="80" text-anchor="middle" fill="#ffffff" font-size="12">45min presentación</text>
+    <text x="90" y="95" text-anchor="middle" fill="#ffffff" font-size="12">15min Q&amp;A</text>
+  </g>
+  
+  <!-- Arrows showing flow -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+  
+  <!-- Flow arrows -->
+  <line x1="230" y1="120" x2="260" y2="120" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="120" x2="470" y2="120" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="120" x2="680" y2="120" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="140" y1="180" x2="140" y2="210" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="230" y1="270" x2="260" y2="270" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="270" x2="470" y2="270" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="270" x2="680" y2="270" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <line x1="140" y1="330" x2="140" y2="360" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="230" y1="420" x2="260" y2="420" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="440" y1="420" x2="470" y2="420" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Presentation Tips -->
+  <rect x="50" y="520" width="800" height="150" fill="#1e1e1e" stroke="#333333" stroke-width="2" rx="10"/>
+  <text x="450" y="545" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">
+    📋 Tips para una Presentación Exitosa
+  </text>
+  
+  <text x="70" y="570" fill="#4caf50" font-size="14" font-weight="bold">Preparación:</text>
+  <text x="70" y="585" fill="#ffffff" font-size="12">• Practicar la demo múltiples veces</text>
+  <text x="70" y="600" fill="#ffffff" font-size="12">• Tener backups de datos y screenshots</text>
+  <text x="70" y="615" fill="#ffffff" font-size="12">• Preparar respuestas para preguntas comunes</text>
+  
+  <text x="300" y="570" fill="#2196f3" font-size="14" font-weight="bold">Durante:</text>
+  <text x="300" y="585" fill="#ffffff" font-size="12">• Mantener contacto visual con la audiencia</text>
+  <text x="300" y="600" fill="#ffffff" font-size="12">• Explicar el "por qué" de las decisiones técnicas</text>
+  <text x="300" y="615" fill="#ffffff" font-size="12">• Mostrar código real, no pseudocódigo</text>
+  
+  <text x="580" y="570" fill="#ff9800" font-size="14" font-weight="bold">Follow-up:</text>
+  <text x="580" y="585" fill="#ffffff" font-size="12">• Documentar preguntas y respuestas</text>
+  <text x="580" y="600" fill="#ffffff" font-size="12">• Compartir recursos adicionales</text>
+  <text x="580" y="615" fill="#ffffff" font-size="12">• Programar sesiones de seguimiento</text>
+  
+  <text x="70" y="640" fill="#e91e63" font-size="14" font-weight="bold">Audiencia Técnica:</text>
+  <text x="200" y="640" fill="#ffffff" font-size="12">Enfocarse en arquitectura y decisiones de diseño</text>
+  
+  <text x="70" y="655" fill="#9c27b0" font-size="14" font-weight="bold">Audiencia Ejecutiva:</text>
+  <text x="200" y="655" fill="#ffffff" font-size="12">Enfocarse en valor de negocio y ROI</text>
+</svg>

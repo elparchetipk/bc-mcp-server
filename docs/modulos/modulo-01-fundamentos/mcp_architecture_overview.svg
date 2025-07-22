@@ -1,0 +1,77 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="clientGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4F46E5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="serverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0D9488;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="protocolGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DC2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#EA580C;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cliente (Modelo de IA) -->
+  <rect x="50" y="100" width="200" height="120" rx="15" fill="url(#clientGradient)" />
+  <text x="150" y="140" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Cliente MCP</text>
+  <text x="150" y="160" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">(Modelo de IA)</text>
+  <text x="150" y="180" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Claude, GPT-4, Gemini</text>
+  <text x="150" y="200" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Llama, etc.</text>
+  
+  <!-- Protocolo MCP en el centro -->
+  <ellipse cx="400" cy="300" rx="80" ry="40" fill="url(#protocolGradient)" />
+  <text x="400" y="295" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Protocolo</text>
+  <text x="400" y="310" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">MCP</text>
+  
+  <!-- Servidor MCP -->
+  <rect x="550" y="100" width="200" height="120" rx="15" fill="url(#serverGradient)" />
+  <text x="650" y="140" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Servidor MCP</text>
+  <text x="650" y="160" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12">(Tu Código)</text>
+  
+  <!-- Herramientas -->
+  <rect x="520" y="250" width="80" height="60" rx="8" fill="#F59E0B" />
+  <text x="560" y="275" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Tools</text>
+  <text x="560" y="290" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Acciones</text>
+  
+  <!-- Recursos -->
+  <rect x="620" y="250" width="80" height="60" rx="8" fill="#8B5CF6" />
+  <text x="660" y="275" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Resources</text>
+  <text x="660" y="290" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Datos</text>
+  
+  <!-- Prompts -->
+  <rect x="720" y="250" width="80" height="60" rx="8" fill="#EC4899" />
+  <text x="760" y="275" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Prompts</text>
+  <text x="760" y="290" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9">Contexto</text>
+  
+  <!-- Servicios Externos -->
+  <rect x="550" y="400" width="200" height="80" rx="10" fill="#6B7280" />
+  <text x="650" y="430" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Servicios Externos</text>
+  <text x="650" y="450" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">APIs, Bases de Datos</text>
+  <text x="650" y="465" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Sistemas de Archivos, etc.</text>
+  
+  <!-- Flechas de comunicación -->
+  <path d="M 250 160 Q 325 160 340 280" stroke="#4F46E5" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 460 280 Q 525 160 550 160" stroke="#059669" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Flecha hacia servicios externos -->
+  <path d="M 650 220 L 650 400" stroke="#059669" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Definición de punta de flecha -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151" />
+    </marker>
+  </defs>
+  
+  <!-- Etiquetas de comunicación -->
+  <text x="295" y="200" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="10">Solicitudes</text>
+  <text x="505" y="200" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="10">Respuestas</text>
+  
+  <!-- Título -->
+  <text x="400" y="40" text-anchor="middle" fill="#1F2937" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Arquitectura del Protocolo MCP</text>
+  <text x="400" y="60" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif" font-size="12">Comunicación Bidireccional Estandarizada</text>
+</svg>

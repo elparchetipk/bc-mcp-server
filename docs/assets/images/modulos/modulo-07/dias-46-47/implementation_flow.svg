@@ -1,0 +1,177 @@
+<svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .title { font-family: 'Segoe UI', sans-serif; font-size: 20px; font-weight: bold; fill: #e0e0e0; }
+      .subtitle { font-family: 'Segoe UI', sans-serif; font-size: 14px; font-weight: bold; fill: #b0b0b0; }
+      .label { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #ffffff; }
+      .small-label { font-family: 'Segoe UI', sans-serif; font-size: 10px; fill: #cccccc; }
+      .phase { fill: #2d3748; stroke: #4a5568; stroke-width: 2; rx: 8; }
+      .task { fill: #1a365d; stroke: #2b6cb0; stroke-width: 1; rx: 4; }
+      .review { fill: #744210; stroke: #d69e2e; stroke-width: 1; rx: 4; }
+      .improve { fill: #22543d; stroke: #38a169; stroke-width: 1; rx: 4; }
+      .arrow { stroke: #63b3ed; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .feedback { stroke: #f6ad55; stroke-width: 2; fill: none; marker-end: url(#arrowhead2); stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#63b3ed" />
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f6ad55" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#1a1a1a"/>
+  
+  <!-- Title -->
+  <text x="600" y="30" text-anchor="middle" class="title">Flujo de Implementación y Refinamiento - Días 46-47</text>
+  
+  <!-- Day 46 Column -->
+  <rect x="50" y="70" width="500" height="680" class="phase"/>
+  <text x="70" y="95" class="subtitle">DÍA 46: Implementación Core</text>
+  
+  <!-- Day 46 Tasks -->
+  <rect x="80" y="120" width="200" height="60" class="task"/>
+  <text x="180" y="140" text-anchor="middle" class="label">Setup Proyecto</text>
+  <text x="180" y="155" text-anchor="middle" class="small-label">• Estructura de carpetas</text>
+  <text x="180" y="168" text-anchor="middle" class="small-label">• Configuración inicial</text>
+  
+  <rect x="300" y="120" width="200" height="60" class="task"/>
+  <text x="400" y="140" text-anchor="middle" class="label">Servidor Base</text>
+  <text x="400" y="155" text-anchor="middle" class="small-label">• Core MCP Server</text>
+  <text x="400" y="168" text-anchor="middle" class="small-label">• Configuración & Logging</text>
+  
+  <rect x="80" y="200" width="200" height="60" class="task"/>
+  <text x="180" y="220" text-anchor="middle" class="label">Tools Implementation</text>
+  <text x="180" y="235" text-anchor="middle" class="small-label">• Herramientas principales</text>
+  <text x="180" y="248" text-anchor="middle" class="small-label">• Validación & Testing</text>
+  
+  <rect x="300" y="200" width="200" height="60" class="task"/>
+  <text x="400" y="220" text-anchor="middle" class="label">Resources & Prompts</text>
+  <text x="400" y="235" text-anchor="middle" class="small-label">• Recursos dinámicos</text>
+  <text x="400" y="248" text-anchor="middle" class="small-label">• Prompts contextuales</text>
+  
+  <rect x="80" y="280" width="200" height="60" class="task"/>
+  <text x="180" y="300" text-anchor="middle" class="label">Database Integration</text>
+  <text x="180" y="315" text-anchor="middle" class="small-label">• Conexión BD</text>
+  <text x="180" y="328" text-anchor="middle" class="small-label">• Migraciones</text>
+  
+  <rect x="300" y="280" width="200" height="60" class="task"/>
+  <text x="400" y="300" text-anchor="middle" class="label">Cache & Services</text>
+  <text x="400" y="315" text-anchor="middle" class="small-label">• Redis Cache</text>
+  <text x="400" y="328" text-anchor="middle" class="small-label">• Servicios externos</text>
+  
+  <!-- Mid-day Review -->
+  <rect x="120" y="360" width="320" height="40" class="review"/>
+  <text x="280" y="382" text-anchor="middle" class="label">Code Review - Checkpoint 1 (Mediodía)</text>
+  
+  <rect x="80" y="420" width="200" height="60" class="task"/>
+  <text x="180" y="440" text-anchor="middle" class="label">Security & Auth</text>
+  <text x="180" y="455" text-anchor="middle" class="small-label">• Autenticación JWT</text>
+  <text x="180" y="468" text-anchor="middle" class="small-label">• Rate limiting</text>
+  
+  <rect x="300" y="420" width="200" height="60" class="task"/>
+  <text x="400" y="440" text-anchor="middle" class="label">Observability</text>
+  <text x="400" y="455" text-anchor="middle" class="small-label">• Métricas</text>
+  <text x="400" y="468" text-anchor="middle" class="small-label">• Tracing</text>
+  
+  <rect x="80" y="500" width="420" height="60" class="task"/>
+  <text x="290" y="520" text-anchor="middle" class="label">Contenerización Docker</text>
+  <text x="290" y="535" text-anchor="middle" class="small-label">• Dockerfile optimizado (imágenes <50MB)</text>
+  <text x="290" y="548" text-anchor="middle" class="small-label">• docker-compose.yml con todos los servicios</text>
+  
+  <!-- Day 47 Column -->
+  <rect x="650" y="70" width="500" height="680" class="phase"/>
+  <text x="670" y="95" class="subtitle">DÍA 47: Refinamiento y Optimización</text>
+  
+  <!-- Day 47 Tasks -->
+  <rect x="680" y="120" width="200" height="60" class="improve"/>
+  <text x="780" y="140" text-anchor="middle" class="label">Testing Complete</text>
+  <text x="780" y="155" text-anchor="middle" class="small-label">• Unit + Integration</text>
+  <text x="780" y="168" text-anchor="middle" class="small-label">• Coverage >90%</text>
+  
+  <rect x="900" y="120" width="200" height="60" class="improve"/>
+  <text x="1000" y="140" text-anchor="middle" class="label">Performance Tuning</text>
+  <text x="1000" y="155" text-anchor="middle" class="small-label">• Profiling</text>
+  <text x="1000" y="168" text-anchor="middle" class="small-label">• Optimización</text>
+  
+  <rect x="680" y="200" width="200" height="60" class="improve"/>
+  <text x="780" y="220" text-anchor="middle" class="label">Code Refactoring</text>
+  <text x="780" y="235" text-anchor="middle" class="small-label">• Clean code</text>
+  <text x="780" y="248" text-anchor="middle" class="small-label">• Patrones avanzados</text>
+  
+  <rect x="900" y="200" width="200" height="60" class="improve"/>
+  <text x="1000" y="220" text-anchor="middle" class="label">Documentation</text>
+  <text x="1000" y="235" text-anchor="middle" class="small-label">• API docs</text>
+  <text x="1000" y="248" text-anchor="middle" class="small-label">• Deployment guides</text>
+  
+  <rect x="680" y="280" width="420" height="60" class="improve"/>
+  <text x="890" y="300" text-anchor="middle" class="label">CI/CD Pipeline</text>
+  <text x="890" y="315" text-anchor="middle" class="small-label">• GitHub Actions configurado</text>
+  <text x="890" y="328" text-anchor="middle" class="small-label">• Automated testing, security scans, deployment</text>
+  
+  <!-- Mid-day Review 2 -->
+  <rect x="720" y="360" width="320" height="40" class="review"/>
+  <text x="880" y="382" text-anchor="middle" class="label">Code Review - Checkpoint 2 (Mediodía)</text>
+  
+  <rect x="680" y="420" width="200" height="60" class="improve"/>
+  <text x="780" y="440" text-anchor="middle" class="label">Security Hardening</text>
+  <text x="780" y="455" text-anchor="middle" class="small-label">• Vulnerability scan</text>
+  <text x="780" y="468" text-anchor="middle" class="small-label">• Security audit</text>
+  
+  <rect x="900" y="420" width="200" height="60" class="improve"/>
+  <text x="1000" y="440" text-anchor="middle" class="label">Load Testing</text>
+  <text x="1000" y="455" text-anchor="middle" class="small-label">• Stress testing</text>
+  <text x="1000" y="468" text-anchor="middle" class="small-label">• Capacity planning</text>
+  
+  <!-- Final Review -->
+  <rect x="680" y="500" width="420" height="60" class="review"/>
+  <text x="890" y="520" text-anchor="middle" class="label">Evaluación Final</text>
+  <text x="890" y="535" text-anchor="middle" class="small-label">• Demo completa del proyecto</text>
+  <text x="890" y="548" text-anchor="middle" class="small-label">• Revisión de rúbrica y feedback</text>
+  
+  <!-- Production Ready -->
+  <rect x="680" y="580" width="420" height="60" style="fill: #553c9a; stroke: #805ad5; stroke-width: 2; rx: 8;"/>
+  <text x="890" y="600" text-anchor="middle" class="label" style="font-size: 14px; font-weight: bold;">🚀 PRODUCTION READY</text>
+  <text x="890" y="615" text-anchor="middle" class="small-label">• Servidor MCP empresarial completo</text>
+  <text x="890" y="628" text-anchor="middle" class="small-label">• Listo para deployment en producción</text>
+  
+  <!-- Flow Arrows -->
+  <line x1="180" y1="180" x2="180" y2="200" class="arrow"/>
+  <line x1="400" y1="180" x2="400" y2="200" class="arrow"/>
+  <line x1="180" y1="260" x2="180" y2="280" class="arrow"/>
+  <line x1="400" y1="260" x2="400" y2="280" class="arrow"/>
+  <line x1="280" y1="340" x2="280" y2="360" class="arrow"/>
+  <line x1="280" y1="400" x2="280" y2="420" class="arrow"/>
+  <line x1="290" y1="480" x2="290" y2="500" class="arrow"/>
+  
+  <!-- Day transition -->
+  <line x1="550" y1="380" x2="650" y2="380" class="arrow"/>
+  <text x="600" y="375" text-anchor="middle" class="small-label">Día 47</text>
+  
+  <!-- Day 47 flows -->
+  <line x1="780" y1="180" x2="780" y2="200" class="arrow"/>
+  <line x1="1000" y1="180" x2="1000" y2="200" class="arrow"/>
+  <line x1="780" y1="260" x2="780" y2="280" class="arrow"/>
+  <line x1="1000" y1="260" x2="1000" y2="280" class="arrow"/>
+  <line x1="890" y1="340" x2="890" y2="360" class="arrow"/>
+  <line x1="890" y1="400" x2="890" y2="420" class="arrow"/>
+  <line x1="890" y1="480" x2="890" y2="500" class="arrow"/>
+  <line x1="890" y1="560" x2="890" y2="580" class="arrow"/>
+  
+  <!-- Feedback loops -->
+  <path d="M 540 250 Q 580 220 620 250" class="feedback"/>
+  <path d="M 540 450 Q 580 420 620 450" class="feedback"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="720" width="400" height="50" style="fill: #2d3748; stroke: #4a5568; stroke-width: 1; rx: 4;"/>
+  <text x="60" y="735" class="small-label">Leyenda:</text>
+  <rect x="60" y="740" width="15" height="10" class="task"/>
+  <text x="80" y="748" class="small-label">Implementación</text>
+  <rect x="150" y="740" width="15" height="10" class="improve"/>
+  <text x="170" y="748" class="small-label">Refinamiento</text>
+  <rect x="250" y="740" width="15" height="10" class="review"/>
+  <text x="270" y="748" class="small-label">Code Review</text>
+  <line x1="350" y1="745" x2="370" y2="745" class="feedback"/>
+  <text x="375" y="748" class="small-label">Feedback Loop</text>
+</svg>

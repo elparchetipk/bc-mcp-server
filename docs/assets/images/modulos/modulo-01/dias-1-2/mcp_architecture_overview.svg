@@ -1,0 +1,65 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo dark -->
+  <rect width="800" height="600" fill="#0f172a"/>
+
+  <defs>
+    <!-- Definición de punta de flecha para tema dark -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Cliente (Modelo de IA) - Tema Dark -->
+  <rect x="50" y="100" width="200" height="120" rx="15" fill="#3b82f6" stroke="#60a5fa" stroke-width="2" />
+  <text x="150" y="140" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">Cliente MCP</text>
+  <text x="150" y="160" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="12">(Modelo de IA)</text>
+  <text x="150" y="180" text-anchor="middle" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="10">Claude, GPT-4, Gemini</text>
+  <text x="150" y="200" text-anchor="middle" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="10">Llama, etc.</text>
+
+  <!-- Protocolo MCP en el centro - Tema Dark -->
+  <ellipse cx="400" cy="300" rx="80" ry="40" fill="#dc2626" stroke="#f87171" stroke-width="2" />
+  <text x="400" y="295" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Protocolo</text>
+  <text x="400" y="310" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="12">MCP</text>
+
+  <!-- Servidor MCP - Tema Dark -->
+  <rect x="550" y="100" width="200" height="120" rx="15" fill="#16a34a" stroke="#4ade80" stroke-width="2" />
+  <text x="650" y="140" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">Servidor MCP</text>
+  <text x="650" y="160" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="12">(Tu Código)</text>  <!-- Herramientas - Tema Dark -->
+  <rect x="520" y="250" width="80" height="60" rx="8" fill="#f59e0b" stroke="#fbbf24" stroke-width="2" />
+  <text x="560" y="275" text-anchor="middle" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Tools</text>
+  <text x="560" y="290" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="9">Acciones</text>
+
+  <!-- Recursos - Tema Dark -->
+  <rect x="620" y="250" width="80" height="60" rx="8" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2" />
+  <text x="660" y="275" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Resources</text>
+  <text x="660" y="290" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="9">Datos</text>
+
+  <!-- Prompts - Tema Dark -->
+  <rect x="720" y="250" width="80" height="60" rx="8" fill="#ec4899" stroke="#f472b6" stroke-width="2" />
+  <text x="760" y="275" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Prompts</text>
+  <text x="760" y="290" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="9">Contexto</text>
+
+  <!-- Servicios Externos - Tema Dark -->
+  <rect x="550" y="400" width="200" height="80" rx="10" fill="#475569" stroke="#64748b" stroke-width="2" />
+  <text x="650" y="430" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Servicios Externos</text>
+  <text x="650" y="450" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">APIs, Bases de Datos</text>
+  <text x="650" y="465" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">Sistemas de Archivos, etc.</text>
+
+  <!-- Flechas de comunicación - Tema Dark -->
+  <path d="M 250 160 Q 325 160 340 280" stroke="#60a5fa" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 460 280 Q 525 160 550 160" stroke="#4ade80" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Flecha hacia servicios externos - Tema Dark -->
+  <path d="M 650 220 L 650 400" stroke="#4ade80" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Definición de punta de flecha ya está en defs al inicio -->
+
+  <!-- Etiquetas de comunicación - Tema Dark -->
+  <text x="295" y="200" text-anchor="middle" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="10">Solicitudes</text>
+  <text x="505" y="200" text-anchor="middle" fill="#cbd5e1" font-family="Inter, system-ui, sans-serif" font-size="10">Respuestas</text>
+
+  <!-- Título - Tema Dark -->
+  <text x="400" y="40" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="bold">Arquitectura del Protocolo MCP</text>
+  <text x="400" y="60" text-anchor="middle" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="12">Comunicación Bidireccional Estandarizada</text>
+</svg>

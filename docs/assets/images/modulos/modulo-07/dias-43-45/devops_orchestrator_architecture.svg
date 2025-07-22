@@ -1,0 +1,219 @@
+<svg viewBox="0 0 1400 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" fill="#f8fafc" font-size="26" font-weight="bold">DevOps Orchestrator - Arquitectura Completa</text>
+  
+  <!-- MCP Client -->
+  <rect x="50" y="70" width="200" height="80" fill="#1e293b" stroke="#64748b" stroke-width="2" rx="8"/>
+  <text x="150" y="95" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Claude Desktop</text>
+  <text x="150" y="115" text-anchor="middle" fill="#94a3b8" font-size="12">Cliente MCP</text>
+  <text x="150" y="135" text-anchor="middle" fill="#94a3b8" font-size="12">Interface Humana</text>
+  
+  <!-- MCP Server Core -->
+  <rect x="350" y="50" width="400" height="120" fill="#1e293b" stroke="#f59e0b" stroke-width="3" rx="12"/>
+  <text x="550" y="75" text-anchor="middle" fill="#f59e0b" font-size="18" font-weight="bold">DevOps MCP Server</text>
+  
+  <!-- Tools inside MCP Server -->
+  <rect x="370" y="95" width="90" height="30" fill="#d97706" stroke="#f59e0b" stroke-width="1" rx="4"/>
+  <text x="415" y="113" text-anchor="middle" fill="#f8fafc" font-size="10">Deploy Tools</text>
+  
+  <rect x="470" y="95" width="90" height="30" fill="#d97706" stroke="#f59e0b" stroke-width="1" rx="4"/>
+  <text x="515" y="113" text-anchor="middle" fill="#f8fafc" font-size="10">Monitor Tools</text>
+  
+  <rect x="570" y="95" width="90" height="30" fill="#d97706" stroke="#f59e0b" stroke-width="1" rx="4"/>
+  <text x="615" y="113" text-anchor="middle" fill="#f8fafc" font-size="10">Analytics</text>
+  
+  <rect x="670" y="95" width="70" height="30" fill="#d97706" stroke="#f59e0b" stroke-width="1" rx="4"/>
+  <text x="705" y="113" text-anchor="middle" fill="#f8fafc" font-size="10">Alerts</text>
+  
+  <!-- Security & Auth Layer -->
+  <rect x="370" y="135" width="360" height="25" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="550" y="150" text-anchor="middle" fill="#f8fafc" font-size="11">JWT Auth + RBAC + Audit Trail</text>
+  
+  <!-- Core Services Layer -->
+  <rect x="50" y="220" width="1300" height="180" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="12"/>
+  <text x="700" y="245" text-anchor="middle" fill="#3b82f6" font-size="16" font-weight="bold">Servicios Core del Orquestador</text>
+  
+  <!-- Deployment Service -->
+  <rect x="80" y="260" width="200" height="120" fill="#1e40af" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="180" y="280" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">Deployment Engine</text>
+  <rect x="90" y="290" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="180" y="302" text-anchor="middle" fill="#f8fafc" font-size="9">Blue-Green Deployments</text>
+  <rect x="90" y="315" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="180" y="327" text-anchor="middle" fill="#f8fafc" font-size="9">Canary Releases</text>
+  <rect x="90" y="340" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="180" y="352" text-anchor="middle" fill="#f8fafc" font-size="9">Rollback Automation</text>
+  
+  <!-- Monitoring Service -->
+  <rect x="300" y="260" width="200" height="120" fill="#1e40af" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="400" y="280" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">Real-time Monitor</text>
+  <rect x="310" y="290" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="400" y="302" text-anchor="middle" fill="#f8fafc" font-size="9">Metrics Collection</text>
+  <rect x="310" y="315" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="400" y="327" text-anchor="middle" fill="#f8fafc" font-size="9">Log Aggregation</text>
+  <rect x="310" y="340" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="400" y="352" text-anchor="middle" fill="#f8fafc" font-size="9">Distributed Tracing</text>
+  
+  <!-- Infrastructure Service -->
+  <rect x="520" y="260" width="200" height="120" fill="#1e40af" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="620" y="280" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">Infrastructure as Code</text>
+  <rect x="530" y="290" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="620" y="302" text-anchor="middle" fill="#f8fafc" font-size="9">Terraform Integration</text>
+  <rect x="530" y="315" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="620" y="327" text-anchor="middle" fill="#f8fafc" font-size="9">Kubernetes API</text>
+  <rect x="530" y="340" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="620" y="352" text-anchor="middle" fill="#f8fafc" font-size="9">Auto-scaling Logic</text>
+  
+  <!-- Analytics Service -->
+  <rect x="740" y="260" width="200" height="120" fill="#1e40af" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="840" y="280" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">Analytics Engine</text>
+  <rect x="750" y="290" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="840" y="302" text-anchor="middle" fill="#f8fafc" font-size="9">Performance Analysis</text>
+  <rect x="750" y="315" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="840" y="327" text-anchor="middle" fill="#f8fafc" font-size="9">Cost Optimization</text>
+  <rect x="750" y="340" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="840" y="352" text-anchor="middle" fill="#f8fafc" font-size="9">Predictive Insights</text>
+  
+  <!-- Alert Service -->
+  <rect x="960" y="260" width="200" height="120" fill="#1e40af" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="1060" y="280" text-anchor="middle" fill="#3b82f6" font-size="12" font-weight="bold">Intelligent Alerts</text>
+  <rect x="970" y="290" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="1060" y="302" text-anchor="middle" fill="#f8fafc" font-size="9">Anomaly Detection</text>
+  <rect x="970" y="315" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="1060" y="327" text-anchor="middle" fill="#f8fafc" font-size="9">ML-Based Filtering</text>
+  <rect x="970" y="340" width="180" height="20" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="1060" y="352" text-anchor="middle" fill="#f8fafc" font-size="9">Multi-channel Notify</text>
+  
+  <!-- Data Layer -->
+  <rect x="50" y="450" width="500" height="120" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="12"/>
+  <text x="300" y="475" text-anchor="middle" fill="#10b981" font-size="16" font-weight="bold">Capa de Persistencia Híbrida</text>
+  
+  <!-- TimescaleDB -->
+  <rect x="70" y="490" width="150" height="60" fill="#059669" stroke="#10b981" stroke-width="1" rx="6"/>
+  <text x="145" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">TimescaleDB</text>
+  <text x="145" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Time-series Metrics</text>
+  <text x="145" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Performance Data</text>
+  
+  <!-- PostgreSQL -->
+  <rect x="240" y="490" width="150" height="60" fill="#059669" stroke="#10b981" stroke-width="1" rx="6"/>
+  <text x="315" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">PostgreSQL</text>
+  <text x="315" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Configuration</text>
+  <text x="315" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Audit Logs</text>
+  
+  <!-- Redis -->
+  <rect x="410" y="490" width="120" height="60" fill="#059669" stroke="#10b981" stroke-width="1" rx="6"/>
+  <text x="470" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Redis</text>
+  <text x="470" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Cache Layer</text>
+  <text x="470" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Session Store</text>
+  
+  <!-- External Integrations -->
+  <rect x="600" y="450" width="750" height="120" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="12"/>
+  <text x="975" y="475" text-anchor="middle" fill="#8b5cf6" font-size="16" font-weight="bold">Integraciones Externas</text>
+  
+  <!-- Kubernetes -->
+  <rect x="620" y="490" width="120" height="60" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1" rx="6"/>
+  <text x="680" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Kubernetes</text>
+  <text x="680" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Cluster API</text>
+  <text x="680" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Workload Mgmt</text>
+  
+  <!-- Prometheus -->
+  <rect x="760" y="490" width="120" height="60" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1" rx="6"/>
+  <text x="820" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Prometheus</text>
+  <text x="820" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Metrics Scraping</text>
+  <text x="820" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Alert Rules</text>
+  
+  <!-- Grafana -->
+  <rect x="900" y="490" width="120" height="60" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1" rx="6"/>
+  <text x="960" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Grafana</text>
+  <text x="960" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Dashboards</text>
+  <text x="960" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Visualization</text>
+  
+  <!-- CI/CD Tools -->
+  <rect x="1040" y="490" width="120" height="60" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1" rx="6"/>
+  <text x="1100" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">GitLab CI</text>
+  <text x="1100" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">Pipeline API</text>
+  <text x="1100" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Webhook Events</text>
+  
+  <!-- Cloud Providers -->
+  <rect x="1180" y="490" width="150" height="60" fill="#7c3aed" stroke="#8b5cf6" stroke-width="1" rx="6"/>
+  <text x="1255" y="510" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Cloud APIs</text>
+  <text x="1255" y="525" text-anchor="middle" fill="#f8fafc" font-size="9">AWS/GCP/Azure</text>
+  <text x="1255" y="540" text-anchor="middle" fill="#f8fafc" font-size="9">Resource Mgmt</text>
+  
+  <!-- Docker Container -->
+  <rect x="50" y="630" width="1300" height="120" fill="#1e293b" stroke="#06b6d4" stroke-width="3" rx="12" stroke-dasharray="8,4"/>
+  <text x="700" y="655" text-anchor="middle" fill="#06b6d4" font-size="16" font-weight="bold">Contenedores Docker Orquestados</text>
+  
+  <!-- Container components -->
+  <rect x="80" y="670" width="180" height="60" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="6"/>
+  <text x="170" y="690" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">MCP Server Container</text>
+  <text x="170" y="705" text-anchor="middle" fill="#f8fafc" font-size="9">Node.js 20 Alpine</text>
+  <text x="170" y="720" text-anchor="middle" fill="#f8fafc" font-size="9">Multi-stage Build</text>
+  
+  <rect x="280" y="670" width="180" height="60" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="6"/>
+  <text x="370" y="690" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Analytics Worker</text>
+  <text x="370" y="705" text-anchor="middle" fill="#f8fafc" font-size="9">Python 3.11 Slim</text>
+  <text x="370" y="720" text-anchor="middle" fill="#f8fafc" font-size="9">ML Libraries</text>
+  
+  <rect x="480" y="670" width="180" height="60" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="6"/>
+  <text x="570" y="690" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Log Processor</text>
+  <text x="570" y="705" text-anchor="middle" fill="#f8fafc" font-size="9">Go 1.21 Alpine</text>
+  <text x="570" y="720" text-anchor="middle" fill="#f8fafc" font-size="9">High Performance</text>
+  
+  <rect x="680" y="670" width="180" height="60" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="6"/>
+  <text x="770" y="690" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">API Gateway</text>
+  <text x="770" y="705" text-anchor="middle" fill="#f8fafc" font-size="9">Nginx Alpine</text>
+  <text x="770" y="720" text-anchor="middle" fill="#f8fafc" font-size="9">Load Balancing</text>
+  
+  <rect x="880" y="670" width="180" height="60" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="6"/>
+  <text x="970" y="690" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Database Cluster</text>
+  <text x="970" y="705" text-anchor="middle" fill="#f8fafc" font-size="9">PostgreSQL 15</text>
+  <text x="970" y="720" text-anchor="middle" fill="#f8fafc" font-size="9">High Availability</text>
+  
+  <rect x="1080" y="670" width="180" height="60" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="6"/>
+  <text x="1170" y="690" text-anchor="middle" fill="#f8fafc" font-size="11" font-weight="bold">Monitoring Stack</text>
+  <text x="1170" y="705" text-anchor="middle" fill="#f8fafc" font-size="9">Prometheus + Grafana</text>
+  <text x="1170" y="720" text-anchor="middle" fill="#f8fafc" font-size="9">Observability</text>
+  
+  <!-- Testing Layer -->
+  <rect x="50" y="780" width="1300" height="80" fill="#1e293b" stroke="#ef4444" stroke-width="2" rx="12"/>
+  <text x="700" y="805" text-anchor="middle" fill="#ef4444" font-size="16" font-weight="bold">Suite de Testing Distribuido</text>
+  
+  <rect x="80" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="155" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">Chaos Engineering</text>
+  
+  <rect x="250" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="325" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">Load Testing</text>
+  
+  <rect x="420" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="495" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">Contract Testing</text>
+  
+  <rect x="590" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="665" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">Security Testing</text>
+  
+  <rect x="760" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="835" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">Integration Tests</text>
+  
+  <rect x="930" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="1005" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">E2E Automation</text>
+  
+  <rect x="1100" y="820" width="150" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="1175" y="838" text-anchor="middle" fill="#f8fafc" font-size="10">Performance Tests</text>
+  
+  <!-- Connection arrows -->
+  <path d="M250 110 L350 110" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M550 170 L300 220" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M300 400 L300 450" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M975 400 L975 450" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M700 570 L700 630" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M700 750 L700 780" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>

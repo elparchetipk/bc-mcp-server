@@ -1,0 +1,100 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .card { fill: #1e293b; stroke: #3b82f6; stroke-width: 2; }
+      .balancer { fill: #7c3aed; stroke: #a855f7; stroke-width: 2; }
+      .healthy { fill: #059669; stroke: #10b981; stroke-width: 2; }
+      .busy { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
+      .moderate { fill: #f59e0b; stroke: #fbbf24; stroke-width: 2; }
+      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; }
+      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .request { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <rect class="bg" width="800" height="600"/>
+  
+  <!-- Título -->
+  <text x="400" y="25" class="title" text-anchor="middle" font-size="16">Load Balancer Inteligente con Health Checks</text>
+  
+  <!-- Cliente requests -->
+  <rect x="50" y="80" width="100" height="50" class="card" rx="5"/>
+  <text x="100" y="100" class="title" text-anchor="middle">Client</text>
+  <text x="100" y="115" class="title" text-anchor="middle">Requests</text>
+  
+  <!-- Load Balancer -->
+  <rect x="250" y="60" width="120" height="90" class="balancer" rx="5"/>
+  <text x="310" y="85" class="title" text-anchor="middle">Load Balancer</text>
+  <text x="310" y="105" class="text" text-anchor="middle">• Round Robin</text>
+  <text x="310" y="125" class="text" text-anchor="middle">• Least Connections</text>
+  <text x="310" y="145" class="text" text-anchor="middle">• Health Monitoring</text>
+  
+  <!-- Algoritmos -->
+  <rect x="450" y="30" width="300" height="120" class="card" rx="5"/>
+  <text x="600" y="55" class="title" text-anchor="middle">Algoritmos de Balanceo</text>
+  
+  <text x="470" y="80" class="title">1. Round Robin:</text>
+  <text x="470" y="95" class="text">Requests rotan secuencialmente</text>
+  
+  <text x="470" y="115" class="title">2. Least Connections:</text>
+  <text x="470" y="130" class="text">Envía a servidor con menos conexiones activas</text>
+  
+  <!-- Instancias del servidor -->
+  <rect x="150" y="220" width="120" height="100" class="healthy" rx="5"/>
+  <text x="210" y="245" class="title" text-anchor="middle">MCP Server 1</text>
+  <text x="210" y="265" class="text" text-anchor="middle">Status: Healthy</text>
+  <text x="210" y="280" class="text" text-anchor="middle">CPU: 45%</text>
+  <text x="210" y="295" class="text" text-anchor="middle">Connections: 12/20</text>
+  <text x="210" y="310" class="text" text-anchor="middle">Response: 85ms</text>
+  
+  <rect x="340" y="220" width="120" height="100" class="moderate" rx="5"/>
+  <text x="400" y="245" class="title" text-anchor="middle">MCP Server 2</text>
+  <text x="400" y="265" class="text" text-anchor="middle">Status: Moderate</text>
+  <text x="400" y="280" class="text" text-anchor="middle">CPU: 78%</text>
+  <text x="400" y="295" class="text" text-anchor="middle">Connections: 18/20</text>
+  <text x="400" y="310" class="text" text-anchor="middle">Response: 150ms</text>
+  
+  <rect x="530" y="220" width="120" height="100" class="busy" rx="5"/>
+  <text x="590" y="245" class="title" text-anchor="middle">MCP Server 3</text>
+  <text x="590" y="265" class="text" text-anchor="middle">Status: Overloaded</text>
+  <text x="590" y="280" class="text" text-anchor="middle">CPU: 95%</text>
+  <text x="590" y="295" class="text" text-anchor="middle">Connections: 20/20</text>
+  <text x="590" y="310" class="text" text-anchor="middle">Response: 450ms</text>
+  
+  <!-- Health Check System -->
+  <rect x="200" y="380" width="400" height="120" class="card" rx="5"/>
+  <text x="400" y="405" class="title" text-anchor="middle">Health Check System</text>
+  
+  <text x="220" y="430" class="title">Métricas Monitoreadas:</text>
+  <text x="220" y="450" class="text">• Response Time: &lt; 200ms (healthy), &gt; 500ms (unhealthy)</text>
+  <text x="220" y="465" class="text">• CPU Usage: &lt; 80% (good), &gt; 90% (critical)</text>
+  <text x="220" y="480" class="text">• Active Connections: Monitoring pool utilization</text>
+  <text x="220" y="495" class="text">• Error Rate: &lt; 1% (healthy), &gt; 5% (remove from pool)</text>
+  
+  <!-- Request flow arrows -->
+  <line x1="150" y1="105" x2="250" y2="105" class="request"/>
+  <text x="180" y="95" class="text">Requests</text>
+  
+  <!-- Load balancer to servers -->
+  <line x1="310" y1="150" x2="210" y2="220" class="arrow"/>
+  <line x1="310" y1="150" x2="400" y2="220" class="arrow"/>
+  <line x1="310" y1="150" x2="590" y2="220" class="arrow" stroke-dasharray="5,5"/>
+  
+  <!-- Legend -->
+  <rect x="50" y="520" width="700" height="60" class="card" rx="5"/>
+  <text x="400" y="545" class="title" text-anchor="middle">Estados del Servidor</text>
+  
+  <circle cx="150" cy="560" r="8" class="healthy"/>
+  <text x="170" y="565" class="text">Healthy: &lt; 80% CPU, &lt; 200ms response</text>
+  
+  <circle cx="350" cy="560" r="8" class="moderate"/>
+  <text x="370" y="565" class="text">Moderate: 80-90% CPU, 200-400ms response</text>
+  
+  <circle cx="580" cy="560" r="8" class="busy"/>
+  <text x="600" y="565" class="text">Overloaded: &gt; 90% CPU, &gt; 400ms response</text>
+</svg>

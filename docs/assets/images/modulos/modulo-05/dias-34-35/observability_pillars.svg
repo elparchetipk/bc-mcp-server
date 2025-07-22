@@ -1,0 +1,77 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .pillar { fill: #2d4a8a; stroke: #4a90e2; stroke-width: 2; }
+      .foundation { fill: #333333; stroke: #666666; stroke-width: 2; }
+      .text-title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .text-pillar { fill: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .text-desc { fill: #cccccc; font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+      .arrow { fill: none; stroke: #4a90e2; stroke-width: 2; marker-end: url(#arrowhead); }
+      .connection { fill: none; stroke: #666666; stroke-width: 1; stroke-dasharray: 5,5; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4a90e2" />
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="800" height="600"/>
+  
+  <!-- Title -->
+  <text class="text-title" x="400" y="40">Observabilidad en Servidores MCP</text>
+  
+  <!-- Foundation -->
+  <rect class="foundation" x="150" y="450" width="500" height="80" rx="10"/>
+  <text class="text-pillar" x="400" y="480">Infraestructura de Observabilidad</text>
+  <text class="text-desc" x="400" y="500">Recolección, Almacenamiento y Visualización</text>
+  
+  <!-- Pillars -->
+  <!-- Metrics Pillar -->
+  <rect class="pillar" x="180" y="250" width="120" height="200" rx="10"/>
+  <text class="text-pillar" x="240" y="280">MÉTRICAS</text>
+  <text class="text-desc" x="240" y="320">• Contadores</text>
+  <text class="text-desc" x="240" y="340">• Gauges</text>
+  <text class="text-desc" x="240" y="360">• Histogramas</text>
+  <text class="text-desc" x="240" y="380">• Timers</text>
+  <text class="text-desc" x="240" y="410">Responden:</text>
+  <text class="text-desc" x="240" y="430">¿Qué tan rápido?</text>
+  
+  <!-- Logs Pillar -->
+  <rect class="pillar" x="340" y="250" width="120" height="200" rx="10"/>
+  <text class="text-pillar" x="400" y="280">LOGS</text>
+  <text class="text-desc" x="400" y="320">• Estructurados</text>
+  <text class="text-desc" x="400" y="340">• Contextuales</text>
+  <text class="text-desc" x="400" y="360">• Agregables</text>
+  <text class="text-desc" x="400" y="380">• Buscables</text>
+  <text class="text-desc" x="400" y="410">Responden:</text>
+  <text class="text-desc" x="400" y="430">¿Qué pasó?</text>
+  
+  <!-- Traces Pillar -->
+  <rect class="pillar" x="500" y="250" width="120" height="200" rx="10"/>
+  <text class="text-pillar" x="560" y="280">TRAZAS</text>
+  <text class="text-desc" x="560" y="320">• Spans</text>
+  <text class="text-desc" x="560" y="340">• Contexto</text>
+  <text class="text-desc" x="560" y="360">• Propagación</text>
+  <text class="text-desc" x="560" y="380">• Correlación</text>
+  <text class="text-desc" x="560" y="410">Responden:</text>
+  <text class="text-desc" x="560" y="430">¿Dónde falló?</text>
+  
+  <!-- Connections -->
+  <line class="connection" x1="240" y1="450" x2="240" y2="450"/>
+  <line class="connection" x1="400" y1="450" x2="400" y2="450"/>
+  <line class="connection" x1="560" y1="450" x2="560" y2="450"/>
+  
+  <!-- Benefits -->
+  <text class="text-desc" x="400" y="580">Juntos proporcionan visibilidad completa del comportamiento del sistema</text>
+  
+  <!-- MCP Context -->
+  <rect fill="#2a4d3a" stroke="#4caf50" stroke-width="2" x="50" y="100" width="200" height="120" rx="10"/>
+  <text class="text-pillar" x="150" y="130" fill="#4caf50">Contexto MCP</text>
+  <text class="text-desc" x="150" y="155">• Herramientas ejecutadas</text>
+  <text class="text-desc" x="150" y="175">• Recursos accedidos</text>
+  <text class="text-desc" x="150" y="195">• Prompts generados</text>
+  <text class="text-desc" x="150" y="215">• Errores de protocolo</text>
+  
+  <path class="arrow" d="M 250 160 Q 300 160 340 280"/>
+</svg>

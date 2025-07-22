@@ -1,0 +1,144 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="700" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#2c3e50">Optimización de Consultas en MCP Server</text>
+  
+  <!-- Query Flow -->
+  <rect x="50" y="70" width="800" height="120" rx="10" fill="white" stroke="#34495e" stroke-width="2"/>
+  <text x="450" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Flujo de Optimización de Consultas</text>
+  
+  <!-- Query Steps -->
+  <rect x="70" y="110" width="120" height="50" rx="5" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+  <text x="130" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">1. Query</text>
+  <text x="130" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Parsing</text>
+  
+  <rect x="210" y="110" width="120" height="50" rx="5" fill="#e74c3c" stroke="#c0392b" stroke-width="1"/>
+  <text x="270" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">2. Cache</text>
+  <text x="270" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Check</text>
+  
+  <rect x="350" y="110" width="120" height="50" rx="5" fill="#f39c12" stroke="#e67e22" stroke-width="1"/>
+  <text x="410" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">3. Query</text>
+  <text x="410" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Optimization</text>
+  
+  <rect x="490" y="110" width="120" height="50" rx="5" fill="#9b59b6" stroke="#8e44ad" stroke-width="1"/>
+  <text x="550" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">4. Index</text>
+  <text x="550" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Selection</text>
+  
+  <rect x="630" y="110" width="120" height="50" rx="5" fill="#27ae60" stroke="#229954" stroke-width="1"/>
+  <text x="690" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">5. Execution</text>
+  <text x="690" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">& Cache</text>
+  
+  <!-- Arrows between steps -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <line x1="190" y1="135" x2="205" y2="135" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="330" y1="135" x2="345" y2="135" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="470" y1="135" x2="485" y2="135" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="610" y1="135" x2="625" y2="135" stroke="#34495e" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Optimization Techniques -->
+  <rect x="50" y="220" width="800" height="450" rx="10" fill="white" stroke="#bdc3c7" stroke-width="2"/>
+  <text x="450" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Técnicas de Optimización</text>
+  
+  <!-- Connection Pooling -->
+  <rect x="80" y="280" width="180" height="100" rx="5" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1"/>
+  <text x="170" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Connection Pooling</text>
+  <text x="170" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Reutilizar conexiones</text>
+  <text x="170" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Reducir overhead</text>
+  <text x="170" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Pool size óptimo</text>
+  <text x="170" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Health checks</text>
+  
+  <!-- Query Batching -->
+  <rect x="280" y="280" width="180" height="100" rx="5" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1"/>
+  <text x="370" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Query Batching</text>
+  <text x="370" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Agrupar consultas</text>
+  <text x="370" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Reducir roundtrips</text>
+  <text x="370" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Bulk operations</text>
+  <text x="370" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Transaction batching</text>
+  
+  <!-- Prepared Statements -->
+  <rect x="480" y="280" width="180" height="100" rx="5" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1"/>
+  <text x="570" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Prepared Statements</text>
+  <text x="570" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Plan caching</text>
+  <text x="570" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• SQL injection protection</text>
+  <text x="570" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Performance boost</text>
+  <text x="570" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Parameter binding</text>
+  
+  <!-- Read Replicas -->
+  <rect x="680" y="280" width="150" height="100" rx="5" fill="#ecf0f1" stroke="#95a5a6" stroke-width="1"/>
+  <text x="755" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">Read Replicas</text>
+  <text x="755" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Distribuir carga</text>
+  <text x="755" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Separar R/W</text>
+  <text x="755" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Escalabilidad</text>
+  <text x="755" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Failover</text>
+  
+  <!-- Advanced Techniques -->
+  <text x="450" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Técnicas Avanzadas</text>
+  
+  <!-- Partitioning -->
+  <rect x="80" y="430" width="160" height="80" rx="5" fill="#f8c471" stroke="#f39c12" stroke-width="1"/>
+  <text x="160" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">Partitioning</text>
+  <text x="160" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Horizontal sharding</text>
+  <text x="160" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Partition pruning</text>
+  <text x="160" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Range/Hash/List</text>
+  
+  <!-- Materialized Views -->
+  <rect x="260" y="430" width="160" height="80" rx="5" fill="#a9dfbf" stroke="#27ae60" stroke-width="1"/>
+  <text x="340" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">Materialized Views</text>
+  <text x="340" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Pre-computed results</text>
+  <text x="340" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Refresh strategies</text>
+  <text x="340" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Query rewriting</text>
+  
+  <!-- In-Memory -->
+  <rect x="440" y="430" width="160" height="80" rx="5" fill="#d2b4de" stroke="#9b59b6" stroke-width="1"/>
+  <text x="520" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">In-Memory DBs</text>
+  <text x="520" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• RAM storage</text>
+  <text x="520" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Ultra-low latency</text>
+  <text x="520" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Session data</text>
+  
+  <!-- CQRS -->
+  <rect x="620" y="430" width="160" height="80" rx="5" fill="#f7dc6f" stroke="#f1c40f" stroke-width="1"/>
+  <text x="700" y="450" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">CQRS Pattern</text>
+  <text x="700" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Separate R/W models</text>
+  <text x="700" y="485" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Optimized queries</text>
+  <text x="700" y="500" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">• Event sourcing</text>
+  
+  <!-- Monitoring -->
+  <text x="450" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Monitoreo y Métricas</text>
+  
+  <!-- Metrics boxes -->
+  <rect x="100" y="560" width="120" height="60" rx="5" fill="#e8f8f5" stroke="#1abc9c" stroke-width="1"/>
+  <text x="160" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#16a085">Query Time</text>
+  <text x="160" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Avg: &lt;50ms</text>
+  <text x="160" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">P95: &lt;200ms</text>
+  
+  <rect x="240" y="560" width="120" height="60" rx="5" fill="#fef9e7" stroke="#f1c40f" stroke-width="1"/>
+  <text x="300" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#f39c12">Throughput</text>
+  <text x="300" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Target: 1000+ QPS</text>
+  <text x="300" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Peak: 5000 QPS</text>
+  
+  <rect x="380" y="560" width="120" height="60" rx="5" fill="#fdf2e9" stroke="#e67e22" stroke-width="1"/>
+  <text x="440" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#d35400">Error Rate</text>
+  <text x="440" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Target: &lt;0.1%</text>
+  <text x="440" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">SLA: &lt;0.5%</text>
+  
+  <rect x="520" y="560" width="120" height="60" rx="5" fill="#ebf5fb" stroke="#3498db" stroke-width="1"/>
+  <text x="580" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2980b9">Connections</text>
+  <text x="580" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Pool: 20-50</text>
+  <text x="580" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Max: 100</text>
+  
+  <rect x="660" y="560" width="120" height="60" rx="5" fill="#f4ecf7" stroke="#9b59b6" stroke-width="1"/>
+  <text x="720" y="580" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#8e44ad">Cache Hit</text>
+  <text x="720" y="595" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Target: &gt;95%</text>
+  <text x="720" y="610" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Current: 97.5%</text>
+  
+  <!-- Best Practices Box -->
+  <rect x="80" y="640" width="740" height="40" rx="5" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+  <text x="450" y="660" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#495057">Best Practices: Indexación estratégica • Análisis de execution plans • Monitoring continuo • Testing de carga • Circuit breakers</text>
+</svg>

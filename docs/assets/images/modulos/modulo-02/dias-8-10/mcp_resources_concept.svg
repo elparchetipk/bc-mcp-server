@@ -1,0 +1,154 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+    Recursos MCP: Datos Inteligentes y Dinámicos
+  </text>
+  
+  <!-- Cliente MCP -->
+  <rect x="50" y="100" width="150" height="80" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="125" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Cliente MCP
+  </text>
+  <text x="125" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    (Claude, etc.)
+  </text>
+  
+  <!-- Servidor MCP -->
+  <rect x="325" y="100" width="150" height="80" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="400" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Servidor MCP
+  </text>
+  <text x="400" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    (Tu aplicación)
+  </text>
+  
+  <!-- Fuentes de Datos -->
+  <rect x="600" y="100" width="150" height="80" rx="10" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="675" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Fuentes de Datos
+  </text>
+  <text x="675" y="155" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    (BD, APIs, archivos)
+  </text>
+  
+  <!-- Arrows -->
+  <path d="M200 140 L325 140" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M475 140 L600 140" stroke="#34495e" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+  
+  <!-- Resource Types -->
+  <text x="400" y="230" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    Tipos de Recursos
+  </text>
+  
+  <!-- Static Resources -->
+  <rect x="80" y="260" width="160" height="100" rx="8" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="160" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Recursos Estáticos
+  </text>
+  <text x="160" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Archivos de configuración
+  </text>
+  <text x="160" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Documentación
+  </text>
+  <text x="160" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Plantillas
+  </text>
+  <text x="160" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Schemas JSON
+  </text>
+  
+  <!-- Dynamic Resources -->
+  <rect x="320" y="260" width="160" height="100" rx="8" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="400" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Recursos Dinámicos
+  </text>
+  <text x="400" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Datos de BD en vivo
+  </text>
+  <text x="400" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Respuestas de APIs
+  </text>
+  <text x="400" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Métricas en tiempo real
+  </text>
+  <text x="400" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Estados de aplicación
+  </text>
+  
+  <!-- Stream Resources -->
+  <rect x="560" y="260" width="160" height="100" rx="8" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="640" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Recursos Streaming
+  </text>
+  <text x="640" y="305" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Logs en tiempo real
+  </text>
+  <text x="640" y="320" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Eventos del sistema
+  </text>
+  <text x="640" y="335" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Notificaciones
+  </text>
+  <text x="640" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+    • Feeds de datos
+  </text>
+  
+  <!-- Resource Lifecycle -->
+  <text x="400" y="410" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+    Ciclo de Vida de un Recurso
+  </text>
+  
+  <!-- Lifecycle steps -->
+  <circle cx="120" cy="460" r="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="120" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">1</text>
+  <text x="120" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Registro</text>
+  
+  <circle cx="250" cy="460" r="25" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="250" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">2</text>
+  <text x="250" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Descubrimiento</text>
+  
+  <circle cx="380" cy="460" r="25" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="380" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">3</text>
+  <text x="380" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Acceso</text>
+  
+  <circle cx="510" cy="460" r="25" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+  <text x="510" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">4</text>
+  <text x="510" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Actualización</text>
+  
+  <circle cx="640" cy="460" r="25" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="640" y="467" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">5</text>
+  <text x="640" y="495" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2c3e50">Notificación</text>
+  
+  <!-- Lifecycle arrows -->
+  <path d="M145 460 L225 460" stroke="#95a5a6" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M275 460 L355 460" stroke="#95a5a6" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M405 460 L485 460" stroke="#95a5a6" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  <path d="M535 460 L615 460" stroke="#95a5a6" stroke-width="2" fill="none" marker-end="url(#smallarrow)"/>
+  
+  <!-- Small arrow marker -->
+  <defs>
+    <marker id="smallarrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#95a5a6"/>
+    </marker>
+  </defs>
+  
+  <!-- Benefits box -->
+  <rect x="50" y="530" width="700" height="50" rx="5" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="1"/>
+  <text x="400" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">
+    Beneficios: Datos siempre actualizados • Acceso unificado • Notificaciones automáticas • Escalabilidad
+  </text>
+  <text x="400" y="570" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#7f8c8d">
+    Los recursos permiten que los clientes MCP accedan a datos de manera inteligente y eficiente
+  </text>
+</svg>

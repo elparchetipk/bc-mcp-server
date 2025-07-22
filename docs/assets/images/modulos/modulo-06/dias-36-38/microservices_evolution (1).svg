@@ -1,0 +1,99 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .monolith { fill: #2d3748; stroke: #4a5568; stroke-width: 2; }
+      .microservice { fill: #2b6cb0; stroke: #3182ce; stroke-width: 2; }
+      .api-gateway { fill: #d69e2e; stroke: #f6ad55; stroke-width: 2; }
+      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; }
+      .title { fill: #f7fafc; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .arrow { stroke: #cbd5e0; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#cbd5e0" />
+    </marker>
+  </defs>
+  
+  <rect width="800" height="400" class="bg"/>
+  
+  <!-- Título -->
+  <text x="400" y="30" text-anchor="middle" class="title">Evolución de Arquitectura MCP</text>
+  
+  <!-- Monolito -->
+  <g transform="translate(50, 80)">
+    <rect x="0" y="0" width="120" height="200" class="monolith" rx="8"/>
+    <text x="60" y="25" text-anchor="middle" class="text">Servidor MCP</text>
+    <text x="60" y="40" text-anchor="middle" class="text">Monolítico</text>
+    
+    <!-- Componentes internos -->
+    <rect x="10" y="60" width="100" height="25" fill="#4a5568" rx="4"/>
+    <text x="60" y="75" text-anchor="middle" class="text" font-size="10">Auth Service</text>
+    
+    <rect x="10" y="95" width="100" height="25" fill="#4a5568" rx="4"/>
+    <text x="60" y="110" text-anchor="middle" class="text" font-size="10">User Management</text>
+    
+    <rect x="10" y="130" width="100" height="25" fill="#4a5568" rx="4"/>
+    <text x="60" y="145" text-anchor="middle" class="text" font-size="10">File Processing</text>
+    
+    <rect x="10" y="165" width="100" height="25" fill="#4a5568" rx="4"/>
+    <text x="60" y="180" text-anchor="middle" class="text" font-size="10">Analytics</text>
+  </g>
+  
+  <!-- Flecha -->
+  <line x1="200" y1="180" x2="280" y2="180" class="arrow"/>
+  <text x="240" y="175" text-anchor="middle" class="text" font-size="10">Evoluciona</text>
+  
+  <!-- API Gateway -->
+  <g transform="translate(320, 120)">
+    <rect x="0" y="0" width="100" height="40" class="api-gateway" rx="8"/>
+    <text x="50" y="25" text-anchor="middle" class="text">API Gateway</text>
+  </g>
+  
+  <!-- Microservicios -->
+  <g transform="translate(500, 80)">
+    <!-- Auth Service -->
+    <rect x="0" y="0" width="80" height="60" class="microservice" rx="6"/>
+    <text x="40" y="20" text-anchor="middle" class="text" font-size="10">Auth</text>
+    <text x="40" y="35" text-anchor="middle" class="text" font-size="10">MCP Server</text>
+    <text x="40" y="50" text-anchor="middle" class="text" font-size="8">:3001</text>
+    
+    <!-- User Service -->
+    <rect x="100" y="0" width="80" height="60" class="microservice" rx="6"/>
+    <text x="140" y="20" text-anchor="middle" class="text" font-size="10">Users</text>
+    <text x="140" y="35" text-anchor="middle" class="text" font-size="10">MCP Server</text>
+    <text x="140" y="50" text-anchor="middle" class="text" font-size="8">:3002</text>
+    
+    <!-- Files Service -->
+    <rect x="0" y="80" width="80" height="60" class="microservice" rx="6"/>
+    <text x="40" y="100" text-anchor="middle" class="text" font-size="10">Files</text>
+    <text x="40" y="115" text-anchor="middle" class="text" font-size="10">MCP Server</text>
+    <text x="40" y="130" text-anchor="middle" class="text" font-size="8">:3003</text>
+    
+    <!-- Analytics Service -->
+    <rect x="100" y="80" width="80" height="60" class="microservice" rx="6"/>
+    <text x="140" y="100" text-anchor="middle" class="text" font-size="10">Analytics</text>
+    <text x="140" y="115" text-anchor="middle" class="text" font-size="10">MCP Server</text>
+    <text x="140" y="130" text-anchor="middle" class="text" font-size="8">:3004</text>
+  </g>
+  
+  <!-- Conexiones del API Gateway -->
+  <line x1="420" y1="140" x2="500" y2="110" class="arrow"/>
+  <line x1="420" y1="140" x2="600" y2="110" class="arrow"/>
+  <line x1="420" y1="140" x2="500" y2="160" class="arrow"/>
+  <line x1="420" y1="140" x2="600" y2="160" class="arrow"/>
+  
+  <!-- Ventajas -->
+  <g transform="translate(50, 320)">
+    <text x="0" y="0" class="text" font-weight="bold">Monolito:</text>
+    <text x="0" y="15" class="text" font-size="10">• Desarrollo simple</text>
+    <text x="0" y="30" class="text" font-size="10">• Deploy único</text>
+    <text x="0" y="45" class="text" font-size="10">• Debugging fácil</text>
+  </g>
+  
+  <g transform="translate(500, 320)">
+    <text x="0" y="0" class="text" font-weight="bold">Microservicios:</text>
+    <text x="0" y="15" class="text" font-size="10">• Escalabilidad independiente</text>
+    <text x="0" y="30" class="text" font-size="10">• Tecnologías específicas</text>
+    <text x="0" y="45" class="text" font-size="10">• Teams autónomos</text>
+  </g>
+</svg>

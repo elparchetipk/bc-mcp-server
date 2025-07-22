@@ -1,0 +1,97 @@
+<svg viewBox="0 0 800 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .card { fill: #1e293b; stroke: #3b82f6; stroke-width: 2; }
+      .shard { fill: #059669; stroke: #10b981; stroke-width: 2; }
+      .router { fill: #7c3aed; stroke: #a855f7; stroke-width: 2; }
+      .data { fill: #f59e0b; }
+      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 11px; }
+      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; }
+      .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .query { stroke: #3b82f6; stroke-width: 2; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <rect class="bg" width="800" height="700"/>
+  
+  <!-- Título -->
+  <text x="400" y="25" class="title" text-anchor="middle" font-size="16">Database Sharding Architecture</text>
+  
+  <!-- Application Layer -->
+  <rect x="350" y="50" width="100" height="50" class="card" rx="5"/>
+  <text x="400" y="70" class="title" text-anchor="middle">MCP Server</text>
+  <text x="400" y="85" class="title" text-anchor="middle">Application</text>
+  
+  <!-- Shard Router -->
+  <rect x="300" y="140" width="200" height="80" class="router" rx="5"/>
+  <text x="400" y="165" class="title" text-anchor="middle">Shard Router</text>
+  <text x="400" y="185" class="text" text-anchor="middle">• Hash-based routing</text>
+  <text x="400" y="200" class="text" text-anchor="middle">• Range-based routing</text>
+  <text x="400" y="215" class="text" text-anchor="middle">• Directory-based routing</text>
+  
+  <!-- Sharding Strategies -->
+  <rect x="50" y="280" width="160" height="120" class="card" rx="5"/>
+  <text x="130" y="305" class="title" text-anchor="middle">Hash Sharding</text>
+  <text x="70" y="325" class="text">Function: hash(user_id) % 3</text>
+  <text x="70" y="345" class="text">User 1001 → Shard 2</text>
+  <text x="70" y="360" class="text">User 1002 → Shard 0</text>
+  <text x="70" y="375" class="text">User 1003 → Shard 1</text>
+  <text x="70" y="390" class="text">Pros: Even distribution</text>
+  
+  <rect x="320" y="280" width="160" height="120" class="card" rx="5"/>
+  <text x="400" y="305" class="title" text-anchor="middle">Range Sharding</text>
+  <text x="340" y="325" class="text">User ID 1-1000 → Shard 0</text>
+  <text x="340" y="340" class="text">User ID 1001-2000 → Shard 1</text>
+  <text x="340" y="355" class="text">User ID 2001-3000 → Shard 2</text>
+  <text x="340" y="370" class="text">Pros: Range queries</text>
+  <text x="340" y="385" class="text">Cons: Hot spots</text>
+  
+  <rect x="590" y="280" width="160" height="120" class="card" rx="5"/>
+  <text x="670" y="305" class="title" text-anchor="middle">Geographic</text>
+  <text x="610" y="325" class="text">North America → Shard 0</text>
+  <text x="610" y="340" class="text">Europe → Shard 1</text>
+  <text x="610" y="355" class="text">Asia → Shard 2</text>
+  <text x="610" y="370" class="text">Pros: Latency optimization</text>
+  <text x="610" y="385" class="text">Complex: Cross-shard queries</text>
+  
+  <!-- Database Shards -->
+  <rect x="100" y="480" width="120" height="100" class="shard" rx="5"/>
+  <text x="160" y="505" class="title" text-anchor="middle">Shard 0</text>
+  <text x="160" y="525" class="text" text-anchor="middle">PostgreSQL</text>
+  <text x="120" y="545" class="text">Users: 0-999</text>
+  <text x="120" y="560" class="text">Records: 50K</text>
+  <text x="120" y="575" class="text">Size: 2.1 GB</text>
+  
+  <rect x="340" y="480" width="120" height="100" class="shard" rx="5"/>
+  <text x="400" y="505" class="title" text-anchor="middle">Shard 1</text>
+  <text x="400" y="525" class="text" text-anchor="middle">PostgreSQL</text>
+  <text x="360" y="545" class="text">Users: 1000-1999</text>
+  <text x="360" y="560" class="text">Records: 48K</text>
+  <text x="360" y="575" class="text">Size: 2.0 GB</text>
+  
+  <rect x="580" y="480" width="120" height="100" class="shard" rx="5"/>
+  <text x="640" y="505" class="title" text-anchor="middle">Shard 2</text>
+  <text x="640" y="525" class="text" text-anchor="middle">PostgreSQL</text>
+  <text x="600" y="545" class="text">Users: 2000-2999</text>
+  <text x="600" y="560" class="text">Records: 52K</text>
+  <text x="600" y="575" class="text">Size: 2.3 GB</text>
+  
+  <!-- Query Flow -->
+  <line x1="400" y1="100" x2="400" y2="140" class="query"/>
+  <text x="420" y="125" class="text">Query: GET user_id=1501</text>
+  
+  <line x1="400" y1="220" x2="400" y2="280" class="arrow"/>
+  <text x="420" y="255" class="text">Route to Shard 1</text>
+  
+  <line x1="400" y1="400" x2="400" y2="480" class="arrow"/>
+  
+  <!-- Cross-shard Query Example -->
+  <rect x="50" y="620" width="700" height="60" class="card" rx="5"/>
+  <text x="400" y="645" class="title" text-anchor="middle">Cross-Shard Query Challenge</text>
+  <text x="70" y="665" class="text">Query: "SELECT COUNT(*) FROM users WHERE created_at > '2024-01-01'"</text>
+  <text x="450" y="665" class="text">Solution: Query all shards + aggregate results</text>
+</svg>

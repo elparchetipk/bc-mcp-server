@@ -1,0 +1,109 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo -->
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  
+  <!-- Título -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">Arquitectura de Validación en Servidores MCP</text>
+  
+  <!-- Flujo de datos desde cliente -->
+  <rect x="50" y="80" width="120" height="60" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="110" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Cliente MCP</text>
+  <text x="110" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Datos de entrada</text>
+  
+  <!-- Capa de Transporte -->
+  <rect x="220" y="80" width="140" height="60" rx="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="290" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Capa Transporte</text>
+  <text x="290" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">JSON-RPC</text>
+  
+  <!-- Validación de Entrada -->
+  <rect x="410" y="80" width="140" height="60" rx="8" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="480" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Validación</text>
+  <text x="480" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">de Entrada</text>
+  
+  <!-- Lógica de Negocio -->
+  <rect x="600" y="80" width="140" height="60" rx="8" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="670" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Lógica de</text>
+  <text x="670" y="120" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">Negocio</text>
+  
+  <!-- Capas de Validación Detalladas -->
+  <text x="450" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Capas de Validación</text>
+  
+  <!-- Validación de Esquema -->
+  <rect x="100" y="220" width="180" height="80" rx="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="190" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Validación de Esquema</text>
+  <text x="190" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• JSON Schema</text>
+  <text x="190" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Tipos TypeScript</text>
+  <text x="190" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Zod Validation</text>
+  
+  <!-- Validación de Negocio -->
+  <rect x="320" y="220" width="180" height="80" rx="10" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="410" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Validación de Negocio</text>
+  <text x="410" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Reglas de dominio</text>
+  <text x="410" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Permisos</text>
+  <text x="410" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Contexto</text>
+  
+  <!-- Validación de Salida -->
+  <rect x="540" y="220" width="180" height="80" rx="10" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+  <text x="630" y="245" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">Validación de Salida</text>
+  <text x="630" y="265" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Formato respuesta</text>
+  <text x="630" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Sanitización</text>
+  <text x="630" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">• Tipos MCP</text>
+  
+  <!-- Tipos de Respuesta MCP -->
+  <text x="450" y="340" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Tipos de Respuesta MCP</text>
+  
+  <!-- Texto -->
+  <rect x="50" y="370" width="120" height="60" rx="8" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+  <text x="110" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Texto</text>
+  <text x="110" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Respuestas simples</text>
+  
+  <!-- Imagen -->
+  <rect x="200" y="370" width="120" height="60" rx="8" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+  <text x="260" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Imagen</text>
+  <text x="260" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Base64 / URLs</text>
+  
+  <!-- Recurso -->
+  <rect x="350" y="370" width="120" height="60" rx="8" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+  <text x="410" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Recurso</text>
+  <text x="410" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Referencias</text>
+  
+  <!-- Estructurado -->
+  <rect x="500" y="370" width="120" height="60" rx="8" fill="#f39c12" stroke="#e67e22" stroke-width="2"/>
+  <text x="560" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Estructurado</text>
+  <text x="560" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">JSON / XML</text>
+  
+  <!-- Error -->
+  <rect x="650" y="370" width="120" height="60" rx="8" fill="#95a5a6" stroke="#7f8c8d" stroke-width="2"/>
+  <text x="710" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">Error</text>
+  <text x="710" y="415" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">Códigos estándar</text>
+  
+  <!-- Arquitectura de Código -->
+  <text x="450" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Principios de Arquitectura</text>
+  
+  <!-- Separación de Responsabilidades -->
+  <rect x="100" y="510" width="160" height="60" rx="8" fill="#9b59b6" stroke="#8e44ad" stroke-width="2"/>
+  <text x="180" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Separación de</text>
+  <text x="180" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Responsabilidades</text>
+  
+  <!-- Composición -->
+  <rect x="290" y="510" width="160" height="60" rx="8" fill="#1abc9c" stroke="#16a085" stroke-width="2"/>
+  <text x="370" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Composición sobre</text>
+  <text x="370" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Herencia</text>
+  
+  <!-- Testabilidad -->
+  <rect x="480" y="510" width="160" height="60" rx="8" fill="#e67e22" stroke="#d35400" stroke-width="2"/>
+  <text x="560" y="535" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Testabilidad y</text>
+  <text x="560" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="white">Mantenibilidad</text>
+  
+  <!-- Conexiones -->
+  <line x1="170" y1="110" x2="220" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="360" y1="110" x2="410" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="550" y1="110" x2="600" y2="110" stroke="#34495e" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Marcador de flecha -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+    </marker>
+  </defs>
+</svg>

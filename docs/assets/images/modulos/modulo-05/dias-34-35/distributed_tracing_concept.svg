@@ -1,0 +1,98 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .trace-line { fill: none; stroke: #4caf50; stroke-width: 3; }
+      .span-box { fill: #2d4a8a; stroke: #4a90e2; stroke-width: 2; }
+      .span-box-child { fill: #4a2d8a; stroke: #8a4ae2; stroke-width: 2; }
+      .span-box-grandchild { fill: #8a2d4a; stroke: #e24a8a; stroke-width: 2; }
+      .title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .subtitle { fill: #cccccc; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .span-text { fill: #ffffff; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+      .time-text { fill: #cccccc; font-family: Arial, sans-serif; font-size: 10px; }
+      .correlation-id { fill: #ffd700; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="1000" height="700"/>
+  
+  <!-- Title -->
+  <text class="title" x="500" y="40">Distributed Tracing: Siguiendo una Petición MCP</text>
+  <text class="subtitle" x="500" y="65">Trace ID: abc123-def456-789ghi</text>
+  
+  <!-- Timeline -->
+  <line x1="100" y1="100" x2="900" y2="100" stroke="#666666" stroke-width="2"/>
+  <text class="time-text" x="100" y="95">0ms</text>
+  <text class="time-text" x="300" y="95">50ms</text>
+  <text class="time-text" x="500" y="95">100ms</text>
+  <text class="time-text" x="700" y="95">150ms</text>
+  <text class="time-text" x="900" y="95">200ms</text>
+  
+  <!-- Root Span: User Request -->
+  <rect class="span-box" x="120" y="130" width="760" height="40" rx="5"/>
+  <text class="span-text" x="130" y="150">🔵 User Request: "Calculate mortgage and save to file"</text>
+  <text class="correlation-id" x="130" y="163">Span ID: root-001 | Duration: 180ms</text>
+  
+  <!-- Child Span 1: Tool Execution -->
+  <rect class="span-box-child" x="140" y="200" width="300" height="35" rx="5"/>
+  <text class="span-text" x="150" y="218">🟣 Tool: advanced_calculator</text>
+  <text class="correlation-id" x="150" y="230">Span ID: calc-002 | Duration: 45ms</text>
+  
+  <!-- Grandchild Spans under Calculator -->
+  <rect class="span-box-grandchild" x="160" y="250" width="120" height="25" rx="3"/>
+  <text class="span-text" x="165" y="265" font-size="10px">🔴 Validate Input</text>
+  <text class="time-text" x="165" y="272">5ms</text>
+  
+  <rect class="span-box-grandchild" x="290" y="250" width="130" height="25" rx="3"/>
+  <text class="span-text" x="295" y="265" font-size="10px">🔴 Execute Calculation</text>
+  <text class="time-text" x="295" y="272">35ms</text>
+  
+  <!-- Child Span 2: File Operations -->
+  <rect class="span-box-child" x="480" y="200" width="320" height="35" rx="5"/>
+  <text class="span-text" x="490" y="218">🟣 Tool: secure_file_reader</text>
+  <text class="correlation-id" x="490" y="230">Span ID: file-003 | Duration: 80ms</text>
+  
+  <!-- Grandchild Spans under File Reader -->
+  <rect class="span-box-grandchild" x="500" y="250" width="100" height="25" rx="3"/>
+  <text class="span-text" x="505" y="265" font-size="10px">🔴 Security Check</text>
+  <text class="time-text" x="505" y="272">15ms</text>
+  
+  <rect class="span-box-grandchild" x="610" y="250" width="90" height="25" rx="3"/>
+  <text class="span-text" x="615" y="265" font-size="10px">🔴 Read File</text>
+  <text class="time-text" x="615" y="272">25ms</text>
+  
+  <rect class="span-box-grandchild" x="710" y="250" width="80" height="25" rx="3"/>
+  <text class="span-text" x="715" y="265" font-size="10px">🔴 Format Output</text>
+  <text class="time-text" x="715" y="272">40ms</text>
+  
+  <!-- Child Span 3: Response Assembly -->
+  <rect class="span-box-child" x="820" y="200" width="140" height="35" rx="5"/>
+  <text class="span-text" x="830" y="218">🟣 Assemble Response</text>
+  <text class="correlation-id" x="830" y="230">Span ID: resp-004 | Duration: 25ms</text>
+  
+  <!-- Context Propagation Lines -->
+  <path d="M 500 170 L 290 200" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <path d="M 500 170 L 640 200" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <path d="M 500 170 L 890 200" stroke="#4caf50" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  
+  <!-- Annotations -->
+  <text class="subtitle" x="500" y="330">Información de Contexto Propagada:</text>
+  
+  <text class="span-text" x="150" y="360">• Trace ID: Identifica toda la operación completa</text>
+  <text class="span-text" x="150" y="380">• Span ID: Identifica cada operación individual</text>
+  <text class="span-text" x="150" y="400">• Parent Span ID: Conecta operaciones padre-hijo</text>
+  <text class="span-text" x="150" y="420">• Baggage: Metadatos que se propagan (user_id, session_id, etc.)</text>
+  <text class="span-text" x="150" y="440">• Tags: Información específica de cada span (tool_name, operation_type)</text>
+  
+  <!-- Benefits Box -->
+  <rect fill="#2a4d3a" stroke="#4caf50" stroke-width="2" x="150" y="470" width="700" height="180" rx="10"/>
+  <text class="subtitle" x="500" y="500" fill="#4caf50">Beneficios del Distributed Tracing en MCP:</text>
+  
+  <text class="span-text" x="170" y="530" fill="#ffffff">🔍 Debugging: Identifica exactamente dónde falla una operación compleja</text>
+  <text class="span-text" x="170" y="550" fill="#ffffff">⚡ Performance: Encuentra cuellos de botella en cadenas de herramientas</text>
+  <text class="span-text" x="170" y="570" fill="#ffffff">🔗 Correlación: Conecta logs y métricas con contexto completo</text>
+  <text class="span-text" x="170" y="590" fill="#ffffff">📊 Análisis: Entiende patrones de uso y dependencias entre herramientas</text>
+  <text class="span-text" x="170" y="610" fill="#ffffff">🚨 Alertas: Detecta anomalías en flujos de trabajo específicos</text>
+  <text class="span-text" x="170" y="630" fill="#ffffff">📈 Optimización: Datos para mejorar la arquitectura del servidor MCP</text>
+</svg>

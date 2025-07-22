@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo dark -->
+  <rect width="800" height="400" fill="#0f172a"/>
+
+  <!-- Título - Tema Dark -->
+  <text x="400" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">Flujo de Desarrollo MCP Server</text>
+
+  <!-- Paso 1: Configuración - Tema Dark -->
+  <rect x="50" y="80" width="140" height="80" rx="10" fill="#1e40af" stroke="#3b82f6" stroke-width="2"/>
+  <text x="120" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#dbeafe">1. Configuración</text>
+  <text x="120" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#bfdbfe">del Entorno</text>
+  <text x="120" y="140" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#bfdbfe">(pnpm, TypeScript)</text>
+
+  <!-- Flecha 1 - Tema Dark -->
+  <path d="M190 120 L210 120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Paso 2: Estructura - Tema Dark -->
+  <rect x="220" y="80" width="140" height="80" rx="10" fill="#7c2d12" stroke="#dc2626" stroke-width="2"/>
+  <text x="290" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#fecaca">2. Estructura</text>
+  <text x="290" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fca5a5">del Proyecto</text>
+  <text x="290" y="140" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fca5a5">(Directorios, Config)</text>
+
+  <!-- Flecha 2 - Tema Dark -->
+  <path d="M360 120 L380 120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Paso 3: Implementación - Tema Dark -->
+  <rect x="390" y="80" width="140" height="80" rx="10" fill="#92400e" stroke="#f59e0b" stroke-width="2"/>
+  <text x="460" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#fef3c7">3. Implementación</text>
+  <text x="460" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">del Servidor</text>
+  <text x="460" y="140" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#fde68a">(Calculadora MCP)</text>
+
+  <!-- Flecha 3 - Tema Dark -->
+  <path d="M530 120 L550 120" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Paso 4: Testing - Tema Dark -->
+  <rect x="560" y="80" width="140" height="80" rx="10" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+  <text x="630" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#d1fae5">4. Pruebas y</text>
+  <text x="630" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#a7f3d0">Validación</text>
+  <text x="630" y="140" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#a7f3d0">(Claude Desktop)</text>
+
+  <!-- Línea de retorno - Tema Dark -->
+  <path d="M630 160 L630 200 L120 200 L120 160" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" fill="none"/>
+  <text x="375" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#94a3b8">Ciclo iterativo de mejora</text>
+
+  <!-- Herramientas - Tema Dark -->
+  <text x="400" y="240" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f1f5f9">Herramientas Principales</text>
+
+  <rect x="100" y="260" width="120" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="160" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">pnpm</text>
+  <text x="160" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Gestor de</text>
+  <text x="160" y="308" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">paquetes</text>
+
+  <rect x="240" y="260" width="120" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="300" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">TypeScript</text>
+  <text x="300" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Tipado</text>
+  <text x="300" y="308" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">estático</text>
+
+  <rect x="380" y="260" width="120" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="440" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">@modelcontextprotocol</text>
+  <text x="440" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">SDK oficial</text>
+  <text x="440" y="308" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">de MCP</text>
+
+  <rect x="520" y="260" width="120" height="60" rx="8" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+  <text x="580" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f1f5f9">Claude Desktop</text>
+  <text x="580" y="295" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">Cliente de</text>
+  <text x="580" y="308" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#cbd5e1">pruebas</text>
+
+  <!-- Definición de flecha - Tema Dark -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+</svg>

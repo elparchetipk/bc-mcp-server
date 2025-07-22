@@ -1,0 +1,121 @@
+<svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo dark -->
+  <rect width="900" height="600" fill="#0f172a"/>
+
+  <defs>
+    <!-- Definición de punta de flecha para tema dark -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Título - Tema Dark -->
+  <text x="450" y="30" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="bold">Niveles de Sofisticación en Desarrollo MCP</text>
+
+  <!-- Nivel 1: Básico - Tema Dark -->
+  <rect x="50" y="80" width="250" height="450" rx="15" fill="#451a03" stroke="#f59e0b" stroke-width="2" />
+  <text x="175" y="110" text-anchor="middle" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">NIVEL 1: BÁSICO</text>
+  <text x="175" y="130" text-anchor="middle" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="12">"Wrapper de API"</text>
+
+  <!-- Características Nivel 1 - Tema Dark -->
+  <text x="70" y="160" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Características:</text>
+  <text x="70" y="180" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• Expone funciones existentes</text>
+  <text x="70" y="195" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• Mapeo 1:1 con APIs</text>
+  <text x="70" y="210" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• Sin contexto adicional</text>
+  <text x="70" y="225" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• Validación mínima</text>
+
+  <text x="70" y="255" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Ejemplo:</text>
+  <rect x="70" y="265" width="210" height="80" fill="#0f172a" stroke="#fbbf24" rx="5" stroke-width="1" />
+  <text x="80" y="285" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">function calculate(a, b, op) {</text>
+  <text x="80" y="300" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">  if (op === 'add') return a + b</text>
+  <text x="80" y="315" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">  if (op === 'subtract') return a - b</text>
+  <text x="80" y="330" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="9">}</text>
+
+  <text x="70" y="365" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Limitaciones:</text>
+  <text x="70" y="385" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• No aprende del contexto</text>
+  <text x="70" y="400" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• Respuestas predecibles</text>
+  <text x="70" y="415" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">• Poco valor agregado</text>
+
+  <text x="175" y="450" text-anchor="middle" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Tiempo de desarrollo:</text>
+  <text x="175" y="465" text-anchor="middle" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">1-2 días</text>
+
+  <text x="175" y="490" text-anchor="middle" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Valor para el usuario:</text>
+  <text x="175" y="505" text-anchor="middle" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="10">⭐⭐☆☆☆</text>
+
+  <!-- Nivel 2: Intermedio - Tema Dark -->
+  <rect x="325" y="80" width="250" height="450" rx="15" fill="#1e3a8a" stroke="#3b82f6" stroke-width="2" />
+  <text x="450" y="110" text-anchor="middle" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">NIVEL 2: INTERMEDIO</text>
+  <text x="450" y="130" text-anchor="middle" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="12">"Contexto Inteligente"</text>
+
+  <!-- Características Nivel 2 - Tema Dark -->
+  <text x="345" y="160" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Características:</text>
+  <text x="345" y="180" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Prompts contextuales</text>
+  <text x="345" y="195" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Recursos dinámicos</text>
+  <text x="345" y="210" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Validación inteligente</text>
+  <text x="345" y="225" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Manejo de errores rico</text>
+
+  <text x="345" y="255" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Ejemplo:</text>
+  <rect x="345" y="265" width="210" height="80" fill="#0f172a" stroke="#60a5fa" rx="5" stroke-width="1" />
+  <text x="355" y="285" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="9">// Entiende contexto del usuario</text>
+  <text x="355" y="300" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="9">// Sugiere mejores prácticas</text>
+  <text x="355" y="315" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="9">// Proporciona ejemplos</text>
+  <text x="355" y="330" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="9">// Aprende de patrones</text>
+
+  <text x="345" y="365" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Beneficios:</text>
+  <text x="345" y="385" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Experiencia personalizada</text>
+  <text x="345" y="400" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Respuestas más útiles</text>
+  <text x="345" y="415" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">• Reduce errores del usuario</text>
+
+  <text x="450" y="450" text-anchor="middle" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Tiempo de desarrollo:</text>
+  <text x="450" y="465" text-anchor="middle" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">1-2 semanas</text>
+
+  <text x="450" y="490" text-anchor="middle" fill="#60a5fa" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Valor para el usuario:</text>
+  <text x="450" y="505" text-anchor="middle" fill="#93c5fd" font-family="Inter, system-ui, sans-serif" font-size="10">⭐⭐⭐⭐☆</text>
+
+  <!-- Nivel 3: Avanzado - Tema Dark -->
+  <rect x="600" y="80" width="250" height="450" rx="15" fill="#064e3b" stroke="#10b981" stroke-width="2" />
+  <text x="725" y="110" text-anchor="middle" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">NIVEL 3: AVANZADO</text>
+  <text x="725" y="130" text-anchor="middle" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="12">"Agente Inteligente"</text>
+
+  <!-- Características Nivel 3 - Tema Dark -->
+  <text x="620" y="160" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Características:</text>
+  <text x="620" y="180" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• Orquestación multi-sistema</text>
+  <text x="620" y="195" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• Memoria y aprendizaje</text>
+  <text x="620" y="210" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• Predicción de necesidades</text>
+  <text x="620" y="225" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• Auto-optimización</text>
+
+  <text x="620" y="255" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Ejemplo:</text>
+  <rect x="620" y="265" width="210" height="80" fill="#0f172a" stroke="#34d399" rx="5" stroke-width="1" />
+  <text x="630" y="285" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="9">// Anticipa necesidades</text>
+  <text x="630" y="300" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="9">// Optimiza workflows</text>
+  <text x="630" y="315" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="9">// Coordina múltiples sistemas</text>
+  <text x="630" y="330" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="9">// Evoluciona con el uso</text>
+
+  <text x="620" y="365" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">Impacto:</text>
+  <text x="620" y="385" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• Transformación de procesos</text>
+  <text x="620" y="400" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• ROI significativo</text>
+  <text x="620" y="415" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">• Ventaja competitiva</text>
+
+  <text x="725" y="450" text-anchor="middle" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Tiempo de desarrollo:</text>
+  <text x="725" y="465" text-anchor="middle" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">1-3 meses</text>
+
+  <text x="725" y="490" text-anchor="middle" fill="#34d399" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Valor para el usuario:</text>
+  <text x="725" y="505" text-anchor="middle" fill="#6ee7b7" font-family="Inter, system-ui, sans-serif" font-size="10">⭐⭐⭐⭐⭐</text>
+
+  <!-- Flechas de progresión - Tema Dark -->
+  <path d="M 300 305 L 325 305" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 575 305 L 600 305" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Labels de progresión - Tema Dark -->
+  <text x="312" y="290" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9">Agregar</text>
+  <text x="312" y="300" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9">Contexto</text>
+
+  <text x="587" y="290" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9">Agregar</text>
+  <text x="587" y="300" text-anchor="middle" fill="#64748b" font-family="Inter, system-ui, sans-serif" font-size="9">Inteligencia</text>
+
+  <!-- Definición de punta de flecha - Tema Dark (eliminada duplicación) -->
+
+  <!-- Nota importante - Tema Dark -->
+  <text x="450" y="570" text-anchor="middle" fill="#94a3b8" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Tu objetivo: Comenzar en Nivel 1, dominar Nivel 2, aspirar a Nivel 3</text>
+</svg>

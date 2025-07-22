@@ -1,0 +1,72 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0d1117"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" fill="#f0f6fc" font-family="Arial, sans-serif" font-size="24" font-weight="bold">
+    Pirámide de Testing para Servidores MCP
+  </text>
+  
+  <!-- Pyramid layers -->
+  <!-- Unit Tests (bottom, largest) -->
+  <polygon points="150,500 650,500 550,400 250,400" fill="#238636" stroke="#2ea043" stroke-width="2"/>
+  <text x="400" y="460" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    Tests Unitarios
+  </text>
+  <text x="400" y="480" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">
+    70% - Herramientas, Resources, Prompts individuales
+  </text>
+  
+  <!-- Integration Tests (middle) -->
+  <polygon points="250,400 550,400 450,300 350,300" fill="#1f6feb" stroke="#388bfd" stroke-width="2"/>
+  <text x="400" y="360" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    Tests de Integración
+  </text>
+  <text x="400" y="380" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">
+    20% - Comunicación MCP, APIs externas
+  </text>
+  
+  <!-- E2E Tests (top, smallest) -->
+  <polygon points="350,300 450,300 425,200 375,200" fill="#a5a5a5" stroke="#d0d7de" stroke-width="2"/>
+  <text x="400" y="260" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="18" font-weight="bold">
+    Tests E2E
+  </text>
+  <text x="400" y="280" text-anchor="middle" fill="#ffffff" font-family="Arial, sans-serif" font-size="14">
+    10% - Flujos completos
+  </text>
+  
+  <!-- Arrows and annotations -->
+  <path d="M 120 450 L 80 450" stroke="#ffa657" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="70" y="440" text-anchor="end" fill="#ffa657" font-family="Arial, sans-serif" font-size="12">
+    Más rápidos
+  </text>
+  <text x="70" y="455" text-anchor="end" fill="#ffa657" font-family="Arial, sans-serif" font-size="12">
+    Más baratos
+  </text>
+  <text x="70" y="470" text-anchor="end" fill="#ffa657" font-family="Arial, sans-serif" font-size="12">
+    Más específicos
+  </text>
+  
+  <path d="M 680 250 L 720 250" stroke="#ffa657" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="730" y="240" fill="#ffa657" font-family="Arial, sans-serif" font-size="12">
+    Más lentos
+  </text>
+  <text x="730" y="255" fill="#ffa657" font-family="Arial, sans-serif" font-size="12">
+    Más costosos
+  </text>
+  <text x="730" y="270" fill="#ffa657" font-family="Arial, sans-serif" font-size="12">
+    Más realistas
+  </text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffa657"/>
+    </marker>
+  </defs>
+  
+  <!-- Bottom note -->
+  <text x="400" y="550" text-anchor="middle" fill="#8b949e" font-family="Arial, sans-serif" font-size="14">
+    Cada nivel construye confianza sobre el anterior
+  </text>
+</svg>

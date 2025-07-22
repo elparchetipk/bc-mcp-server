@@ -1,0 +1,114 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="500" y="30" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="bold">Arquitectura Integral MCP Server - Proyecto Final</text>
+  
+  <!-- Client Layer -->
+  <rect x="50" y="80" width="200" height="80" fill="#1e293b" stroke="#64748b" stroke-width="2" rx="8"/>
+  <text x="150" y="110" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Cliente MCP</text>
+  <text x="150" y="130" text-anchor="middle" fill="#94a3b8" font-size="12">Claude Desktop / API</text>
+  
+  <!-- MCP Server Core -->
+  <rect x="350" y="60" width="300" height="120" fill="#1e293b" stroke="#3b82f6" stroke-width="3" rx="8"/>
+  <text x="500" y="85" text-anchor="middle" fill="#3b82f6" font-size="16" font-weight="bold">MCP Server Core</text>
+  
+  <!-- Tools inside MCP Server -->
+  <rect x="370" y="100" width="80" height="30" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="410" y="118" text-anchor="middle" fill="#f8fafc" font-size="10">Tools</text>
+  
+  <rect x="460" y="100" width="80" height="30" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="500" y="118" text-anchor="middle" fill="#f8fafc" font-size="10">Resources</text>
+  
+  <rect x="550" y="100" width="80" height="30" fill="#2563eb" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="590" y="118" text-anchor="middle" fill="#f8fafc" font-size="10">Prompts</text>
+  
+  <!-- Security Layer -->
+  <rect x="370" y="140" width="260" height="30" fill="#dc2626" stroke="#ef4444" stroke-width="1" rx="4"/>
+  <text x="500" y="158" text-anchor="middle" fill="#f8fafc" font-size="11">Autenticación & Autorización</text>
+  
+  <!-- Data Layer -->
+  <rect x="100" y="250" width="180" height="100" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="190" y="275" text-anchor="middle" fill="#10b981" font-size="14" font-weight="bold">Capa de Datos</text>
+  <text x="190" y="295" text-anchor="middle" fill="#94a3b8" font-size="11">PostgreSQL/SQLite</text>
+  <text x="190" y="310" text-anchor="middle" fill="#94a3b8" font-size="11">Redis Cache</text>
+  <text x="190" y="325" text-anchor="middle" fill="#94a3b8" font-size="11">Prisma ORM</text>
+  
+  <!-- External APIs -->
+  <rect x="350" y="250" width="150" height="100" fill="#1e293b" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="425" y="275" text-anchor="middle" fill="#f59e0b" font-size="14" font-weight="bold">APIs Externas</text>
+  <text x="425" y="295" text-anchor="middle" fill="#94a3b8" font-size="11">REST APIs</text>
+  <text x="425" y="310" text-anchor="middle" fill="#94a3b8" font-size="11">GraphQL</text>
+  <text x="425" y="325" text-anchor="middle" fill="#94a3b8" font-size="11">Webhooks</text>
+  
+  <!-- Monitoring -->
+  <rect x="550" y="250" width="150" height="100" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="625" y="275" text-anchor="middle" fill="#8b5cf6" font-size="14" font-weight="bold">Observabilidad</text>
+  <text x="625" y="295" text-anchor="middle" fill="#94a3b8" font-size="11">Logs</text>
+  <text x="625" y="310" text-anchor="middle" fill="#94a3b8" font-size="11">Métricas</text>
+  <text x="625" y="325" text-anchor="middle" fill="#94a3b8" font-size="11">Tracing</text>
+  
+  <!-- Docker Container -->
+  <rect x="750" y="200" width="200" height="200" fill="#1e293b" stroke="#06b6d4" stroke-width="2" rx="8" stroke-dasharray="5,5"/>
+  <text x="850" y="225" text-anchor="middle" fill="#06b6d4" font-size="14" font-weight="bold">Docker Container</text>
+  
+  <!-- Container components -->
+  <rect x="770" y="240" width="160" height="40" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="4"/>
+  <text x="850" y="260" text-anchor="middle" fill="#f8fafc" font-size="11">Node.js Alpine</text>
+  
+  <rect x="770" y="290" width="160" height="40" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="4"/>
+  <text x="850" y="310" text-anchor="middle" fill="#f8fafc" font-size="11">MCP Server App</text>
+  
+  <rect x="770" y="340" width="160" height="40" fill="#0891b2" stroke="#06b6d4" stroke-width="1" rx="4"/>
+  <text x="850" y="360" text-anchor="middle" fill="#f8fafc" font-size="11">Health Checks</text>
+  
+  <!-- Testing Layer -->
+  <rect x="100" y="450" width="600" height="80" fill="#1e293b" stroke="#f97316" stroke-width="2" rx="8"/>
+  <text x="400" y="475" text-anchor="middle" fill="#f97316" font-size="14" font-weight="bold">Suite de Testing Integral</text>
+  
+  <rect x="120" y="490" width="100" height="30" fill="#ea580c" stroke="#f97316" stroke-width="1" rx="4"/>
+  <text x="170" y="508" text-anchor="middle" fill="#f8fafc" font-size="10">Unit Tests</text>
+  
+  <rect x="240" y="490" width="120" height="30" fill="#ea580c" stroke="#f97316" stroke-width="1" rx="4"/>
+  <text x="300" y="508" text-anchor="middle" fill="#f8fafc" font-size="10">Integration Tests</text>
+  
+  <rect x="380" y="490" width="100" height="30" fill="#ea580c" stroke="#f97316" stroke-width="1" rx="4"/>
+  <text x="430" y="508" text-anchor="middle" fill="#f8fafc" font-size="10">E2E Tests</text>
+  
+  <rect x="500" y="490" width="120" height="30" fill="#ea580c" stroke="#f97316" stroke-width="1" rx="4"/>
+  <text x="560" y="508" text-anchor="middle" fill="#f8fafc" font-size="10">Performance Tests</text>
+  
+  <!-- CI/CD Pipeline -->
+  <rect x="100" y="580" width="600" height="80" fill="#1e293b" stroke="#ec4899" stroke-width="2" rx="8"/>
+  <text x="400" y="605" text-anchor="middle" fill="#ec4899" font-size="14" font-weight="bold">Pipeline CI/CD</text>
+  
+  <rect x="120" y="620" width="80" height="30" fill="#db2777" stroke="#ec4899" stroke-width="1" rx="4"/>
+  <text x="160" y="638" text-anchor="middle" fill="#f8fafc" font-size="10">Build</text>
+  
+  <rect x="220" y="620" width="80" height="30" fill="#db2777" stroke="#ec4899" stroke-width="1" rx="4"/>
+  <text x="260" y="638" text-anchor="middle" fill="#f8fafc" font-size="10">Test</text>
+  
+  <rect x="320" y="620" width="80" height="30" fill="#db2777" stroke="#ec4899" stroke-width="1" rx="4"/>
+  <text x="360" y="638" text-anchor="middle" fill="#f8fafc" font-size="10">Security</text>
+  
+  <rect x="420" y="620" width="80" height="30" fill="#db2777" stroke="#ec4899" stroke-width="1" rx="4"/>
+  <text x="460" y="638" text-anchor="middle" fill="#f8fafc" font-size="10">Deploy</text>
+  
+  <rect x="520" y="620" width="80" height="30" fill="#db2777" stroke="#ec4899" stroke-width="1" rx="4"/>
+  <text x="560" y="638" text-anchor="middle" fill="#f8fafc" font-size="10">Monitor</text>
+  
+  <!-- Arrows -->
+  <path d="M250 120 L350 120" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500 180 L190 250" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500 180 L425 250" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M500 180 L625 250" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M650 300 L750 300" stroke="#94a3b8" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>

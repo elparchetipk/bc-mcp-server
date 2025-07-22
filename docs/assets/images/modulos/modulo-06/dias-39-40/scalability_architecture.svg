@@ -1,0 +1,85 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .card { fill: #1e293b; stroke: #3b82f6; stroke-width: 2; }
+      .highlight { fill: #3b82f6; }
+      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 14px; }
+      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .db { fill: #059669; }
+      .cache { fill: #f59e0b; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <rect class="bg" width="800" height="600"/>
+  
+  <!-- Título -->
+  <text x="400" y="30" class="title" text-anchor="middle">Arquitectura Escalable de Servidores MCP</text>
+  
+  <!-- Load Balancer -->
+  <rect x="350" y="60" width="100" height="60" class="card" rx="5"/>
+  <text x="400" y="85" class="title" text-anchor="middle">Load</text>
+  <text x="400" y="105" class="title" text-anchor="middle">Balancer</text>
+  
+  <!-- Servidores MCP -->
+  <rect x="150" y="180" width="120" height="80" class="card" rx="5"/>
+  <text x="210" y="205" class="title" text-anchor="middle">MCP Server</text>
+  <text x="210" y="225" class="title" text-anchor="middle">Instance 1</text>
+  <text x="210" y="245" class="text" text-anchor="middle">Connection Pool</text>
+  
+  <rect x="340" y="180" width="120" height="80" class="card" rx="5"/>
+  <text x="400" y="205" class="title" text-anchor="middle">MCP Server</text>
+  <text x="400" y="225" class="title" text-anchor="middle">Instance 2</text>
+  <text x="400" y="245" class="text" text-anchor="middle">Connection Pool</text>
+  
+  <rect x="530" y="180" width="120" height="80" class="card" rx="5"/>
+  <text x="590" y="205" class="title" text-anchor="middle">MCP Server</text>
+  <text x="590" y="225" class="title" text-anchor="middle">Instance 3</text>
+  <text x="590" y="245" class="text" text-anchor="middle">Connection Pool</text>
+  
+  <!-- Cache Layer -->
+  <rect x="340" y="320" width="120" height="60" class="cache" rx="5"/>
+  <text x="400" y="345" class="title" text-anchor="middle">Redis Cache</text>
+  <text x="400" y="365" class="text" text-anchor="middle">Distributed</text>
+  
+  <!-- Database Sharding -->
+  <rect x="150" y="450" width="120" height="80" class="db" rx="5"/>
+  <text x="210" y="475" class="title" text-anchor="middle">DB Shard 1</text>
+  <text x="210" y="495" class="text" text-anchor="middle">Users A-H</text>
+  <text x="210" y="515" class="text" text-anchor="middle">PostgreSQL</text>
+  
+  <rect x="340" y="450" width="120" height="80" class="db" rx="5"/>
+  <text x="400" y="475" class="title" text-anchor="middle">DB Shard 2</text>
+  <text x="400" y="495" class="text" text-anchor="middle">Users I-P</text>
+  <text x="400" y="515" class="text" text-anchor="middle">PostgreSQL</text>
+  
+  <rect x="530" y="450" width="120" height="80" class="db" rx="5"/>
+  <text x="590" y="475" class="title" text-anchor="middle">DB Shard 3</text>
+  <text x="590" y="495" class="text" text-anchor="middle">Users Q-Z</text>
+  <text x="590" y="515" class="text" text-anchor="middle">PostgreSQL</text>
+  
+  <!-- Arrows -->
+  <line x1="400" y1="120" x2="210" y2="180" class="arrow"/>
+  <line x1="400" y1="120" x2="400" y2="180" class="arrow"/>
+  <line x1="400" y1="120" x2="590" y2="180" class="arrow"/>
+  
+  <line x1="210" y1="260" x2="400" y2="320" class="arrow"/>
+  <line x1="400" y1="260" x2="400" y2="320" class="arrow"/>
+  <line x1="590" y1="260" x2="400" y2="320" class="arrow"/>
+  
+  <line x1="210" y1="260" x2="210" y2="450" class="arrow"/>
+  <line x1="400" y1="260" x2="400" y2="450" class="arrow"/>
+  <line x1="590" y1="260" x2="590" y2="450" class="arrow"/>
+  
+  <!-- Performance Metrics -->
+  <rect x="650" y="100" width="140" height="120" class="card" rx="5"/>
+  <text x="720" y="125" class="title" text-anchor="middle">Métricas Clave</text>
+  <text x="720" y="150" class="text" text-anchor="middle">• Latencia &lt; 100ms</text>
+  <text x="720" y="170" class="text" text-anchor="middle">• Throughput 10k/s</text>
+  <text x="720" y="190" class="text" text-anchor="middle">• CPU &lt; 70%</text>
+  <text x="720" y="210" class="text" text-anchor="middle">• Memory &lt; 80%</text>
+</svg>

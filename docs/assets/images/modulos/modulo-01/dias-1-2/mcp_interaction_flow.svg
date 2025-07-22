@@ -1,0 +1,103 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fondo dark -->
+  <rect width="900" height="700" fill="#0f172a"/>
+
+  <defs>
+    <!-- Definición de punta de flecha para tema dark -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b" />
+    </marker>
+  </defs>
+
+  <!-- Título - Tema Dark -->
+  <text x="450" y="30" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="bold">Ejemplo: "Analiza las ventas de este mes y envía un reporte"</text>
+
+  <!-- Paso 1: Usuario hace solicitud - Tema Dark -->
+  <rect x="50" y="80" width="180" height="100" rx="10" fill="#3b82f6" stroke="#60a5fa" stroke-width="2" />
+  <text x="140" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 1</text>
+  <text x="140" y="130" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">Usuario solicita:</text>
+  <text x="140" y="145" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">"Analiza ventas y</text>
+  <text x="140" y="160" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">envía reporte"</text>
+
+  <!-- Paso 2: Cliente consulta recursos -->
+  <rect x="270" y="80" width="180" height="100" rx="10" fill="url(#stepGradient2)" />
+  <text x="360" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PASO 2</text>
+  <text x="360" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Cliente consulta</text>
+  <text x="360" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">RECURSOS</text>
+  <text x="360" y="160" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">disponibles</text>
+
+  <!-- Paso 2: MCP procesa - Tema Dark -->
+  <rect x="270" y="80" width="180" height="100" rx="10" fill="#16a34a" stroke="#4ade80" stroke-width="2" />
+  <text x="360" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 2</text>
+  <text x="360" y="130" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">MCP analiza y</text>
+  <text x="360" y="145" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">planifica</text>
+  <text x="360" y="160" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">ejecución</text>
+
+  <!-- Paso 3: Uso de herramientas - Tema Dark -->
+  <rect x="490" y="80" width="180" height="100" rx="10" fill="#f59e0b" stroke="#fbbf24" stroke-width="2" />
+  <text x="580" y="110" text-anchor="middle" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 3</text>
+  <text x="580" y="130" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="10">Ejecuta</text>
+  <text x="580" y="145" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="10">HERRAMIENTAS</text>
+  <text x="580" y="160" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="10">necesarias</text>
+
+  <!-- Paso 4: Uso de prompts - Tema Dark -->
+  <rect x="710" y="80" width="180" height="100" rx="10" fill="#8b5cf6" stroke="#a78bfa" stroke-width="2" />
+  <text x="800" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 4</text>
+  <text x="800" y="130" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">Aplica</text>
+  <text x="800" y="145" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">PROMPTS</text>
+  <text x="800" y="160" text-anchor="middle" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="10">contextuales</text>
+
+  <!-- Flechas entre pasos - Tema Dark -->
+  <path d="M 230 130 L 270 130" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 450 130 L 490 130" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 670 130 L 710 130" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- Detalles de cada paso - Tema Dark -->
+
+  <!-- Recursos disponibles - Tema Dark -->
+  <rect x="200" y="230" width="320" height="120" rx="8" fill="#334155" stroke="#64748b" stroke-width="2" />
+  <text x="360" y="255" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">RECURSOS Disponibles</text>
+  <text x="220" y="280" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="11">📊 sales_data.csv - Datos de ventas del mes</text>
+  <text x="220" y="300" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="11">📈 historical_trends.json - Tendencias históricas</text>
+  <text x="220" y="320" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="11">👥 customer_segments.db - Segmentos de clientes</text>
+  <text x="220" y="340" fill="#e2e8f0" font-family="Inter, system-ui, sans-serif" font-size="11">📧 email_templates/ - Plantillas de reporte</text>
+
+  <!-- Herramientas disponibles - Tema Dark -->
+  <rect x="200" y="380" width="320" height="120" rx="8" fill="#451a03" stroke="#f59e0b" stroke-width="2" />
+  <text x="360" y="405" text-anchor="middle" fill="#fbbf24" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">HERRAMIENTAS Disponibles</text>
+  <text x="220" y="430" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="11">🔍 analyze_sales() - Analizar datos de ventas</text>
+  <text x="220" y="450" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="11">📊 generate_chart() - Crear gráficos</text>
+  <text x="220" y="470" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="11">📨 send_email() - Enviar reportes</text>
+  <text x="220" y="490" fill="#fed7aa" font-family="Inter, system-ui, sans-serif" font-size="11">📝 format_report() - Formatear documentos</text>
+
+  <!-- Prompts contextuales - Tema Dark -->
+  <rect x="200" y="530" width="320" height="120" rx="8" fill="#2e1065" stroke="#8b5cf6" stroke-width="2" />
+  <text x="360" y="555" text-anchor="middle" fill="#a78bfa" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">PROMPTS Contextuales</text>
+  <text x="220" y="580" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="11">💡 "Para análisis de ventas, incluye..."</text>
+  <text x="220" y="600" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="11">📋 "Formato estándar de reporte:"</text>
+  <text x="220" y="620" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="11">🎯 "Métricas clave a destacar:"</text>
+  <text x="220" y="640" fill="#c4b5fd" font-family="Inter, system-ui, sans-serif" font-size="11">📊 "Visualizaciones recomendadas:"</text>
+
+  <!-- Resultado final - Tema Dark -->
+  <rect x="580" y="380" width="280" height="270" rx="8" fill="#052e16" stroke="#16a34a" stroke-width="2" />
+  <text x="720" y="405" text-anchor="middle" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">RESULTADO INTEGRADO</text>
+  <text x="600" y="430" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="11">✅ Análisis completo generado</text>
+  <text x="600" y="450" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="11">📊 Gráficos con insights clave</text>
+  <text x="600" y="470" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="11">📈 Comparación con períodos anteriores</text>
+  <text x="600" y="490" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="11">🎯 Recomendaciones específicas</text>
+  <text x="600" y="510" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="11">📧 Reporte enviado automáticamente</text>
+  <text x="600" y="530" fill="#bbf7d0" font-family="Inter, system-ui, sans-serif" font-size="11">⏱️ Todo en menos de 30 segundos</text>
+
+  <text x="720" y="570" text-anchor="middle" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Lo que antes tomaba horas,</text>
+  <text x="720" y="590" text-anchor="middle" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">ahora se hace automáticamente</text>
+  <text x="720" y="610" text-anchor="middle" fill="#4ade80" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">con contexto inteligente</text>
+
+  <!-- Definición de punta de flecha -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151" />
+    </marker>
+  </defs>
+</svg>

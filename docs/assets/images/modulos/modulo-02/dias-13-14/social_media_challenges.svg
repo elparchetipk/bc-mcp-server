@@ -1,0 +1,156 @@
+<svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="700" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <text x="450" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1e293b">
+    Desafíos Únicos de las APIs de Redes Sociales
+  </text>
+  
+  <!-- OAuth 2.0 Challenge -->
+  <rect x="50" y="80" width="200" height="120" rx="10" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+  <text x="150" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    OAuth 2.0
+  </text>
+  <text x="150" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Autenticación Compleja
+  </text>
+  <text x="150" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Bearer Tokens
+  </text>
+  <text x="150" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Refresh Tokens
+  </text>
+  <text x="150" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Scope Management
+  </text>
+  
+  <!-- Extreme Rate Limiting -->
+  <rect x="300" y="80" width="200" height="120" rx="10" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+  <text x="400" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Rate Limiting Extremo
+  </text>
+  <text x="400" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Límites Muy Agresivos
+  </text>
+  <text x="400" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • 300 requests/15min
+  </text>
+  <text x="400" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Windows deslizantes
+  </text>
+  <text x="400" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Límites por endpoint
+  </text>
+  
+  <!-- Real-time Data -->
+  <rect x="550" y="80" width="200" height="120" rx="10" fill="#10b981" stroke="#059669" stroke-width="2"/>
+  <text x="650" y="105" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Datos en Tiempo Real
+  </text>
+  <text x="650" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Información Volátil
+  </text>
+  <text x="650" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Engagement cambia
+  </text>
+  <text x="650" y="160" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Trending topics
+  </text>
+  <text x="650" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Viral content
+  </text>
+  
+  <!-- Complex Data Structures -->
+  <rect x="100" y="250" width="200" height="120" rx="10" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+  <text x="200" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Estructuras Complejas
+  </text>
+  <text x="200" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Datos Multidimensionales
+  </text>
+  <text x="200" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Media attachments
+  </text>
+  <text x="200" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Nested replies
+  </text>
+  <text x="200" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • User relationships
+  </text>
+  
+  <!-- Content Moderation -->
+  <rect x="350" y="250" width="200" height="120" rx="10" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+  <text x="450" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Moderación de Contenido
+  </text>
+  <text x="450" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Filtros y Restricciones
+  </text>
+  <text x="450" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Contenido sensible
+  </text>
+  <text x="450" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Políticas de uso
+  </text>
+  <text x="450" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Compliance GDPR
+  </text>
+  
+  <!-- Analytics & Insights -->
+  <rect x="600" y="250" width="200" height="120" rx="10" fill="#06b6d4" stroke="#0891b2" stroke-width="2"/>
+  <text x="700" y="275" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Analytics Avanzados
+  </text>
+  <text x="700" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Métricas Complejas
+  </text>
+  <text x="700" y="315" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Engagement rates
+  </text>
+  <text x="700" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Reach & impressions
+  </text>
+  <text x="700" y="345" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">
+    • Sentiment analysis
+  </text>
+  
+  <!-- Central Challenge -->
+  <circle cx="450" cy="480" r="80" fill="#1e293b" stroke="#334155" stroke-width="3"/>
+  <text x="450" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+    Desafío Central:
+  </text>
+  <text x="450" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Máxima Información
+  </text>
+  <text x="450" y="505" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="white">
+    Mínimos Requests
+  </text>
+  
+  <!-- Arrows pointing to central challenge -->
+  <line x1="150" y1="200" x2="400" y2="420" stroke="#334155" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="400" y1="200" x2="450" y2="400" stroke="#334155" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="650" y1="200" x2="500" y2="420" stroke="#334155" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="200" y1="370" x2="380" y2="450" stroke="#334155" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="450" y1="370" x2="450" y2="400" stroke="#334155" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="370" x2="520" y2="450" stroke="#334155" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Strategy Box -->
+  <rect x="200" y="600" width="500" height="80" rx="10" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="450" y="625" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">
+    Estrategia de Solución
+  </text>
+  <text x="450" y="645" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#475569">
+    Cache Inteligente + Batch Requests + Priorización de Datos + Fallback Strategies
+  </text>
+  <text x="450" y="665" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#475569">
+    OAuth Token Management + Rate Limit Awareness + Data Enrichment
+  </text>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+    </marker>
+  </defs>
+</svg>

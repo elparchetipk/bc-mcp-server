@@ -1,0 +1,178 @@
+<svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .client { fill: #48bb78; stroke: #68d391; stroke-width: 2; }
+      .gateway { fill: #ed8936; stroke: #f6ad55; stroke-width: 2; }
+      .auth-service { fill: #4299e1; stroke: #63b3ed; stroke-width: 2; }
+      .doc-service { fill: #9f7aea; stroke: #b794f6; stroke-width: 2; }
+      .database { fill: #f56565; stroke: #fc8181; stroke-width: 2; }
+      .redis { fill: #e53e3e; stroke: #feb2b2; stroke-width: 2; }
+      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 10px; }
+      .title { fill: #f7fafc; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+      .flow-text { fill: #cbd5e0; font-family: Arial, sans-serif; font-size: 8px; }
+      .arrow { stroke: #cbd5e0; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
+      .data-arrow { stroke: #68d391; stroke-width: 2; fill: none; marker-end: url(#greenarrow); }
+      .auth-arrow { stroke: #4299e1; stroke-width: 2; fill: none; marker-end: url(#bluearrow); }
+      .async-arrow { stroke: #f6ad55; stroke-width: 2; fill: none; stroke-dasharray: 5,5; marker-end: url(#orangearrow); }
+    </style>
+    <marker id="arrowhead" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <polygon points="0 0, 6 2, 0 4" fill="#cbd5e0" />
+    </marker>
+    <marker id="greenarrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#68d391" />
+    </marker>
+    <marker id="bluearrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#4299e1" />
+    </marker>
+    <marker id="orangearrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f6ad55" />
+    </marker>
+  </defs>
+  
+  <rect width="1000" height="700" class="bg"/>
+  
+  <!-- Título -->
+  <text x="500" y="25" text-anchor="middle" class="title" font-size="16">Sistema Completo de Microservicios MCP - Flujo de Comunicación</text>
+  
+  <!-- Claude Client -->
+  <g transform="translate(400, 60)">
+    <rect x="0" y="0" width="200" height="50" class="client" rx="8"/>
+    <text x="100" y="25" text-anchor="middle" class="title">Claude AI Client</text>
+    <text x="100" y="40" text-anchor="middle" class="text">Usuario Final</text>
+  </g>
+  
+  <!-- Request inicial -->
+  <text x="500" y="140" text-anchor="middle" class="flow-text">Request: "Autenticar usuario y crear documento"</text>
+  
+  <!-- API Gateway -->
+  <g transform="translate(350, 160)">
+    <rect x="0" y="0" width="300" height="80" class="gateway" rx="8"/>
+    <text x="150" y="25" text-anchor="middle" class="title">API Gateway :3000</text>
+    <text x="150" y="40" text-anchor="middle" class="text">• Request Routing</text>
+    <text x="150" y="55" text-anchor="middle" class="text">• Auth Validation</text>
+    <text x="150" y="70" text-anchor="middle" class="text">• Response Aggregation</text>
+  </g>
+  
+  <!-- Auth Service -->
+  <g transform="translate(50, 300)">
+    <rect x="0" y="0" width="180" height="100" class="auth-service" rx="8"/>
+    <text x="90" y="25" text-anchor="middle" class="title">Auth Service :3001</text>
+    <text x="90" y="45" text-anchor="middle" class="text">MCP Tools:</text>
+    <text x="90" y="60" text-anchor="middle" class="text">• authenticate_user</text>
+    <text x="90" y="75" text-anchor="middle" class="text">• validate_token</text>
+    <text x="90" y="90" text-anchor="middle" class="text">• get_user_info</text>
+  </g>
+  
+  <!-- Document Service -->
+  <g transform="translate(350, 300)">
+    <rect x="0" y="0" width="180" height="100" class="doc-service" rx="8"/>
+    <text x="90" y="25" text-anchor="middle" class="title">Document Service :3003</text>
+    <text x="90" y="45" text-anchor="middle" class="text">MCP Tools:</text>
+    <text x="90" y="60" text-anchor="middle" class="text">• create_document</text>
+    <text x="90" y="75" text-anchor="middle" class="text">• get_document</text>
+    <text x="90" y="90" text-anchor="middle" class="text">• search_documents</text>
+  </g>
+  
+  <!-- Future Services -->
+  <g transform="translate(600, 300)">
+    <rect x="0" y="0" width="160" height="100" class="doc-service" rx="8" opacity="0.5"/>
+    <text x="80" y="25" text-anchor="middle" class="title">Future Services</text>
+    <text x="80" y="45" text-anchor="middle" class="text">• File Service :3004</text>
+    <text x="80" y="60" text-anchor="middle" class="text">• Search Service :3005</text>
+    <text x="80" y="75" text-anchor="middle" class="text">• Analytics Service :3006</text>
+  </g>
+  
+  <!-- Bases de Datos -->
+  <g transform="translate(50, 450)">
+    <ellipse cx="90" cy="40" rx="80" ry="30" class="database"/>
+    <text x="90" y="35" text-anchor="middle" class="title">Auth DB</text>
+    <text x="90" y="50" text-anchor="middle" class="text">PostgreSQL</text>
+  </g>
+  
+  <g transform="translate(350, 450)">
+    <ellipse cx="90" cy="40" rx="80" ry="30" class="database"/>
+    <text x="90" y="35" text-anchor="middle" class="title">Documents DB</text>
+    <text x="90" y="50" text-anchor="middle" class="text">PostgreSQL</text>
+  </g>
+  
+  <!-- Redis Cache -->
+  <g transform="translate(200, 550)">
+    <ellipse cx="90" cy="30" rx="70" ry="25" class="redis"/>
+    <text x="90" y="25" text-anchor="middle" class="title">Redis Cache</text>
+    <text x="90" y="40" text-anchor="middle" class="text">Sessions & Cache</text>
+  </g>
+  
+  <!-- Flujo de comunicación -->
+  <!-- Cliente a Gateway -->
+  <line x1="500" y1="110" x2="500" y2="160" class="data-arrow"/>
+  <text x="520" y="135" class="flow-text">1. HTTP Request</text>
+  
+  <!-- Gateway a Auth Service -->
+  <line x1="400" y1="240" x2="150" y2="300" class="auth-arrow"/>
+  <text x="250" y="270" class="flow-text">2. Validate Token</text>
+  
+  <!-- Auth Service response -->
+  <line x1="180" y1="300" x2="430" y2="240" class="auth-arrow"/>
+  <text x="280" y="290" class="flow-text">3. User Info</text>
+  
+  <!-- Gateway a Document Service -->
+  <line x1="520" y1="240" x2="450" y2="300" class="data-arrow"/>
+  <text x="500" y="270" class="flow-text">4. Create Document</text>
+  
+  <!-- Document Service response -->
+  <line x1="420" y1="300" x2="490" y2="240" class="data-arrow"/>
+  <text x="430" y="290" class="flow-text">5. Document Created</text>
+  
+  <!-- Services a bases de datos -->
+  <line x1="140" y1="400" x2="140" y2="450" class="arrow"/>
+  <line x1="440" y1="400" x2="440" y2="450" class="arrow"/>
+  
+  <!-- Inter-service communication -->
+  <line x1="230" y1="350" x2="350" y2="350" class="auth-arrow"/>
+  <text x="280" y="340" class="flow-text">Token Validation</text>
+  
+  <!-- Cache connections -->
+  <line x1="200" y1="380" x2="250" y2="550" class="async-arrow"/>
+  <line x1="400" y1="380" x2="330" y2="550" class="async-arrow"/>
+  
+  <!-- Leyenda -->
+  <g transform="translate(800, 150)">
+    <text x="0" y="0" class="title">Leyenda:</text>
+    
+    <line x1="0" y1="20" x2="30" y2="20" class="data-arrow"/>
+    <text x="35" y="25" class="flow-text">Data Flow</text>
+    
+    <line x1="0" y1="40" x2="30" y2="40" class="auth-arrow"/>
+    <text x="35" y="45" class="flow-text">Auth Flow</text>
+    
+    <line x1="0" y1="60" x2="30" y2="60" class="async-arrow"/>
+    <text x="35" y="65" class="flow-text">Async/Cache</text>
+    
+    <line x1="0" y1="80" x2="30" y2="80" class="arrow"/>
+    <text x="35" y="85" class="flow-text">DB Connection</text>
+  </g>
+  
+  <!-- Pasos del flujo -->
+  <g transform="translate(50, 580)">
+    <text x="0" y="0" class="title">Flujo Típico de Request:</text>
+    <text x="0" y="20" class="text">1. Cliente envía request al API Gateway</text>
+    <text x="0" y="35" class="text">2. Gateway valida token con Auth Service</text>
+    <text x="0" y="50" class="text">3. Auth Service verifica en su DB y cache</text>
+    <text x="0" y="65" class="text">4. Gateway enruta a Document Service</text>
+    <text x="0" y="80" class="text">5. Document Service valida permisos</text>
+    <text x="0" y="95" class="text">6. Operación en DB y respuesta agregada</text>
+  </g>
+  
+  <!-- Características arquitectónicas -->
+  <g transform="translate(650, 450)">
+    <text x="0" y="0" class="title">Características Clave:</text>
+    <text x="0" y="20" class="text">✓ Separación de responsabilidades</text>
+    <text x="0" y="35" class="text">✓ Bases de datos independientes</text>
+    <text x="0" y="50" class="text">✓ Comunicación inter-servicios</text>
+    <text x="0" y="65" class="text">✓ Circuit breaker patterns</text>
+    <text x="0" y="80" class="text">✓ Caching distribuido</text>
+    <text x="0" y="95" class="text">✓ Health monitoring</text>
+    <text x="0" y="110" class="text">✓ Load balancing</text>
+  </g>
+</svg>

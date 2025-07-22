@@ -1,0 +1,68 @@
+<svg viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .traditional-box { fill: #4a2c2a; stroke: #ff6b6b; stroke-width: 2; }
+      .structured-box { fill: #2a4a2c; stroke: #4caf50; stroke-width: 2; }
+      .title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; text-anchor: middle; }
+      .subtitle { fill: #cccccc; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .log-text { fill: #ffffff; font-family: 'Courier New', monospace; font-size: 10px; }
+      .advantage { fill: #4caf50; font-family: Arial, sans-serif; font-size: 12px; }
+      .disadvantage { fill: #ff6b6b; font-family: Arial, sans-serif; font-size: 12px; }
+      .vs-text { fill: #ffd700; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect class="bg" width="900" height="500"/>
+  
+  <!-- Title -->
+  <text class="title" x="450" y="30">Evolución del Logging en Sistemas MCP</text>
+  
+  <!-- VS indicator -->
+  <text class="vs-text" x="450" y="250">VS</text>
+  
+  <!-- Traditional Logging -->
+  <rect class="traditional-box" x="50" y="70" width="350" height="300" rx="10"/>
+  <text class="subtitle" x="225" y="95" fill="#ff6b6b">Logs Tradicionales (No estructurados)</text>
+  
+  <!-- Traditional log examples -->
+  <text class="log-text" x="70" y="120">2024-06-24 15:30:45 INFO Tool calculator executed</text>
+  <text class="log-text" x="70" y="140">2024-06-24 15:30:47 ERROR Failed to execute file_reader</text>
+  <text class="log-text" x="70" y="160">2024-06-24 15:30:48 DEBUG User input: read /tmp/file.txt</text>
+  <text class="log-text" x="70" y="180">2024-06-24 15:30:49 WARN Connection timeout detected</text>
+  <text class="log-text" x="70" y="200">2024-06-24 15:30:50 INFO Request completed in 234ms</text>
+  
+  <!-- Traditional disadvantages -->
+  <text class="disadvantage" x="70" y="230">❌ Difícil de consultar</text>
+  <text class="disadvantage" x="70" y="250">❌ No agregable automáticamente</text>
+  <text class="disadvantage" x="70" y="270">❌ Parsing manual requerido</text>
+  <text class="disadvantage" x="70" y="290">❌ Correlación compleja</text>
+  <text class="disadvantage" x="70" y="310">❌ Análisis limitado</text>
+  <text class="disadvantage" x="70" y="330">❌ Alertas básicas</text>
+  
+  <!-- Structured Logging -->
+  <rect class="structured-box" x="500" y="70" width="350" height="300" rx="10"/>
+  <text class="subtitle" x="675" y="95" fill="#4caf50">Logs Estructurados (JSON)</text>
+  
+  <!-- Structured log examples -->
+  <text class="log-text" x="520" y="120">{"timestamp": "2024-06-24T15:30:45Z",</text>
+  <text class="log-text" x="520" y="135"> "level": "info", "tool": "calculator",</text>
+  <text class="log-text" x="520" y="150"> "duration_ms": 234, "user_id": "abc123"}</text>
+  
+  <text class="log-text" x="520" y="170">{"timestamp": "2024-06-24T15:30:47Z",</text>
+  <text class="log-text" x="520" y="185"> "level": "error", "tool": "file_reader",</text>
+  <text class="log-text" x="520" y="200"> "error_type": "ENOENT", "file": "/tmp/file.txt"}</text>
+  
+  <!-- Structured advantages -->
+  <text class="advantage" x="520" y="230">✅ Consultas SQL-like</text>
+  <text class="advantage" x="520" y="250">✅ Agregación automática</text>
+  <text class="advantage" x="520" y="270">✅ Parsing nativo</text>
+  <text class="advantage" x="520" y="290">✅ Correlación por ID</text>
+  <text class="advantage" x="520" y="310">✅ Análisis avanzado</text>
+  <text class="advantage" x="520" y="330">✅ Alertas inteligentes</text>
+  
+  <!-- Bottom note -->
+  <text class="subtitle" x="450" y="420">Los logs estructurados transforman datos de texto en información procesable</text>
+  <text class="subtitle" x="450" y="440">permitiendo observabilidad avanzada y debugging eficiente</text>
+</svg>

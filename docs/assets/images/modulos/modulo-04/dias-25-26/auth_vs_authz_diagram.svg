@@ -1,0 +1,103 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .text-primary { fill: #ffffff; font-family: Arial, sans-serif; }
+      .text-secondary { fill: #a0a0a0; font-family: Arial, sans-serif; }
+      .auth-box { fill: #2563eb; stroke: #3b82f6; stroke-width: 2; }
+      .authz-box { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
+      .arrow { stroke: #10b981; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .tool-box { fill: #7c3aed; stroke: #8b5cf6; stroke-width: 1; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" class="bg"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" class="text-primary" font-size="24" font-weight="bold" text-anchor="middle">
+    Flujo de Autenticación y Autorización en MCP
+  </text>
+  
+  <!-- User -->
+  <circle cx="100" cy="150" r="30" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+  <text x="100" y="155" class="text-primary" font-size="12" text-anchor="middle" font-weight="bold">USER</text>
+  
+  <!-- Authentication Box -->
+  <rect x="200" y="120" width="140" height="60" rx="8" class="auth-box"/>
+  <text x="270" y="140" class="text-primary" font-size="14" font-weight="bold" text-anchor="middle">Autenticación</text>
+  <text x="270" y="155" class="text-secondary" font-size="11" text-anchor="middle">¿Quién eres?</text>
+  <text x="270" y="170" class="text-secondary" font-size="10" text-anchor="middle">JWT, API Keys, OAuth</text>
+  
+  <!-- Authorization Box -->
+  <rect x="200" y="220" width="140" height="60" rx="8" class="authz-box"/>
+  <text x="270" y="240" class="text-primary" font-size="14" font-weight="bold" text-anchor="middle">Autorización</text>
+  <text x="270" y="255" class="text-secondary" font-size="11" text-anchor="middle">¿Qué puedes hacer?</text>
+  <text x="270" y="270" class="text-secondary" font-size="10" text-anchor="middle">RBAC, ABAC, Permisos</text>
+  
+  <!-- MCP Server -->
+  <rect x="450" y="170" width="120" height="80" rx="8" fill="#374151" stroke="#4b5563" stroke-width="2"/>
+  <text x="510" y="190" class="text-primary" font-size="14" font-weight="bold" text-anchor="middle">MCP Server</text>
+  <text x="510" y="205" class="text-secondary" font-size="10" text-anchor="middle">Valida permisos</text>
+  <text x="510" y="220" class="text-secondary" font-size="10" text-anchor="middle">por cada herramienta</text>
+  <text x="510" y="235" class="text-secondary" font-size="10" text-anchor="middle">y recurso</text>
+  
+  <!-- Tools -->
+  <rect x="620" y="120" width="80" height="40" rx="4" class="tool-box"/>
+  <text x="660" y="135" class="text-primary" font-size="10" text-anchor="middle">file_read</text>
+  <text x="660" y="150" class="text-secondary" font-size="8" text-anchor="middle">READ_FILES</text>
+  
+  <rect x="620" y="170" width="80" height="40" rx="4" class="tool-box"/>
+  <text x="660" y="185" class="text-primary" font-size="10" text-anchor="middle">db_write</text>
+  <text x="660" y="200" class="text-secondary" font-size="8" text-anchor="middle">WRITE_DB</text>
+  
+  <rect x="620" y="220" width="80" height="40" rx="4" class="tool-box"/>
+  <text x="660" y="235" class="text-primary" font-size="10" text-anchor="middle">admin_cmd</text>
+  <text x="660" y="250" class="text-secondary" font-size="8" text-anchor="middle">ADMIN</text>
+  
+  <!-- Arrows -->
+  <path d="M 130 150 L 190 150" class="arrow"/>
+  <path d="M 270 180 L 270 210" class="arrow"/>
+  <path d="M 350 210 L 440 210" class="arrow"/>
+  <path d="M 570 210 L 610 140" class="arrow"/>
+  <path d="M 570 210 L 610 190" class="arrow"/>
+  <path d="M 570 210 L 610 240" class="arrow"/>
+  
+  <!-- Labels -->
+  <text x="160" y="140" class="text-secondary" font-size="10">Credenciales</text>
+  <text x="280" y="200" class="text-secondary" font-size="10">Token válido</text>
+  <text x="370" y="200" class="text-secondary" font-size="10">Consulta permisos</text>
+  
+  <!-- Bottom explanation -->
+  <text x="400" y="350" class="text-primary" font-size="16" font-weight="bold" text-anchor="middle">
+    Principio de Menor Privilegio
+  </text>
+  <text x="400" y="370" class="text-secondary" font-size="12" text-anchor="middle">
+    Cada usuario tiene exactamente los permisos mínimos necesarios
+  </text>
+  <text x="400" y="385" class="text-secondary" font-size="12" text-anchor="middle">
+    para realizar sus tareas, ni más ni menos
+  </text>
+  
+  <!-- Permission Matrix -->
+  <rect x="50" y="380" width="300" height="100" rx="8" fill="#1f2937" stroke="#374151" stroke-width="1"/>
+  <text x="200" y="400" class="text-primary" font-size="12" font-weight="bold" text-anchor="middle">
+    Matriz de Permisos Ejemplo
+  </text>
+  
+  <text x="70" y="420" class="text-secondary" font-size="10">Admin:</text>
+  <text x="120" y="420" class="text-primary" font-size="10">✓ READ_FILES ✓ WRITE_DB ✓ ADMIN</text>
+  
+  <text x="70" y="435" class="text-secondary" font-size="10">Editor:</text>
+  <text x="120" y="435" class="text-primary" font-size="10">✓ READ_FILES ✓ WRITE_DB ✗ ADMIN</text>
+  
+  <text x="70" y="450" class="text-secondary" font-size="10">Viewer:</text>
+  <text x="120" y="450" class="text-primary" font-size="10">✓ READ_FILES ✗ WRITE_DB ✗ ADMIN</text>
+  
+  <text x="70" y="465" class="text-secondary" font-size="10">Guest:</text>
+  <text x="120" y="465" class="text-primary" font-size="10">✗ READ_FILES ✗ WRITE_DB ✗ ADMIN</text>
+</svg>
