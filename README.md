@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="docs/assets/images/logo-bc-mcp-server.webp" alt="Logo del MCP Server Bootcamp" width="150"/>
+<img src="docs/assets/images/logo-bc-mcp-server.webp" alt="Logo del MCP Server Bootcamp" width="400"/>
 
 **Un bootcamp completo y gratuito para dominar la creación de servidores MCP**
 
