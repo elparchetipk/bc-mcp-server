@@ -1,0 +1,242 @@
+{
+  "name": "mcp-bootcamp-studio",
+  "displayName": "MCP Bootcamp Studio",
+  "description": "Interactive MCP Server development and testing studio for bootcamp students",
+  "version": "0.1.0",
+  "publisher": "mcp-bootcamp",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other",
+    "Testing",
+    "Education"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bootcamp",
+    "server",
+    "testing",
+    "claude",
+    "ai"
+  ],
+  "activationEvents": [
+    "workspaceContains:**/*.ts",
+    "workspaceContains:**/*.js",
+    "workspaceContains:**/package.json"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mcp-bootcamp-studio",
+          "title": "MCP Bootcamp Studio",
+          "icon": "$(server-process)"
+        }
+      ]
+    },
+    "views": {
+      "mcp-bootcamp-studio": [
+        {
+          "id": "mcpServers",
+          "name": "Servidores MCP",
+          "when": "workspaceHasFolder"
+        },
+        {
+          "id": "mcpTools",
+          "name": "Herramientas Disponibles",
+          "when": "mcpBootcamp.hasActiveServer"
+        },
+        {
+          "id": "mcpChat",
+          "name": "Chat Simulator",
+          "type": "webview",
+          "when": "mcpBootcamp.hasActiveServer"
+        },
+        {
+          "id": "mcpLogs",
+          "name": "Protocol Logs",
+          "when": "mcpBootcamp.hasActiveServer"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "mcpBootcamp.addServer",
+        "title": "Agregar Servidor MCP",
+        "icon": "$(add)"
+      },
+      {
+        "command": "mcpBootcamp.connectServer",
+        "title": "Conectar Servidor",
+        "icon": "$(plug)"
+      },
+      {
+        "command": "mcpBootcamp.disconnectServer",
+        "title": "Desconectar Servidor",
+        "icon": "$(debug-disconnect)"
+      },
+      {
+        "command": "mcpBootcamp.refreshServers",
+        "title": "Refrescar",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "mcpBootcamp.callTool",
+        "title": "Ejecutar Herramienta",
+        "icon": "$(play)"
+      },
+      {
+        "command": "mcpBootcamp.inspectTool",
+        "title": "Inspeccionar Herramienta",
+        "icon": "$(search)"
+      },
+      {
+        "command": "mcpBootcamp.clearLogs",
+        "title": "Limpiar Logs",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "mcpBootcamp.exportLogs",
+        "title": "Exportar Logs",
+        "icon": "$(export)"
+      },
+      {
+        "command": "mcpBootcamp.openBootcampDocs",
+        "title": "Abrir Documentación Bootcamp",
+        "icon": "$(book)"
+      },
+      {
+        "command": "mcpBootcamp.runBootcampExample",
+        "title": "Ejecutar Ejemplo del Bootcamp",
+        "icon": "$(rocket)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "mcpBootcamp.addServer",
+          "when": "view == mcpServers",
+          "group": "navigation"
+        },
+        {
+          "command": "mcpBootcamp.refreshServers",
+          "when": "view == mcpServers",
+          "group": "navigation"
+        },
+        {
+          "command": "mcpBootcamp.clearLogs",
+          "when": "view == mcpLogs",
+          "group": "navigation"
+        },
+        {
+          "command": "mcpBootcamp.exportLogs",
+          "when": "view == mcpLogs",
+          "group": "navigation"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "mcpBootcamp.connectServer",
+          "when": "view == mcpServers && viewItem == mcpServer.disconnected",
+          "group": "inline"
+        },
+        {
+          "command": "mcpBootcamp.disconnectServer",
+          "when": "view == mcpServers && viewItem == mcpServer.connected",
+          "group": "inline"
+        },
+        {
+          "command": "mcpBootcamp.callTool",
+          "when": "view == mcpTools && viewItem == mcpTool",
+          "group": "inline"
+        },
+        {
+          "command": "mcpBootcamp.inspectTool",
+          "when": "view == mcpTools && viewItem == mcpTool",
+          "group": "context"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "mcpBootcamp.openBootcampDocs",
+          "when": "true"
+        },
+        {
+          "command": "mcpBootcamp.runBootcampExample",
+          "when": "workspaceHasFolder"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "MCP Bootcamp Studio",
+      "properties": {
+        "mcpBootcamp.autoConnect": {
+          "type": "boolean",
+          "default": true,
+          "description": "Conectar automáticamente a servidores MCP al abrir workspace"
+        },
+        "mcpBootcamp.showProtocolLogs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Mostrar logs detallados del protocolo MCP para aprendizaje"
+        },
+        "mcpBootcamp.chatSimulator.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Habilitar simulador de chat estilo Claude Desktop"
+        },
+        "mcpBootcamp.chatSimulator.autoDetectTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Detectar automáticamente cuándo usar herramientas en el chat"
+        },
+        "mcpBootcamp.examples.autoLoad": {
+          "type": "boolean",
+          "default": true,
+          "description": "Cargar automáticamente ejemplos del bootcamp al detectar proyectos MCP"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./dist/test/runTest.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.9",
+    "@types/vscode": "^1.102.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vscode/test-electron": "^2.3.0",
+    "@vscode/vsce": "^2.19.0",
+    "eslint": "^8.0.0",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tu-usuario/bc-mcp-server.git",
+    "directory": "herramientas/mcp-bootcamp-studio"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/bc-mcp-server/issues"
+  },
+  "homepage": "https://github.com/tu-usuario/bc-mcp-server#readme",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#1e293b",
+    "theme": "dark"
+  }
+}
