@@ -1,0 +1,53 @@
+# docker-compose.yml
+# Archivo de configuración para Docker Compose.
+# Define y orquesta los servicios necesarios para el entorno de desarrollo del bootcamp.
+# Uso: docker compose up -d
+
+version: '3.8'
+
+# Definición de los servicios (contenedores)
+services:
+  # 1. Contenedor de Desarrollo Principal
+  # Basado en Node.js, sirve como el entorno de trabajo principal.
+  # Monta el código fuente local para desarrollo en tiempo real.
+  bootcamp-dev:
+    image: node:18-alpine
+    container_name: bootcamp-dev
+    working_dir: /app
+    # Mantiene el contenedor corriendo para poder ejecutar comandos dentro de él.
+    command: tail -f /dev/null
+    volumes:
+      # Monta el directorio actual del proyecto en /app dentro del contenedor.
+      - .:/app
+      # Crea un volumen persistente para el store de pnpm, acelerando instalaciones.
+      - pnpm_store:/root/.local/share/pnpm/store/v3
+    environment:
+      - NODE_ENV=development
+      # Asegura que el servicio de desarrollo espere a que la BD esté lista.
+    depends_on:
+      - db
+
+  # 2. Contenedor de la Base de Datos
+  # Servicio de PostgreSQL para los módulos de persistencia.
+  db:
+    image: postgres:15-alpine
+    container_name: postgres-db
+    restart: always
+    environment:
+      # Las credenciales se cargan desde el archivo .env para mayor seguridad.
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      # Expone el puerto de PostgreSQL al host para conectar con clientes de BD.
+      - '5432:5432'
+    volumes:
+      # Crea un volumen persistente para los datos de PostgreSQL.
+      - postgres_data:/var/lib/postgresql/data
+
+# Definición de los volúmenes nombrados para persistencia de datos.
+volumes:
+  postgres_data:
+    driver: local
+  pnpm_store:
+    driver: local
