@@ -243,7 +243,7 @@ jobs:
 
     steps:
       - name: 📢 Crear discusión para el release
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const { data: release } = await github.rest.repos.getReleaseByTag({
