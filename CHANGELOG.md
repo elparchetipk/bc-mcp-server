@@ -29,6 +29,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Documentation
 
+- **Documentation**: update project structure (3 changes) for module 1 (fundamentals)
+- **Documentation**: update project structure (2 changes) for module 1 (fundamentals)
+- **Documentation**: update project structure (66 changes) for module 1 (fundamentals)
+- **Documentation**: update project structure (2 changes)
+- **Project**: update project structure (3 changes)
+- **Project**: update project structure (18 changes)
+- **Documentation**: update project structure (6 changes)
+- **Project**: update project structure (1 changes)
+- **Documentation**: update project structure (2 changes)
+- **Project**: update project structure (2 changes)
+- complete automation documentation and template index
+- plan-trabajo.md added
+
+### Build System
+
+- **Dependencies**: update project structure (4 changes)
+
+### Maintenance
+
+- **Configuration**: update project structure (8 changes)
+- **Configuration**: update project structure (3 changes)
+- **Configuration**: update project structure (1 changes)
+- **Changelog**: update changelog with recent automation commits
+- initial commit
+## [0.1.0] - 2025-07-22
+
+### Added
+
+- **Examples**: update project structure (2 changes) for module 1 (fundamentals)
+- **Tooling**: update project structure (5 changes)
+- **Examples**: update project structure (17 changes) for module 6 (advanced architectures)
+- copilot-instructions.md added
+
+### Fixed
+
+- **README**: aumentar el tamaño del logo del bootcamp a 400px
+
+### Documentation
+
 - **Documentation**: update project structure (2 changes) for module 1 (fundamentals)
 - **Documentation**: update project structure (66 changes) for module 1 (fundamentals)
 - **Documentation**: update project structure (2 changes)
