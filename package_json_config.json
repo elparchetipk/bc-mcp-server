@@ -1,0 +1,43 @@
+{
+  "name": "mcp-calculator-server",
+  "version": "1.0.0",
+  "description": "Servidor MCP para operaciones de calculadora inteligente - Bootcamp Día 3-4",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js",
+    "test": "node --test tests/**/*.test.js",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'Linting será configurado en módulos posteriores'"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "calculator",
+    "bootcamp",
+    "ai-tools"
+  ],
+  "author": "Tu Nombre <tu.email@ejemplo.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tu-usuario/mcp-calculator-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tu-usuario/mcp-calculator-server/issues"
+  },
+  "homepage": "https://github.com/tu-usuario/mcp-calculator-server#readme"
+}
