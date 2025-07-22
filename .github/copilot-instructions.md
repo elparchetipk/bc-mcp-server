@@ -18,6 +18,8 @@ Este bootcamp de 7 semanas enseña desarrollo de servidores MCP desde conceptos 
 
 ### Stack Tecnológico Principal:
 
+**SIEMPRE** usa las imágenes más livianas para Docker
+
 - **TypeScript** 5.0+ (lenguaje principal)
 - **Node.js** 18+ (runtime)
 - **Python** 3.11+ (ejemplos FastAPI)
