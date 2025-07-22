@@ -1,0 +1,195 @@
+# 🚀 MCP Server Bootcamp: De Zero a Hero
+
+<div align="center">
+
+![MCP Bootcamp](docs/assets/images/mcp-bootcamp-hero.svg)
+
+**Un bootcamp completo y gratuito para dominar la creación de servidores MCP**
+
+[![Open Source](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://opensource.org/)
+[![GitHub Stars](https://img.shields.io/github/stars/tu-usuario/mcp-server-bootcamp?style=social)](https://github.com/tu-usuario/mcp-server-bootcamp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+[📚 Comenzar Bootcamp](#-comenzar-el-bootcamp) • 
+[🎯 Módulos](#-módulos) • 
+[🛠️ Instalación](#️-instalación) • 
+[🤝 Contribuir](#-contribuir) • 
+[💬 Comunidad](#-comunidad)
+
+</div>
+
+## 🎯 ¿Qué Aprenderás?
+
+Transforma tu comprensión de los **Model Context Protocol (MCP) Servers** desde conceptos básicos hasta arquitecturas empresariales avanzadas en solo **7 semanas**:
+
+- 🔧 **Fundamentos Sólidos**: Arquitectura, configuración y primer servidor funcional
+- ⚡ **Herramientas Avanzadas**: Recursos dinámicos, prompts inteligentes e integración de APIs
+- 🗄️ **Persistencia**: Bases de datos, ORMs y optimización de performance
+- 🔐 **Seguridad**: Autenticación, autorización y auditoría empresarial
+- 🧪 **Calidad**: Testing, CI/CD y observabilidad
+- 🏗️ **Arquitecturas**: Microservicios, escalabilidad y resilencia
+- 🎯 **Proyecto Real**: Aplicación completa lista para producción
+
+## 🚀 Comenzar el Bootcamp
+
+### Prerrequisitos
+
+- **Node.js** 18+ y **pnpm** 8+
+- **Python** 3.11+ (para ejemplos FastAPI)
+- **Docker** y **Docker Compose**
+- **Git** para control de versiones
+- Editor como **VS Code** (configuración incluida)
+
+### Instalación Rápida
+
+```bash
+# Clonar el repositorio
+git clone https://github.com/tu-usuario/mcp-server-bootcamp.git
+cd mcp-server-bootcamp
+
+# Configurar workspace
+pnpm install
+pnpm run setup
+
+# Verificar instalación
+pnpm run verify-setup
+
+# Iniciar el primer módulo
+cd ejemplos/modulo-01/calculadora-basica
+pnpm run dev
+```
+
+### 🐳 Desarrollo con Docker
+
+```bash
+# Desarrollo completo en contenedores
+docker compose up -d
+
+# Acceder al entorno de desarrollo
+docker compose exec bootcamp-dev bash
+```
+
+## 📋 Módulos
+
+### 📖 [Módulo 1: Fundamentos y Conceptos Base](docs/modulos/modulo-01-fundamentos/)
+**Semana 1** • Comprensión conceptual, configuración y primer servidor
+
+- 🎯 **Días 1-2**: Arquitectura MCP y casos de uso
+- 🛠️ **Días 3-4**: Entorno y calculadora inteligente
+- 🔍 **Días 5-7**: Anatomía completa de servidores MCP
+
+### ⚡ [Módulo 2: Herramientas Avanzadas y Recursos](docs/modulos/modulo-02-herramientas-avanzadas/)
+**Semana 2** • Recursos dinámicos y contexto inteligente
+
+- 📊 **Días 8-10**: Sistema de recursos y gestión de datos
+- 🧠 **Días 11-12**: Prompts dinámicos y contexto adaptativo
+- 🌐 **Días 13-14**: Integración con APIs externas
+
+### 🗄️ [Módulo 3: Persistencia y Bases de Datos](docs/modulos/modulo-03-persistencia/)
+**Semana 3** • Almacenamiento y optimización
+
+- 💾 **Días 15-17**: SQLite, PostgreSQL y patrones de acceso
+- 🔄 **Días 18-19**: Prisma ORM y modelado de datos
+- ⚡ **Días 20-21**: Cache distribuido y optimización
+
+### 🔐 [Módulo 4: Seguridad y Autenticación](docs/modulos/modulo-04-seguridad/)
+**Semana 4** • Seguridad empresarial
+
+- 🛡️ **Días 22-24**: Fundamentos y autenticación robusta
+- 👥 **Días 25-26**: RBAC/ABAC y control granular
+- 📋 **Días 27-28**: Auditoría y logging estructurado
+
+### 🧪 [Módulo 5: Testing y Calidad](docs/modulos/modulo-05-testing/)
+**Semana 5** • Calidad y automatización
+
+- ✅ **Días 29-31**: Testing integral y mocking
+- 🔄 **Días 32-33**: CI/CD y deployment automatizado
+- 📊 **Días 34-35**: Monitoreo y observabilidad
+
+### 🏗️ [Módulo 6: Arquitecturas Avanzadas](docs/modulos/modulo-06-arquitecturas-avanzadas/)
+**Semana 6** • Escalabilidad empresarial
+
+- 🔗 **Días 36-38**: Microservicios y sistemas distribuidos
+- 🚀 **Días 39-40**: Performance y escalabilidad extrema
+- 🛡️ **Días 41-42**: Resilencia y alta disponibilidad
+
+### 🎯 [Módulo 7: Proyecto Final](docs/modulos/modulo-07-proyecto-final/)
+**Semana 7** • Aplicación tu expertise
+
+- 📋 **Días 43-45**: Diseño de arquitectura completa
+- 💻 **Días 46-47**: Implementación con mentoría
+- 🚀 **Días 48-49**: Deployment y presentación
+
+## 🛠️ Tecnologías Principales
+
+<div align="center">
+
+| Tecnología | Uso | Versión |
+|------------|-----|---------|
+| ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white) | Desarrollo principal | 5.0+ |
+| ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=flat&logo=node.js&logoColor=white) | Runtime JavaScript | 18+ |
+| ![Python](https://img.shields.io/badge/Python-3776AB?style=flat&logo=python&logoColor=white) | Ejemplos FastAPI | 3.11+ |
+| ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white) | Contenedorización | Latest |
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat&logo=postgresql&logoColor=white) | Base de datos | 15+ |
+| ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=flat&logo=Prisma&logoColor=white) | ORM | 5.0+ |
+
+</div>
+
+## 📊 Evaluación y Certificación
+
+Cada módulo incluye:
+- ✅ **Rúbricas detalladas** con criterios claros
+- 🎯 **Ejercicios prácticos** con soluciones
+- 🏆 **Proyectos incrementales** que construyen expertise
+- 📈 **Auto-evaluación** y peer review
+
+## 🤝 Contribuir
+
+¡Tu contribución hace que este bootcamp sea mejor para todos! 
+
+### Formas de Contribuir
+
+- 🐛 **Reportar bugs** o mejoras en el contenido
+- 📝 **Mejorar documentación** y ejemplos
+- 💡 **Proponer nuevos módulos** o ejercicios
+- 🌍 **Traducir contenido** a otros idiomas
+- ⭐ **Compartir y dar estrella** al repositorio
+
+### Proceso de Contribución
+
+1. **Fork** el repositorio
+2. **Crea una rama** para tu feature: `git checkout -b feature/nueva-funcionalidad`
+3. **Commits descriptivos**: `git commit -m 'feat: agregar ejercicio de WebSockets'`
+4. **Push** a tu fork: `git push origin feature/nueva-funcionalidad`
+5. **Pull Request** con descripción detallada
+
+Lee nuestra [**Guía de Contribución**](CONTRIBUTING.md) para más detalles.
+
+## 📜 Licencia
+
+Este proyecto está licenciado bajo la **MIT License** - mira el archivo [LICENSE](LICENSE) para detalles.
+
+## 💬 Comunidad
+
+<div align="center">
+
+[![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.gg/tu-server)
+[![GitHub Discussions](https://img.shields.io/badge/GitHub-Discussions-181717?style=for-the-badge&logo=github)](https://github.com/tu-usuario/mcp-server-bootcamp/discussions)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/tu-handle)
+
+**¿Tienes preguntas?** Únete a nuestras discusiones o crea un issue.
+
+**¿Quieres mantenerte actualizado?** Síguenos y dale ⭐ al repositorio.
+
+</div>
+
+---
+
+<div align="center">
+
+**Hecho con ❤️ para la comunidad de desarrolladores MCP**
+
+[⬆️ Volver arriba](#-mcp-server-bootcamp-de-zero-a-hero)
+
+</div>
