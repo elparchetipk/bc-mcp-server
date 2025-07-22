@@ -143,6 +143,10 @@ test-output/
 mcp-logs/
 server-logs/
 
+# Autocommit system
+.autocommit/
+*.lock
+
 # Generated documentation
 docs/generated/
 

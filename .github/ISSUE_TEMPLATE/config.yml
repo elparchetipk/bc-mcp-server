@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/tu-usuario/mcp-server-bootcamp/discussions
+    about: Para preguntas generales, discusiones sobre conceptos y compartir experiencias
+  - name: 📚 Documentación del Bootcamp
+    url: https://github.com/tu-usuario/mcp-server-bootcamp/tree/main/docs
+    about: Consulta la documentación completa de todos los módulos
+  - name: 🎓 Recursos de MCP
+    url: https://modelcontextprotocol.io/
+    about: Documentación oficial del Model Context Protocol
+  - name: 🆘 Discord/Slack Community
+    url: https://discord.gg/tu-server
+    about: Chat en tiempo real con la comunidad del bootcamp
