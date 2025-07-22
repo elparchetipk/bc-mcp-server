@@ -29,6 +29,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Maintenance
 
+- **Changelog**: update changelog with recent automation commits
+- initial commit
+## [0.1.0] - 2025-07-22
+
+### Added
+
+- **Tooling**: update project structure (5 changes)
+- **Examples**: update project structure (17 changes) for module 6 (advanced architectures)
+- copilot-instructions.md added
+
+### Documentation
+
+- complete automation documentation and template index
+- plan-trabajo.md added
+
+### Maintenance
+
 - initial commit
 ## [0.1.0] - 2025-07-22
 
