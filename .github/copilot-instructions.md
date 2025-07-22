@@ -30,6 +30,35 @@ Este bootcamp de 7 semanas enseña desarrollo de servidores MCP desde conceptos 
 - **Prisma** 5.0+ (ORM)
 - **SQLite** (persistencia local)
 
+## Contexto del Entorno de Desarrollo
+
+**ENTORNO OBJETIVO**: Fedora 42 Linux sin MCP Server Desktop
+**IMPORTANTE**: El instructor NO tiene instalado MCP Server Desktop de Anthropic
+
+### Implicaciones para el Desarrollo:
+
+- **Testing Manual**: Usar herramientas CLI y scripts para probar servidores MCP
+- **Sin GUI MCP**: Todos los ejemplos deben funcionar sin interfaz gráfica
+- **Testing con cURL/Node**: Implementar pruebas usando herramientas de línea de comandos
+- **Documentación detallada**: Incluir instrucciones para testing sin desktop app
+- **Docker prioritario**: Contenedorización para consistencia multiplataforma
+
+### Herramientas de Testing Recomendadas:
+
+```bash
+# Testing básico con Node.js
+node test-mcp-server.js
+
+# Testing con cURL (para transportes HTTP)
+curl -X POST http://localhost:3000/mcp/...
+
+# Docker para aislamiento
+docker run --rm -it mcp-server-test
+
+# Scripts de validación automática
+npm run test:mcp
+```
+
 ## Directrices de Asistencia
 
 ### 1. Enfoque Pedagógico Progresivo
