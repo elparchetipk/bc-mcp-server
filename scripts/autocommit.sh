@@ -56,10 +56,16 @@ generate_commit_message() {
     local files_modified=0
     local files_deleted=0
     
-    # Count changes by type
-    files_added=$(echo "$changes" | grep -c "^A" || echo 0)
-    files_modified=$(echo "$changes" | grep -c "^M" || echo 0)
-    files_deleted=$(echo "$changes" | grep -c "^D" || echo 0)
+    # Count changes by type (with safe defaults)
+    local files_added files_modified files_deleted
+    files_added=$(echo "$changes" | grep -c "^A" 2>/dev/null || echo "0")
+    files_modified=$(echo "$changes" | grep -c "^M" 2>/dev/null || echo "0")
+    files_deleted=$(echo "$changes" | grep -c "^D" 2>/dev/null || echo "0")
+    
+    # Ensure variables are numeric
+    files_added=${files_added:-0}
+    files_modified=${files_modified:-0}
+    files_deleted=${files_deleted:-0}
     
     # Detect primary change type based on file patterns
     if echo "$changes" | grep -q "docs/"; then
@@ -111,7 +117,9 @@ generate_commit_message() {
             description="remove $files_deleted obsolete files"
         fi
     else
-        local total_changes=$((files_added + files_modified + files_deleted))
+        # Calculate total changes safely
+        local total_changes
+        total_changes=$(echo "$changes" | wc -l)
         description="update project structure ($total_changes changes)"
     fi
     
@@ -163,6 +171,25 @@ done
 # Generate commit message
 commit_message=$(generate_commit_message "$staged_changes")
 log "Generated commit message: $commit_message"
+
+# Update changelog if there are substantial changes
+# (Skip for minor config changes to avoid excessive changelog entries)
+if ! echo "$staged_changes" | grep -q "^M.*\.gitignore$\|^M.*\.github/\|^A.*\.gitkeep$"; then
+    log "Updating changelog before commit..."
+    if "$REPO_DIR/scripts/update-changelog.sh" >> "$LOG_FILE" 2>&1; then
+        log "Changelog updated successfully"
+        
+        # Check if changelog was modified and stage it
+        if ! git diff --quiet CHANGELOG.md; then
+            git add CHANGELOG.md
+            log "Staged updated CHANGELOG.md"
+        fi
+    else
+        log "WARNING: Failed to update changelog, proceeding with commit anyway"
+    fi
+else
+    log "Skipping changelog update for minor configuration changes"
+fi
 
 # Create commit
 if git commit -m "$commit_message"; then
