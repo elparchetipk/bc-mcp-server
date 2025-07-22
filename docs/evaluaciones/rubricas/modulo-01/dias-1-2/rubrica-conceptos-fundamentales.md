@@ -3,10 +3,10 @@
 
 ### 📊 Información General
 
-**Módulo**: 1 - Fundamentos y Conceptos Base  
-**Período**: Días 1-2 (Comprensión Conceptual Profunda)  
-**Duración**: 16 horas académicas  
-**Modalidad**: Teórico-práctica con ejercicios conceptuales  
+**Módulo**: 1 - Fundamentos y Conceptos Base
+**Período**: Días 1-2 (Comprensión Conceptual Profunda)
+**Duración**: 16 horas académicas
+**Modalidad**: Teórico-práctica con ejercicios conceptuales
 
 ### 🎯 Objetivos de Aprendizaje Evaluados
 
@@ -86,7 +86,7 @@ Al completar esta evaluación, el estudiante demuestra que puede:
 Total: 100 puntos
 
 Comprensión Conceptual    : 25 puntos
-Análisis de Arquitectura  : 25 puntos  
+Análisis de Arquitectura  : 25 puntos
 Comparación con Anteriores: 20 puntos
 Casos de Uso             : 20 puntos
 Comunicación             : 10 puntos
