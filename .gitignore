@@ -2,6 +2,9 @@
 # MCP Server Bootcamp - .gitignore
 # ================================
 
+# Claude AI Development Base (sin trazabilidad)
+claude-ai/
+
 # Dependencies
 node_modules/
 .pnpm-store/
