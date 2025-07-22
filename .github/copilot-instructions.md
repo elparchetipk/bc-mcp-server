@@ -19,6 +19,7 @@ Este bootcamp de 7 semanas enseña desarrollo de servidores MCP desde conceptos 
 ### Stack Tecnológico Principal:
 
 **SIEMPRE** usa las imágenes más livianas para Docker
+**NUNCA** generar tets en carpetas diferentes a bc-mcp-server/tests
 
 - **TypeScript** 5.0+ (lenguaje principal)
 - **Node.js** 18+ (runtime)

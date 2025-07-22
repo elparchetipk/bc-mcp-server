@@ -1,0 +1,53 @@
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All files
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# TypeScript/JavaScript files
+[*.{js,jsx,ts,tsx,mjs,cjs}]
+indent_size = 2
+max_line_length = 80
+
+# JSON files
+[*.json]
+indent_size = 2
+max_line_length = 120
+
+# YAML files
+[*.{yml,yaml}]
+indent_size = 2
+
+# Markdown files
+[*.md]
+trim_trailing_whitespace = false
+max_line_length = 100
+
+# Shell scripts
+[*.{sh,bash}]
+indent_size = 4
+
+# Docker files
+[{Dockerfile,*.dockerfile}]
+indent_size = 2
+
+# Python files (para ejemplos de FastAPI)
+[*.py]
+indent_size = 4
+max_line_length = 88
+
+# SQL files
+[*.sql]
+indent_size = 2
+
+# Configuration files
+[*.{toml,ini}]
+indent_size = 2
