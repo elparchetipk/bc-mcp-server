@@ -140,7 +140,7 @@ jobs:
           echo "description: Bootcamp completo para dominar servidores MCP" >> _site/_config.yml
 
       - name: 📤 Subir artefacto de documentación
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: '_site'
 
