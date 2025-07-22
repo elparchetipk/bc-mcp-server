@@ -1,0 +1,23 @@
+{
+  "name": "mi-primer-servidor-mcp",
+  "version": "1.0.0",
+  "description": "Ejercicio 1: Implementar mi primer servidor MCP",
+  "type": "module",
+  "main": "dist/solucion.js",
+  "scripts": {
+    "build": "tsc",
+    "build:esqueleto": "tsc server-esqueleto.ts --outDir dist --target ES2022 --module ES2022",
+    "build:solucion": "tsc solucion.ts --outDir dist --target ES2022 --module ES2022",
+    "start": "node dist/solucion.js",
+    "start:esqueleto": "node dist/server-esqueleto.js",
+    "dev": "tsc && node dist/solucion.js",
+    "test": "node ../../../servidor-inicial/test-client.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}

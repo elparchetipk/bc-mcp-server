@@ -1,0 +1,33 @@
+{
+  "name": "calculadora-basica-mcp",
+  "version": "1.0.0",
+  "description": "Servidor MCP básico para operaciones matemáticas - Módulo 1 Días 1-2",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc && node dist/server.js",
+    "clean": "rm -rf dist",
+    "test": "node ../servidor-inicial/test-client.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "calculator",
+    "bootcamp",
+    "education"
+  ],
+  "author": "MCP Server Bootcamp",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "calculator-mcp-server",
+  "version": "1.0.0",
+  "description": "Servidor MCP de calculadora - Primer ejemplo del Bootcamp MCP Server",
+  "type": "module",
+  "main": "calculator-server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node calculator-server.js",
+    "dev": "tsc && node calculator-server.js",
+    "test": "node test-client.js",
+    "lint": "eslint . --ext .ts,.js",
+    "format": "prettier --write \"**/*.{ts,js,json,md}\"",
+    "clean": "rm -rf *.js *.js.map"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "calculator",
+    "bootcamp",
+    "tutorial",
+    "example"
+  ],
+  "author": "Bootcamp MCP Server",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bootcamp-mcp-server/ejemplos"
+  },
+  "bugs": {
+    "url": "https://github.com/bootcamp-mcp-server/ejemplos/issues"
+  },
+  "homepage": "https://github.com/bootcamp-mcp-server/ejemplos#readme",
+  "mcp": {
+    "server": {
+      "command": "node",
+      "args": [
+        "calculator-server.js"
+      ],
+      "env": {}
+    },
+    "capabilities": [
+      "tools"
+    ],
+    "tools": [
+      "add",
+      "subtract",
+      "multiply",
+      "divide",
+      "power",
+      "sqrt",
+      "percentage",
+      "factorial"
+    ]
+  }
+}

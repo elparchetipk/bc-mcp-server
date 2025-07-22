@@ -1,0 +1,1170 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCP Web Simulator - Bootcamp MCP Server</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iOCIgZmlsbD0iIzBmMTcyYSIvPgo8cGF0aCBkPSJNOCAxMkg0VjI0SDE2VjIwSDE4VjEySDE2VjE2SDE0VjE0SDE2VjEySDE4VjEwSDE2VjEySDhaTTEwIDE0SDE0VjE2SDEwVjE0WiIgZmlsbD0iIzNiODJmNiIvPgo8L3N2Zz4K"
+    />
+    <style>
+      :root {
+        /* Dark Theme Colors */
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --bg-tertiary: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #e2e8f0;
+        --text-muted: #64748b;
+
+        /* Semantic Colors */
+        --accent-blue: #3b82f6;
+        --accent-blue-dark: #1e40af;
+        --accent-green: #10b981;
+        --accent-green-dark: #064e3b;
+        --accent-red: #ef4444;
+        --accent-red-dark: #7c2d12;
+        --accent-amber: #f59e0b;
+        --accent-amber-dark: #92400e;
+
+        /* Border Colors */
+        --border-primary: #475569;
+        --border-secondary: #334155;
+
+        /* Shadows */
+        --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+
+        /* Typography */
+        --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-mono: 'Fira Code', 'Monaco', 'Cascadia Code', monospace;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: var(--font-family);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      .header {
+        background: var(--bg-secondary);
+        border-bottom: 1px solid var(--border-primary);
+        padding: 1.5rem 2rem;
+        box-shadow: var(--shadow-md);
+      }
+
+      .header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header h1 {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--accent-blue);
+        margin: 0;
+      }
+
+      .header p {
+        margin: 0.25rem 0 0 0;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      .theme-toggle {
+        padding: 0.5rem;
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-primary);
+        border-radius: 6px;
+        color: var(--text-primary);
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      .theme-toggle:hover {
+        background: var(--accent-blue);
+      }
+
+      /* Main Container */
+      .container {
+        display: grid;
+        grid-template-columns: 320px 1fr 300px;
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+        flex: 1;
+      }
+
+      @media (max-width: 1200px) {
+        .container {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+      }
+
+      /* Sidebar */
+      .sidebar {
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-secondary);
+        height: fit-content;
+        position: sticky;
+        top: 2rem;
+      }
+
+      .sidebar h3 {
+        color: var(--accent-blue);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .tool-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .tool-item {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-primary);
+        border-radius: 8px;
+        padding: 1rem;
+        transition: all 0.2s ease;
+        cursor: pointer;
+      }
+
+      .tool-item:hover {
+        background: var(--accent-blue-dark);
+        border-color: var(--accent-blue);
+        transform: translateY(-1px);
+      }
+
+      .tool-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        font-size: 0.9rem;
+      }
+
+      .tool-desc {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        margin-top: 0.25rem;
+      }
+
+      /* Chat Area */
+      .chat-area {
+        display: flex;
+        flex-direction: column;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        border: 1px solid var(--border-secondary);
+        overflow: hidden;
+      }
+
+      .chat-header {
+        background: var(--bg-tertiary);
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid var(--border-primary);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chat-title {
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+
+      .clear-btn {
+        padding: 0.5rem 1rem;
+        background: var(--accent-red-dark);
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+      }
+
+      .clear-btn:hover {
+        background: var(--accent-red);
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 1.5rem;
+        overflow-y: auto;
+        min-height: 400px;
+        max-height: 500px;
+        background: var(--bg-primary);
+      }
+
+      .message {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        border-radius: 12px;
+        max-width: 85%;
+        word-wrap: break-word;
+      }
+
+      .message.user {
+        background: var(--accent-blue);
+        color: white;
+        margin-left: auto;
+        text-align: right;
+        border-bottom-right-radius: 4px;
+      }
+
+      .message.assistant {
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-primary);
+        color: var(--text-primary);
+        border-bottom-left-radius: 4px;
+      }
+
+      .message.system {
+        background: var(--accent-green-dark);
+        border: 1px solid var(--accent-green);
+        color: var(--text-primary);
+        font-family: var(--font-mono);
+        font-size: 0.85rem;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .message.error {
+        background: var(--accent-red-dark);
+        border: 1px solid var(--accent-red);
+        color: var(--text-primary);
+      }
+
+      .message pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        margin: 0;
+        font-family: var(--font-mono);
+      }
+
+      .input-area {
+        padding: 1.5rem;
+        background: var(--bg-tertiary);
+        border-top: 1px solid var(--border-primary);
+        display: flex;
+        gap: 1rem;
+        align-items: flex-end;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 0.75rem 1rem;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-primary);
+        border-radius: 8px;
+        color: var(--text-primary);
+        font-size: 1rem;
+        font-family: var(--font-family);
+        resize: vertical;
+        min-height: 44px;
+        max-height: 120px;
+      }
+
+      .chat-input:focus {
+        outline: none;
+        border-color: var(--accent-blue);
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+      }
+
+      .send-btn {
+        padding: 0.75rem 1.5rem;
+        background: var(--accent-blue);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 1rem;
+        font-weight: 600;
+        transition: all 0.2s ease;
+        min-width: 100px;
+      }
+
+      .send-btn:hover:not(:disabled) {
+        background: var(--accent-blue-dark);
+        transform: translateY(-1px);
+      }
+
+      .send-btn:disabled {
+        background: var(--text-muted);
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      /* Inspector Panel */
+      .inspector {
+        background: var(--bg-secondary);
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid var(--border-secondary);
+        height: fit-content;
+        position: sticky;
+        top: 2rem;
+      }
+
+      .inspector h3 {
+        color: var(--accent-amber);
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      .protocol-status {
+        background: var(--bg-tertiary);
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .status-indicator {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent-green);
+      }
+
+      .examples {
+        margin-top: 1.5rem;
+      }
+
+      .examples h4 {
+        color: var(--text-primary);
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .example-item {
+        background: var(--bg-tertiary);
+        border: 1px solid var(--border-primary);
+        border-radius: 6px;
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.2s ease;
+        color: var(--text-secondary);
+      }
+
+      .example-item:hover {
+        background: var(--accent-blue-dark);
+        border-color: var(--accent-blue);
+        color: white;
+      }
+
+      .stats {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--border-primary);
+      }
+
+      .stat-item {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+      }
+
+      .stat-label {
+        color: var(--text-muted);
+      }
+
+      .stat-value {
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      /* Animations */
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+
+      .processing {
+        animation: pulse 1s ease-in-out infinite;
+      }
+
+      /* Loading indicator */
+      .typing-indicator {
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 1rem;
+        color: var(--text-muted);
+        font-style: italic;
+      }
+
+      .typing-dots {
+        display: flex;
+        gap: 4px;
+      }
+
+      .typing-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--accent-blue);
+        animation: typing 1.4s ease-in-out infinite;
+      }
+
+      .typing-dot:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      .typing-dot:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes typing {
+        0%,
+        60%,
+        100% {
+          transform: translateY(0);
+        }
+        30% {
+          transform: translateY(-10px);
+        }
+      }
+
+      /* Scrollbar styling */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--bg-tertiary);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: var(--border-primary);
+        border-radius: 4px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-blue);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <div>
+          <h1>🤖 MCP Web Simulator</h1>
+          <p>Herramienta de desarrollo y testing para el Bootcamp MCP Server</p>
+        </div>
+        <button
+          class="theme-toggle"
+          onclick="toggleTheme()"
+          title="Cambiar tema"
+        >
+          🌙
+        </button>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Sidebar - Herramientas disponibles -->
+      <aside class="sidebar">
+        <h3>🛠️ Herramientas MCP</h3>
+        <div class="tool-list" id="toolList">
+          <!-- Se pobla dinámicamente -->
+        </div>
+      </aside>
+
+      <!-- Chat Area Principal -->
+      <section class="chat-area">
+        <div class="chat-header">
+          <div class="chat-title">💬 Conversación MCP</div>
+          <button class="clear-btn" onclick="clearChat()">Limpiar Chat</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <div class="message system">
+            <strong>🚀 MCP Web Simulator v2.0 - Bootcamp Edition</strong><br />
+            <br />
+            <strong>Características:</strong><br />
+            • ✅ Simulación completa del protocolo MCP<br />
+            • 🔧 Testing interactivo de herramientas<br />
+            • 📊 Inspector de protocolo en tiempo real<br />
+            • 🎨 Interfaz optimizada para aprendizaje<br />
+            <br />
+            <strong>Instrucciones:</strong><br />
+            1. Escribe consultas en lenguaje natural<br />
+            2. Observa cómo se traduce al protocolo MCP<br />
+            3. Analiza las respuestas del servidor<br />
+            <br />
+            <em>💡 Prueba: "suma 15 + 27" o "raíz cuadrada de 144"</em>
+          </div>
+        </div>
+
+        <div class="typing-indicator" id="typingIndicator">
+          <span>MCP Server está procesando</span>
+          <div class="typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+          </div>
+        </div>
+
+        <div class="input-area">
+          <textarea
+            id="chatInput"
+            class="chat-input"
+            placeholder="Escribe tu consulta aquí... (ej: suma 5 + 3)"
+            onkeydown="handleKeyPress(event)"
+            rows="1"
+          ></textarea>
+          <button id="sendBtn" class="send-btn" onclick="sendMessage()">
+            Enviar
+          </button>
+        </div>
+      </section>
+
+      <!-- Inspector Panel -->
+      <aside class="inspector">
+        <h3>🔍 Inspector MCP</h3>
+
+        <div class="protocol-status">
+          <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Protocolo MCP Activo</span>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted)">
+            Simulando servidor MCP v1.0
+          </div>
+        </div>
+
+        <div class="examples">
+          <h4>📝 Ejemplos Rápidos</h4>
+          <div class="example-item" onclick="insertExample('suma 25 + 17')">
+            suma 25 + 17
+          </div>
+          <div
+            class="example-item"
+            onclick="insertExample('multiplica 8 por 7')"
+          >
+            multiplica 8 por 7
+          </div>
+          <div
+            class="example-item"
+            onclick="insertExample('raíz cuadrada de 81')"
+          >
+            raíz cuadrada de 81
+          </div>
+          <div
+            class="example-item"
+            onclick="insertExample('15 elevado a la 3')"
+          >
+            15 elevado a la 3
+          </div>
+          <div class="example-item" onclick="insertExample('20% de 150')">
+            20% de 150
+          </div>
+          <div
+            class="example-item"
+            onclick="insertExample('divide 100 entre 4')"
+          >
+            divide 100 entre 4
+          </div>
+        </div>
+
+        <div class="stats">
+          <h4>📊 Estadísticas</h4>
+          <div class="stat-item">
+            <span class="stat-label">Consultas:</span>
+            <span class="stat-value" id="queryCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Exitosas:</span>
+            <span class="stat-value" id="successCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Errores:</span>
+            <span class="stat-value" id="errorCount">0</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Uptime:</span>
+            <span class="stat-value" id="uptime">00:00</span>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <script>
+      // Variables globales para estadísticas
+      let stats = {
+        queries: 0,
+        successes: 0,
+        errors: 0,
+        startTime: new Date(),
+      };
+
+      // Herramientas MCP disponibles
+      const mcpTools = [
+        {
+          name: 'add',
+          description: 'Suma dos números',
+          schema: {
+            type: 'object',
+            properties: {
+              a: { type: 'number', description: 'Primer número' },
+              b: { type: 'number', description: 'Segundo número' },
+            },
+            required: ['a', 'b'],
+          },
+        },
+        {
+          name: 'subtract',
+          description: 'Resta dos números',
+          schema: {
+            type: 'object',
+            properties: {
+              a: { type: 'number', description: 'Minuendo' },
+              b: { type: 'number', description: 'Sustraendo' },
+            },
+            required: ['a', 'b'],
+          },
+        },
+        {
+          name: 'multiply',
+          description: 'Multiplica dos números',
+          schema: {
+            type: 'object',
+            properties: {
+              a: { type: 'number', description: 'Primer factor' },
+              b: { type: 'number', description: 'Segundo factor' },
+            },
+            required: ['a', 'b'],
+          },
+        },
+        {
+          name: 'divide',
+          description: 'Divide dos números',
+          schema: {
+            type: 'object',
+            properties: {
+              a: { type: 'number', description: 'Dividendo' },
+              b: { type: 'number', description: 'Divisor' },
+            },
+            required: ['a', 'b'],
+          },
+        },
+        {
+          name: 'power',
+          description: 'Eleva un número a una potencia',
+          schema: {
+            type: 'object',
+            properties: {
+              a: { type: 'number', description: 'Base' },
+              b: { type: 'number', description: 'Exponente' },
+            },
+            required: ['a', 'b'],
+          },
+        },
+        {
+          name: 'sqrt',
+          description: 'Calcula la raíz cuadrada',
+          schema: {
+            type: 'object',
+            properties: {
+              value: { type: 'number', description: 'Número' },
+            },
+            required: ['value'],
+          },
+        },
+        {
+          name: 'percentage',
+          description: 'Calcula un porcentaje',
+          schema: {
+            type: 'object',
+            properties: {
+              value: { type: 'number', description: 'Valor base' },
+              percentage: { type: 'number', description: 'Porcentaje' },
+            },
+            required: ['value', 'percentage'],
+          },
+        },
+      ];
+
+      // Inicializar interfaz
+      function initializeInterface() {
+        populateToolList();
+        updateStats();
+        startUptime();
+        showWelcomeMessage();
+      }
+
+      // Poblar lista de herramientas
+      function populateToolList() {
+        const toolList = document.getElementById('toolList');
+        toolList.innerHTML = '';
+
+        mcpTools.forEach(tool => {
+          const toolElement = document.createElement('div');
+          toolElement.className = 'tool-item';
+          toolElement.onclick = () => showToolDetails(tool);
+
+          toolElement.innerHTML = `
+                    <div class="tool-name">${tool.name}</div>
+                    <div class="tool-desc">${tool.description}</div>
+                `;
+
+          toolList.appendChild(toolElement);
+        });
+      }
+
+      // Mostrar detalles de herramienta
+      function showToolDetails(tool) {
+        const details = {
+          tool: tool.name,
+          description: tool.description,
+          schema: tool.schema,
+          example_usage: getToolExample(tool.name),
+        };
+
+        addMessage(details, 'system');
+      }
+
+      // Obtener ejemplo de uso de herramienta
+      function getToolExample(toolName) {
+        const examples = {
+          add: 'suma 10 + 5',
+          subtract: 'resta 20 - 8',
+          multiply: 'multiplica 6 por 4',
+          divide: 'divide 15 entre 3',
+          power: '2 elevado a la 8',
+          sqrt: 'raíz cuadrada de 49',
+          percentage: '15% de 200',
+        };
+        return examples[toolName] || `Usar herramienta ${toolName}`;
+      }
+
+      // Parser mejorado de lenguaje natural
+      function parseNaturalLanguage(input) {
+        const text = input.toLowerCase().trim();
+
+        // Patrones mejorados con múltiples variantes
+        const patterns = [
+          // Suma
+          {
+            regex:
+              /(?:suma|sumar|mas|\+)\s*(\d+(?:\.\d+)?)\s*(?:y|con|\+)\s*(\d+(?:\.\d+)?)/,
+            tool: 'add',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+          {
+            regex: /(\d+(?:\.\d+)?)\s*\+\s*(\d+(?:\.\d+)?)/,
+            tool: 'add',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+
+          // Resta
+          {
+            regex:
+              /(?:resta|restar|menos|-)\s*(\d+(?:\.\d+)?)\s*(?:y|con|-)\s*(\d+(?:\.\d+)?)/,
+            tool: 'subtract',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+          {
+            regex: /(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)/,
+            tool: 'subtract',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+
+          // Multiplicación
+          {
+            regex:
+              /(?:multiplica|multiplicar|por|x|\*)\s*(\d+(?:\.\d+)?)\s*(?:por|x|\*)\s*(\d+(?:\.\d+)?)/,
+            tool: 'multiply',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+          {
+            regex: /(\d+(?:\.\d+)?)\s*(?:\*|x)\s*(\d+(?:\.\d+)?)/,
+            tool: 'multiply',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+
+          // División
+          {
+            regex:
+              /(?:divide|dividir|entre|\/)\s*(\d+(?:\.\d+)?)\s*(?:entre|\/)\s*(\d+(?:\.\d+)?)/,
+            tool: 'divide',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+          {
+            regex: /(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)/,
+            tool: 'divide',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+
+          // Potencia
+          {
+            regex:
+              /(\d+(?:\.\d+)?)\s*(?:elevado a|elevado a la|a la potencia de|\^)\s*(\d+(?:\.\d+)?)/,
+            tool: 'power',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+          {
+            regex: /(\d+(?:\.\d+)?)\s*\^\s*(\d+(?:\.\d+)?)/,
+            tool: 'power',
+            args: m => ({ a: parseFloat(m[1]), b: parseFloat(m[2]) }),
+          },
+
+          // Raíz cuadrada
+          {
+            regex:
+              /(?:raiz cuadrada|raíz cuadrada|sqrt)\s*(?:de)?\s*(\d+(?:\.\d+)?)/,
+            tool: 'sqrt',
+            args: m => ({ value: parseFloat(m[1]) }),
+          },
+
+          // Porcentaje
+          {
+            regex: /(\d+(?:\.\d+)?)%\s*(?:de)?\s*(\d+(?:\.\d+)?)/,
+            tool: 'percentage',
+            args: m => ({
+              percentage: parseFloat(m[1]),
+              value: parseFloat(m[2]),
+            }),
+          },
+          {
+            regex:
+              /(?:el\s+)?(\d+(?:\.\d+)?)\s*(?:por ciento|porciento|%)\s*de\s*(\d+(?:\.\d+)?)/,
+            tool: 'percentage',
+            args: m => ({
+              percentage: parseFloat(m[1]),
+              value: parseFloat(m[2]),
+            }),
+          },
+        ];
+
+        for (const pattern of patterns) {
+          const match = text.match(pattern.regex);
+          if (match) {
+            try {
+              return {
+                tool: pattern.tool,
+                args: pattern.args(match),
+              };
+            } catch (e) {
+              console.error('Error parsing arguments:', e);
+              return null;
+            }
+          }
+        }
+
+        return null;
+      }
+
+      // Simulador MCP mejorado
+      function simulateMCPResponse(tool, args) {
+        const timestamp = new Date().toISOString();
+        const requestId = Math.random().toString(36).substr(2, 9);
+
+        try {
+          let result;
+          let explanation;
+
+          switch (tool) {
+            case 'add':
+              result = args.a + args.b;
+              explanation = `✅ Suma: ${args.a} + ${args.b} = ${result}`;
+              break;
+            case 'subtract':
+              result = args.a - args.b;
+              explanation = `✅ Resta: ${args.a} - ${args.b} = ${result}`;
+              break;
+            case 'multiply':
+              result = args.a * args.b;
+              explanation = `✅ Multiplicación: ${args.a} × ${args.b} = ${result}`;
+              break;
+            case 'divide':
+              if (args.b === 0) {
+                throw new Error('División por cero no permitida');
+              }
+              result = args.a / args.b;
+              explanation = `✅ División: ${args.a} ÷ ${args.b} = ${result}`;
+              break;
+            case 'power':
+              result = Math.pow(args.a, args.b);
+              explanation = `✅ Potencia: ${args.a}^${args.b} = ${result}`;
+              break;
+            case 'sqrt':
+              if (args.value < 0) {
+                throw new Error(
+                  'No se puede calcular la raíz cuadrada de un número negativo'
+                );
+              }
+              result = Math.sqrt(args.value);
+              explanation = `✅ Raíz cuadrada: √${args.value} = ${result}`;
+              break;
+            case 'percentage':
+              result = (args.value * args.percentage) / 100;
+              explanation = `✅ Porcentaje: ${args.percentage}% de ${args.value} = ${result}`;
+              break;
+            default:
+              throw new Error(`Herramienta desconocida: ${tool}`);
+          }
+
+          // Formatear resultado con precisión adecuada
+          const formattedResult = Number.isInteger(result)
+            ? result
+            : parseFloat(result.toFixed(10));
+
+          return {
+            jsonrpc: '2.0',
+            id: requestId,
+            result: {
+              content: [
+                {
+                  type: 'text',
+                  text: explanation,
+                },
+              ],
+              operation: tool,
+              arguments: args,
+              result: formattedResult,
+              timestamp,
+              execution_time_ms: Math.floor(Math.random() * 50) + 10,
+            },
+          };
+        } catch (error) {
+          return {
+            jsonrpc: '2.0',
+            id: requestId,
+            error: {
+              code: -32000,
+              message: error.message,
+              data: {
+                operation: tool,
+                arguments: args,
+                timestamp,
+                suggestion: 'Verifica que los parámetros sean válidos',
+              },
+            },
+          };
+        }
+      }
+
+      // Agregar mensaje mejorado
+      function addMessage(content, type = 'assistant') {
+        const messagesContainer = document.getElementById('chatMessages');
+        const messageElement = document.createElement('div');
+        messageElement.className = `message ${type}`;
+
+        if (typeof content === 'object') {
+          // Formatear JSON de manera más legible
+          const formattedJson = JSON.stringify(content, null, 2);
+          messageElement.innerHTML = `<pre>${formattedJson}</pre>`;
+        } else {
+          messageElement.textContent = content;
+        }
+
+        messagesContainer.appendChild(messageElement);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      }
+
+      // Mostrar indicador de escritura
+      function showTypingIndicator() {
+        document.getElementById('typingIndicator').style.display = 'flex';
+      }
+
+      // Ocultar indicador de escritura
+      function hideTypingIndicator() {
+        document.getElementById('typingIndicator').style.display = 'none';
+      }
+
+      // Enviar mensaje mejorado
+      function sendMessage() {
+        const input = document.getElementById('chatInput');
+        const sendBtn = document.getElementById('sendBtn');
+        const message = input.value.trim();
+
+        if (!message) return;
+
+        // Actualizar estadísticas
+        stats.queries++;
+        updateStats();
+
+        // Agregar mensaje del usuario
+        addMessage(message, 'user');
+
+        // Limpiar input y deshabilitar botón
+        input.value = '';
+        sendBtn.disabled = true;
+        sendBtn.textContent = 'Procesando...';
+        sendBtn.classList.add('processing');
+
+        // Mostrar indicador de escritura
+        showTypingIndicator();
+
+        // Simular delay de procesamiento realista
+        setTimeout(
+          () => {
+            hideTypingIndicator();
+
+            const parsed = parseNaturalLanguage(message);
+
+            if (parsed) {
+              const response = simulateMCPResponse(parsed.tool, parsed.args);
+
+              if (response.error) {
+                addMessage(`❌ Error: ${response.error.message}`, 'error');
+                addMessage(response, 'system');
+                stats.errors++;
+              } else {
+                addMessage(response.result.content[0].text, 'assistant');
+                addMessage(response, 'system');
+                stats.successes++;
+              }
+            } else {
+              addMessage(
+                '❓ No pude entender tu consulta. Intenta con ejemplos como:',
+                'error'
+              );
+              addMessage(
+                '• "suma 5 + 3"\n• "raíz cuadrada de 25"\n• "15% de 200"\n• "8 elevado a la 2"',
+                'assistant'
+              );
+              stats.errors++;
+            }
+
+            // Actualizar estadísticas
+            updateStats();
+
+            // Rehabilitar botón
+            sendBtn.disabled = false;
+            sendBtn.textContent = 'Enviar';
+            sendBtn.classList.remove('processing');
+            input.focus();
+          },
+          Math.random() * 1000 + 500
+        ); // Delay realista entre 500-1500ms
+      }
+
+      // Manejar teclas
+      function handleKeyPress(event) {
+        if (event.key === 'Enter' && !event.shiftKey) {
+          event.preventDefault();
+          sendMessage();
+        }
+      }
+
+      // Insertar ejemplo
+      function insertExample(example) {
+        const input = document.getElementById('chatInput');
+        input.value = example;
+        input.focus();
+
+        // Auto-resize textarea
+        input.style.height = 'auto';
+        input.style.height = input.scrollHeight + 'px';
+      }
+
+      // Limpiar chat
+      function clearChat() {
+        const messagesContainer = document.getElementById('chatMessages');
+        messagesContainer.innerHTML = '';
+        showWelcomeMessage();
+      }
+
+      // Mostrar mensaje de bienvenida
+      function showWelcomeMessage() {
+        addMessage(
+          {
+            system: 'MCP Web Simulator',
+            version: '2.0.0',
+            mode: 'Bootcamp Edition',
+            status: 'ready',
+            available_tools: mcpTools.length,
+            message:
+              '¡Listo para simular interacciones MCP! Escribe tu consulta o usa los ejemplos.',
+          },
+          'system'
+        );
+      }
+
+      // Actualizar estadísticas
+      function updateStats() {
+        document.getElementById('queryCount').textContent = stats.queries;
+        document.getElementById('successCount').textContent = stats.successes;
+        document.getElementById('errorCount').textContent = stats.errors;
+      }
+
+      // Actualizar uptime
+      function startUptime() {
+        setInterval(() => {
+          const now = new Date();
+          const diff = now - stats.startTime;
+          const minutes = Math.floor(diff / 60000);
+          const seconds = Math.floor((diff % 60000) / 1000);
+          document.getElementById('uptime').textContent =
+            `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+        }, 1000);
+      }
+
+      // Toggle theme (placeholder para futuras mejoras)
+      function toggleTheme() {
+        // Implementar cambio de tema si se requiere
+        console.log('Theme toggle - Feature para implementar en el futuro');
+      }
+
+      // Auto-resize textarea
+      function autoResize(element) {
+        element.style.height = 'auto';
+        element.style.height = element.scrollHeight + 'px';
+      }
+
+      // Event listener para auto-resize
+      document.addEventListener('DOMContentLoaded', function () {
+        const textarea = document.getElementById('chatInput');
+        textarea.addEventListener('input', function () {
+          autoResize(this);
+        });
+      });
+
+      // Inicializar cuando carga la página
+      window.onload = function () {
+        initializeInterface();
+        document.getElementById('chatInput').focus();
+      };
+    </script>
+  </body>
+</html>

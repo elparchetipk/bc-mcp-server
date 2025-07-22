@@ -1,0 +1,33 @@
+{
+  "name": "mi-servidor-mcp-personalizado",
+  "version": "1.0.0",
+  "description": "Proyecto final Módulo 1 - Servidor MCP personalizado",
+  "type": "module",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "tsc && node dist/server.js",
+    "clean": "rm -rf dist",
+    "test": "node tests/client.js",
+    "test:auto": "node tests/client.js --auto"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "bootcamp",
+    "proyecto-final"
+  ],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
