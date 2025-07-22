@@ -205,7 +205,7 @@ jobs:
     steps:
       - name: 🚀 Deploy a GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
 
   # 5. Comentar en PR con vista previa
   preview-comment:
