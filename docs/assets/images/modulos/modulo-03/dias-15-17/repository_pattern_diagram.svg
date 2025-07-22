@@ -3,78 +3,78 @@
   <rect width="800" height="500" fill="#f8fafc"/>
   
   <!-- Title -->
-  <text x="400" y="30" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="18" font-weight="bold">Patrón Repository: Separación de Responsabilidades</text>
+  <text x="400" y="30" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="bold">Patrón Repository: Separación de Responsabilidades</text>
   
   <!-- Business Logic Layer -->
   <rect x="50" y="70" width="200" height="100" rx="10" fill="#3b82f6" stroke="#1d4ed8" stroke-width="2"/>
-  <text x="150" y="95" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Lógica de Negocio</text>
-  <text x="150" y="115" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11">(Herramientas MCP)</text>
-  <text x="150" y="135" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• Validaciones</text>
-  <text x="150" y="150" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• Reglas de negocio</text>
+  <text x="150" y="95" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Lógica de Negocio</text>
+  <text x="150" y="115" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="11">(Herramientas MCP)</text>
+  <text x="150" y="135" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• Validaciones</text>
+  <text x="150" y="150" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• Reglas de negocio</text>
   
   <!-- Arrow 1 -->
   <path d="M 250 120 L 300 120" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
-  <text x="275" y="115" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="10">llama</text>
+  <text x="275" y="115" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">llama</text>
   
   <!-- Repository Interface -->
   <rect x="320" y="70" width="160" height="100" rx="10" fill="#10b981" stroke="#047857" stroke-width="2"/>
-  <text x="400" y="95" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Repository Interface</text>
-  <text x="400" y="115" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• create()</text>
-  <text x="400" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• findById()</text>
-  <text x="400" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• update()</text>
-  <text x="400" y="160" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• delete()</text>
+  <text x="400" y="95" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Repository Interface</text>
+  <text x="400" y="115" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• create()</text>
+  <text x="400" y="130" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• findById()</text>
+  <text x="400" y="145" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• update()</text>
+  <text x="400" y="160" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• delete()</text>
   
   <!-- Arrow 2 -->
   <path d="M 480 120 L 530 120" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
-  <text x="505" y="115" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="10">implementa</text>
+  <text x="505" y="115" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">implementa</text>
   
   <!-- Repository Implementation -->
   <rect x="550" y="70" width="180" height="100" rx="10" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
-  <text x="640" y="95" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Repository Impl</text>
-  <text x="640" y="115" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• SQL queries</text>
-  <text x="640" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• Mapeo de datos</text>
-  <text x="640" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">• Manejo de errores</text>
+  <text x="640" y="95" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Repository Impl</text>
+  <text x="640" y="115" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• SQL queries</text>
+  <text x="640" y="130" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• Mapeo de datos</text>
+  <text x="640" y="145" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">• Manejo de errores</text>
   
   <!-- Arrow 3 -->
   <path d="M 640 170 L 640 220" stroke="#374151" stroke-width="3" marker-end="url(#arrowhead)"/>
-  <text x="665" y="195" fill="#374151" font-family="Arial, sans-serif" font-size="10">accede</text>
+  <text x="665" y="195" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="10">accede</text>
   
   <!-- Database -->
   <ellipse cx="640" cy="270" rx="80" ry="40" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
-  <text x="640" y="275" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Base de Datos</text>
+  <text x="640" y="275" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Base de Datos</text>
   
   <!-- Benefits Box -->
   <rect x="50" y="200" width="450" height="180" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
-  <text x="275" y="225" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="16" font-weight="bold">Beneficios del Patrón Repository</text>
+  <text x="275" y="225" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">Beneficios del Patrón Repository</text>
   
   <!-- Benefit 1 -->
   <circle cx="70" cy="250" r="15" fill="#22c55e"/>
-  <text x="70" y="255" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">1</text>
-  <text x="100" y="255" fill="#374151" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Testabilidad:</text>
-  <text x="100" y="270" fill="#374151" font-family="Arial, sans-serif" font-size="11">Puedes crear mocks fácilmente para testing</text>
+  <text x="70" y="255" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">1</text>
+  <text x="100" y="255" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Testabilidad:</text>
+  <text x="100" y="270" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Puedes crear mocks fácilmente para testing</text>
   
   <!-- Benefit 2 -->
   <circle cx="70" cy="290" r="15" fill="#3b82f6"/>
-  <text x="70" y="295" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">2</text>
-  <text x="100" y="295" fill="#374151" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Flexibilidad:</text>
-  <text x="100" y="310" fill="#374151" font-family="Arial, sans-serif" font-size="11">Cambiar de SQLite a PostgreSQL sin romper nada</text>
+  <text x="70" y="295" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">2</text>
+  <text x="100" y="295" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Flexibilidad:</text>
+  <text x="100" y="310" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Cambiar de SQLite a PostgreSQL sin romper nada</text>
   
   <!-- Benefit 3 -->
   <circle cx="270" cy="250" r="15" fill="#f59e0b"/>
-  <text x="270" y="255" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">3</text>
-  <text x="300" y="255" fill="#374151" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Mantenibilidad:</text>
-  <text x="300" y="270" fill="#374151" font-family="Arial, sans-serif" font-size="11">Lógica de datos centralizada y organizada</text>
+  <text x="270" y="255" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">3</text>
+  <text x="300" y="255" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Mantenibilidad:</text>
+  <text x="300" y="270" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Lógica de datos centralizada y organizada</text>
   
   <!-- Benefit 4 -->
   <circle cx="270" cy="290" r="15" fill="#8b5cf6"/>
-  <text x="270" y="295" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">4</text>
-  <text x="300" y="295" fill="#374151" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Reutilización:</text>
-  <text x="300" y="310" fill="#374151" font-family="Arial, sans-serif" font-size="11">Misma interfaz para diferentes contextos</text>
+  <text x="270" y="295" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">4</text>
+  <text x="300" y="295" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Reutilización:</text>
+  <text x="300" y="310" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="11">Misma interfaz para diferentes contextos</text>
   
   <!-- Wrong approach indicator -->
   <path d="M 150 200 L 640 240" stroke="#ef4444" stroke-width="3" stroke-dasharray="10,5"/>
-  <text x="350" y="215" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="12" font-weight="bold">✗ Sin Repository: Acceso directo</text>
-  <text x="350" y="190" text-anchor="middle" fill="#ef4444" font-family="Arial, sans-serif" font-size="10">(Código difícil de mantener y testear)</text>
+  <text x="350" y="215" text-anchor="middle" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">✗ Sin Repository: Acceso directo</text>
+  <text x="350" y="190" text-anchor="middle" fill="#ef4444" font-family="Inter, system-ui, sans-serif" font-size="10">(Código difícil de mantener y testear)</text>
   
   <!-- Arrow marker definition -->
   <defs>

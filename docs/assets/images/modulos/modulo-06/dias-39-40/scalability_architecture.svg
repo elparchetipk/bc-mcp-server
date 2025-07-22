@@ -4,8 +4,8 @@
       .bg { fill: #0f172a; }
       .card { fill: #1e293b; stroke: #3b82f6; stroke-width: 2; }
       .highlight { fill: #3b82f6; }
-      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 14px; }
-      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: Inter, system-ui, sans-serif; font-size: 14px; }
+      .title { fill: #f1f5f9; font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: bold; }
       .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
       .db { fill: #059669; }
       .cache { fill: #f59e0b; }

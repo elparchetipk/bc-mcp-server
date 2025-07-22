@@ -2,8 +2,8 @@
   <defs>
     <style>
       .bg { fill: #1a1a1a; }
-      .text-primary { fill: #ffffff; font-family: Arial, sans-serif; }
-      .text-secondary { fill: #a0a0a0; font-family: Arial, sans-serif; }
+      .text-primary { fill: #0f172a; font-family: Inter, system-ui, sans-serif; }
+      .text-secondary { fill: #a0a0a0; font-family: Inter, system-ui, sans-serif; }
       .auth-box { fill: #2563eb; stroke: #3b82f6; stroke-width: 2; }
       .authz-box { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
       .arrow { stroke: #10b981; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }

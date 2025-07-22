@@ -7,9 +7,9 @@
       .service { fill: #4299e1; stroke: #63b3ed; stroke-width: 2; }
       .database { fill: #9f7aea; stroke: #b794f6; stroke-width: 2; }
       .message-queue { fill: #f56565; stroke: #fc8181; stroke-width: 2; }
-      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 11px; }
-      .title { fill: #f7fafc; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
-      .service-title { fill: #f7fafc; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: Inter, system-ui, sans-serif; font-size: 11px; }
+      .title { fill: #f7fafc; font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: bold; }
+      .service-title { fill: #f7fafc; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: bold; }
       .arrow { stroke: #cbd5e0; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
       .dashed { stroke-dasharray: 5,5; }
     </style>

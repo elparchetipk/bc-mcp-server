@@ -4,12 +4,12 @@
       .bg { fill: #1a1a1a; }
       .traditional-box { fill: #4a2c2a; stroke: #ff6b6b; stroke-width: 2; }
       .structured-box { fill: #2a4a2c; stroke: #4caf50; stroke-width: 2; }
-      .title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 20px; font-weight: bold; text-anchor: middle; }
-      .subtitle { fill: #cccccc; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
-      .log-text { fill: #ffffff; font-family: 'Courier New', monospace; font-size: 10px; }
-      .advantage { fill: #4caf50; font-family: Arial, sans-serif; font-size: 12px; }
-      .disadvantage { fill: #ff6b6b; font-family: Arial, sans-serif; font-size: 12px; }
-      .vs-text { fill: #ffd700; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .title { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 20px; font-weight: bold; text-anchor: middle; }
+      .subtitle { fill: #cccccc; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; }
+      .log-text { fill: #0f172a; font-family: 'Courier New', monospace; font-size: 10px; }
+      .advantage { fill: #4caf50; font-family: Inter, system-ui, sans-serif; font-size: 12px; }
+      .disadvantage { fill: #ff6b6b; font-family: Inter, system-ui, sans-serif; font-size: 12px; }
+      .vs-text { fill: #ffd700; font-family: Inter, system-ui, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
     </style>
   </defs>
   

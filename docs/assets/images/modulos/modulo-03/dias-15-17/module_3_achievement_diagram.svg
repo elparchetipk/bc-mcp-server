@@ -3,65 +3,65 @@
   <rect width="900" height="700" fill="#f8fafc"/>
   
   <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" fill="#1f2937" font-family="Arial, sans-serif" font-size="20" font-weight="bold">Módulo 3 Completado: Persistencia y Bases de Datos</text>
-  <text x="450" y="50" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="14">De Zero a Hero en Integración de Bases de Datos con MCP</text>
+  <text x="450" y="30" text-anchor="middle" fill="#1f2937" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="bold">Módulo 3 Completado: Persistencia y Bases de Datos</text>
+  <text x="450" y="50" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="14">De Zero a Hero en Integración de Bases de Datos con MCP</text>
   
   <!-- Achievement boxes -->
   <!-- Day 15 -->
   <rect x="50" y="80" width="250" height="150" rx="10" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
-  <text x="175" y="105" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✅ Día 15: Fundamentos</text>
-  <text x="70" y="125" fill="#166534" font-family="Arial, sans-serif" font-size="11">• Configuración multi-entorno</text>
-  <text x="70" y="140" fill="#166534" font-family="Arial, sans-serif" font-size="11">• Factory pattern para BD</text>
-  <text x="70" y="155" fill="#166534" font-family="Arial, sans-serif" font-size="11">• Singleton para conexiones</text>
-  <text x="70" y="170" fill="#166534" font-family="Arial, sans-serif" font-size="11">• Modelos con Zod</text>
-  <text x="70" y="185" fill="#166534" font-family="Arial, sans-serif" font-size="11">• Manejo de errores tipado</text>
-  <text x="70" y="200" fill="#166534" font-family="Arial, sans-serif" font-size="11">• SQLite + PostgreSQL</text>
-  <text x="70" y="215" fill="#166534" font-family="Arial, sans-serif" font-size="11">• Transacciones robustas</text>
+  <text x="175" y="105" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">✅ Día 15: Fundamentos</text>
+  <text x="70" y="125" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• Configuración multi-entorno</text>
+  <text x="70" y="140" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• Factory pattern para BD</text>
+  <text x="70" y="155" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• Singleton para conexiones</text>
+  <text x="70" y="170" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• Modelos con Zod</text>
+  <text x="70" y="185" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• Manejo de errores tipado</text>
+  <text x="70" y="200" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• SQLite + PostgreSQL</text>
+  <text x="70" y="215" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="11">• Transacciones robustas</text>
   
   <!-- Day 16 -->
   <rect x="325" y="80" width="250" height="150" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
-  <text x="450" y="105" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✅ Día 16: Repository Pattern</text>
-  <text x="345" y="125" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• Repository base abstracto</text>
-  <text x="345" y="140" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• CRUD completo + validaciones</text>
-  <text x="345" y="155" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• Consultas con JOIN</text>
-  <text x="345" y="170" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• Búsqueda avanzada</text>
-  <text x="345" y="185" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• Paginación y filtros</text>
-  <text x="345" y="200" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• Mapeo objeto-relacional</text>
-  <text x="345" y="215" fill="#1e40af" font-family="Arial, sans-serif" font-size="11">• Estadísticas y agregaciones</text>
+  <text x="450" y="105" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">✅ Día 16: Repository Pattern</text>
+  <text x="345" y="125" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• Repository base abstracto</text>
+  <text x="345" y="140" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• CRUD completo + validaciones</text>
+  <text x="345" y="155" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• Consultas con JOIN</text>
+  <text x="345" y="170" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• Búsqueda avanzada</text>
+  <text x="345" y="185" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• Paginación y filtros</text>
+  <text x="345" y="200" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• Mapeo objeto-relacional</text>
+  <text x="345" y="215" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="11">• Estadísticas y agregaciones</text>
   
   <!-- Day 17 -->
   <rect x="600" y="80" width="250" height="150" rx="10" fill="#f3e8ff" stroke="#8b5cf6" stroke-width="2"/>
-  <text x="725" y="105" text-anchor="middle" fill="#6b21a8" font-family="Arial, sans-serif" font-size="14" font-weight="bold">✅ Día 17: Integración MCP</text>
-  <text x="620" y="125" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• Servidor MCP completo</text>
-  <text x="620" y="140" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• 10+ herramientas integradas</text>
-  <text x="620" y="155" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• Schema initializer</text>
-  <text x="620" y="170" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• Scripts de desarrollo</text>
-  <text x="620" y="185" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• Testing interactivo</text>
-  <text x="620" y="200" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• Ejemplos prácticos</text>
-  <text x="620" y="215" fill="#6b21a8" font-family="Arial, sans-serif" font-size="11">• Casos de uso reales</text>
+  <text x="725" y="105" text-anchor="middle" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">✅ Día 17: Integración MCP</text>
+  <text x="620" y="125" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• Servidor MCP completo</text>
+  <text x="620" y="140" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• 10+ herramientas integradas</text>
+  <text x="620" y="155" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• Schema initializer</text>
+  <text x="620" y="170" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• Scripts de desarrollo</text>
+  <text x="620" y="185" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• Testing interactivo</text>
+  <text x="620" y="200" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• Ejemplos prácticos</text>
+  <text x="620" y="215" fill="#6b21a8" font-family="Inter, system-ui, sans-serif" font-size="11">• Casos de uso reales</text>
   
   <!-- Skills acquired -->
   <rect x="50" y="260" width="800" height="120" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
-  <text x="450" y="285" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🎯 Habilidades Adquiridas</text>
+  <text x="450" y="285" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">🎯 Habilidades Adquiridas</text>
   
   <!-- Skills grid -->
-  <text x="70" y="310" fill="#92400e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Técnicas:</text>
-  <text x="70" y="325" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• Arquitectura de persistencia escalable</text>
-  <text x="70" y="340" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• Patrones de diseño para datos</text>
-  <text x="70" y="355" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• SQL avanzado y optimización</text>
+  <text x="70" y="310" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Técnicas:</text>
+  <text x="70" y="325" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• Arquitectura de persistencia escalable</text>
+  <text x="70" y="340" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• Patrones de diseño para datos</text>
+  <text x="70" y="355" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• SQL avanzado y optimización</text>
   
-  <text x="320" y="310" fill="#92400e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Herramientas:</text>
-  <text x="320" y="325" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• TypeScript + Zod + pnpm</text>
-  <text x="320" y="340" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• SQLite + PostgreSQL</text>
-  <text x="320" y="355" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• MCP SDK completo</text>
+  <text x="320" y="310" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Herramientas:</text>
+  <text x="320" y="325" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• TypeScript + Zod + pnpm</text>
+  <text x="320" y="340" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• SQLite + PostgreSQL</text>
+  <text x="320" y="355" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• MCP SDK completo</text>
   
-  <text x="570" y="310" fill="#92400e" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Mejores Prácticas:</text>
-  <text x="570" y="325" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• Code organization & documentation</text>
-  <text x="570" y="340" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• Error handling & validation</text>
-  <text x="570" y="355" fill="#92400e" font-family="Arial, sans-serif" font-size="10">• Testing & development workflows</text>
+  <text x="570" y="310" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Mejores Prácticas:</text>
+  <text x="570" y="325" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• Code organization & documentation</text>
+  <text x="570" y="340" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• Error handling & validation</text>
+  <text x="570" y="355" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10">• Testing & development workflows</text>
   
   <!-- Progress bar -->
-  <text x="450" y="410" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Progreso del Bootcamp</text>
+  <text x="450" y="410" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">Progreso del Bootcamp</text>
   
   <!-- Progress line -->
   <line x1="100" y1="430" x2="800" y2="430" stroke="#e5e7eb" stroke-width="8" stroke-linecap="round"/>
@@ -69,52 +69,52 @@
   
   <!-- Module markers -->
   <circle cx="150" cy="430" r="12" fill="#22c55e" stroke="white" stroke-width="3"/>
-  <text x="150" y="455" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="10" font-weight="bold">M1</text>
-  <text x="150" y="468" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="8">Fundamentos</text>
+  <text x="150" y="455" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">M1</text>
+  <text x="150" y="468" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="8">Fundamentos</text>
   
   <circle cx="250" cy="430" r="12" fill="#22c55e" stroke="white" stroke-width="3"/>
-  <text x="250" y="455" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="10" font-weight="bold">M2</text>
-  <text x="250" y="468" text-anchor="middle" fill="#166534" font-family="Arial, sans-serif" font-size="8">Herramientas</text>
+  <text x="250" y="455" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">M2</text>
+  <text x="250" y="468" text-anchor="middle" fill="#166534" font-family="Inter, system-ui, sans-serif" font-size="8">Herramientas</text>
   
   <circle cx="350" cy="430" r="15" fill="#3b82f6" stroke="white" stroke-width="3"/>
-  <text x="350" y="437" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="11" font-weight="bold">M3</text>
-  <text x="350" y="455" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Persistencia</text>
-  <text x="350" y="468" text-anchor="middle" fill="#1e40af" font-family="Arial, sans-serif" font-size="8">COMPLETADO</text>
+  <text x="350" y="437" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="11" font-weight="bold">M3</text>
+  <text x="350" y="455" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">Persistencia</text>
+  <text x="350" y="468" text-anchor="middle" fill="#1e40af" font-family="Inter, system-ui, sans-serif" font-size="8">COMPLETADO</text>
   
   <circle cx="450" cy="430" r="12" fill="#f59e0b" stroke="white" stroke-width="3"/>
-  <text x="450" y="455" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="10" font-weight="bold">M4</text>
-  <text x="450" y="468" text-anchor="middle" fill="#92400e" font-family="Arial, sans-serif" font-size="8">Seguridad</text>
+  <text x="450" y="455" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">M4</text>
+  <text x="450" y="468" text-anchor="middle" fill="#92400e" font-family="Inter, system-ui, sans-serif" font-size="8">Seguridad</text>
   
   <circle cx="550" cy="430" r="12" fill="#d1d5db" stroke="white" stroke-width="3"/>
-  <text x="550" y="455" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10" font-weight="bold">M5</text>
-  <text x="550" y="468" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="8">Testing</text>
+  <text x="550" y="455" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">M5</text>
+  <text x="550" y="468" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Testing</text>
   
   <circle cx="650" cy="430" r="12" fill="#d1d5db" stroke="white" stroke-width="3"/>
-  <text x="650" y="455" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10" font-weight="bold">M6</text>
-  <text x="650" y="468" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="8">Arquitectura</text>
+  <text x="650" y="455" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">M6</text>
+  <text x="650" y="468" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Arquitectura</text>
   
   <circle cx="750" cy="430" r="12" fill="#d1d5db" stroke="white" stroke-width="3"/>
-  <text x="750" y="455" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="10" font-weight="bold">M7</text>
-  <text x="750" y="468" text-anchor="middle" fill="#6b7280" font-family="Arial, sans-serif" font-size="8">Proyecto</text>
+  <text x="750" y="455" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="10" font-weight="bold">M7</text>
+  <text x="750" y="468" text-anchor="middle" fill="#6b7280" font-family="Inter, system-ui, sans-serif" font-size="8">Proyecto</text>
   
   <!-- Next steps -->
   <rect x="50" y="500" width="800" height="150" rx="10" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
-  <text x="450" y="525" text-anchor="middle" fill="#065f46" font-family="Arial, sans-serif" font-size="16" font-weight="bold">🚀 Próximo: Módulo 4 - Seguridad y Autenticación</text>
+  <text x="450" y="525" text-anchor="middle" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold">🚀 Próximo: Módulo 4 - Seguridad y Autenticación</text>
   
-  <text x="70" y="550" fill="#065f46" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Lo que aprenderás:</text>
-  <text x="70" y="570" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Autenticación robusta (JWT, OAuth2, API Keys)</text>
-  <text x="70" y="585" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Autorización granular (RBAC, ABAC)</text>
-  <text x="70" y="600" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Validación y sanitización de entrada</text>
-  <text x="70" y="615" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Auditoría y logging de seguridad</text>
-  <text x="70" y="630" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Protección contra vulnerabilidades comunes</text>
+  <text x="70" y="550" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Lo que aprenderás:</text>
+  <text x="70" y="570" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Autenticación robusta (JWT, OAuth2, API Keys)</text>
+  <text x="70" y="585" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Autorización granular (RBAC, ABAC)</text>
+  <text x="70" y="600" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Validación y sanitización de entrada</text>
+  <text x="70" y="615" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Auditoría y logging de seguridad</text>
+  <text x="70" y="630" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Protección contra vulnerabilidades comunes</text>
   
-  <text x="470" y="550" fill="#065f46" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Preparación recomendada:</text>
-  <text x="470" y="570" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Revisa tu servidor MCP del Módulo 3</text>
-  <text x="470" y="585" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Familiarízate con conceptos de criptografía</text>
-  <text x="470" y="600" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Lee sobre vulnerabilidades OWASP Top 10</text>
-  <text x="470" y="615" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Practica con tu repositorio antes de continuar</text>
-  <text x="470" y="630" fill="#065f46" font-family="Arial, sans-serif" font-size="11">• Haz tu autoevaluación con la rúbrica</text>
+  <text x="470" y="550" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">Preparación recomendada:</text>
+  <text x="470" y="570" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Revisa tu servidor MCP del Módulo 3</text>
+  <text x="470" y="585" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Familiarízate con conceptos de criptografía</text>
+  <text x="470" y="600" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Lee sobre vulnerabilidades OWASP Top 10</text>
+  <text x="470" y="615" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Practica con tu repositorio antes de continuar</text>
+  <text x="470" y="630" fill="#065f46" font-family="Inter, system-ui, sans-serif" font-size="11">• Haz tu autoevaluación con la rúbrica</text>
   
   <!-- Confidence meter -->
-  <text x="450" y="680" text-anchor="middle" fill="#374151" font-family="Arial, sans-serif" font-size="14" font-weight="bold">¿Te sientes confiado para continuar? 💪</text>
+  <text x="450" y="680" text-anchor="middle" fill="#374151" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold">¿Te sientes confiado para continuar? 💪</text>
 </svg>

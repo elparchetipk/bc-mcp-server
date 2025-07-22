@@ -6,11 +6,11 @@
       .span-box { fill: #2d4a8a; stroke: #4a90e2; stroke-width: 2; }
       .span-box-child { fill: #4a2d8a; stroke: #8a4ae2; stroke-width: 2; }
       .span-box-grandchild { fill: #8a2d4a; stroke: #e24a8a; stroke-width: 2; }
-      .title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
-      .subtitle { fill: #cccccc; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
-      .span-text { fill: #ffffff; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
-      .time-text { fill: #cccccc; font-family: Arial, sans-serif; font-size: 10px; }
-      .correlation-id { fill: #ffd700; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; }
+      .title { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .subtitle { fill: #cccccc; font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .span-text { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: bold; }
+      .time-text { fill: #cccccc; font-family: Inter, system-ui, sans-serif; font-size: 10px; }
+      .correlation-id { fill: #ffd700; font-family: Inter, system-ui, sans-serif; font-size: 10px; font-weight: bold; }
     </style>
   </defs>
   
@@ -89,10 +89,10 @@
   <rect fill="#2a4d3a" stroke="#4caf50" stroke-width="2" x="150" y="470" width="700" height="180" rx="10"/>
   <text class="subtitle" x="500" y="500" fill="#4caf50">Beneficios del Distributed Tracing en MCP:</text>
   
-  <text class="span-text" x="170" y="530" fill="#ffffff">🔍 Debugging: Identifica exactamente dónde falla una operación compleja</text>
-  <text class="span-text" x="170" y="550" fill="#ffffff">⚡ Performance: Encuentra cuellos de botella en cadenas de herramientas</text>
-  <text class="span-text" x="170" y="570" fill="#ffffff">🔗 Correlación: Conecta logs y métricas con contexto completo</text>
-  <text class="span-text" x="170" y="590" fill="#ffffff">📊 Análisis: Entiende patrones de uso y dependencias entre herramientas</text>
-  <text class="span-text" x="170" y="610" fill="#ffffff">🚨 Alertas: Detecta anomalías en flujos de trabajo específicos</text>
-  <text class="span-text" x="170" y="630" fill="#ffffff">📈 Optimización: Datos para mejorar la arquitectura del servidor MCP</text>
+  <text class="span-text" x="170" y="530" fill="#0f172a">🔍 Debugging: Identifica exactamente dónde falla una operación compleja</text>
+  <text class="span-text" x="170" y="550" fill="#0f172a">⚡ Performance: Encuentra cuellos de botella en cadenas de herramientas</text>
+  <text class="span-text" x="170" y="570" fill="#0f172a">🔗 Correlación: Conecta logs y métricas con contexto completo</text>
+  <text class="span-text" x="170" y="590" fill="#0f172a">📊 Análisis: Entiende patrones de uso y dependencias entre herramientas</text>
+  <text class="span-text" x="170" y="610" fill="#0f172a">🚨 Alertas: Detecta anomalías en flujos de trabajo específicos</text>
+  <text class="span-text" x="170" y="630" fill="#0f172a">📈 Optimización: Datos para mejorar la arquitectura del servidor MCP</text>
 </svg>

@@ -1,12 +1,12 @@
 <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="900" height="700" fill="#f8f9fa"/>
+  <rect width="900" height="700" fill="#0f172a"/>
   
   <!-- Title -->
-  <text x="450" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">Arquitectura de Contexto Inteligente</text>
+  <text x="450" y="40" text-anchor="middle" font-size="24" font-weight="bold" fill="#f8fafc">Arquitectura de Contexto Inteligente</text>
   
   <!-- Context Layers -->
-  <text x="450" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#34495e">Capas de Contexto</text>
+  <text x="450" y="80" text-anchor="middle" font-size="18" font-weight="bold" fill="#64748b">Capas de Contexto</text>
   
   <!-- Layer 1: Environment Context -->
   <rect x="50" y="100" width="800" height="80" fill="#e8f5e8" stroke="#4caf50" stroke-width="2" rx="10"/>

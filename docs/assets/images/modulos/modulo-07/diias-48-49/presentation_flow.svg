@@ -14,11 +14,11 @@
   </defs>
   
   <!-- Background -->
-  <rect width="1000" height="800" fill="#1a1a1a"/>
+  <rect width="1000" height="800" fill="#0f172a"/>
   <rect width="1000" height="800" fill="url(#grid)"/>
   
   <!-- Title -->
-  <text x="500" y="30" text-anchor="middle" fill="#ffffff" font-size="24" font-weight="bold">
+  <text x="500" y="30" text-anchor="middle" fill="#f8fafc" font-size="24" font-weight="bold">
     Flujo de Presentación y Evaluación Final - Bootcamp MCP
   </text>
   
@@ -28,42 +28,42 @@
   <!-- Day 48 Section -->
   <g transform="translate(100, 100)">
     <rect width="350" height="280" fill="#263238" stroke="#37474f" stroke-width="2" rx="10"/>
-    <text x="175" y="30" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">
+    <text x="175" y="30" text-anchor="middle" fill="#f8fafc" font-size="18" font-weight="bold">
       📅 DÍA 48 - DEPLOYMENT
     </text>
     
     <!-- Deployment Steps -->
     <g transform="translate(20, 50)">
       <rect width="310" height="40" fill="url(#processGradient)" rx="5"/>
-      <text x="155" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">
+      <text x="155" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">
         1. Pre-deployment Setup
       </text>
     </g>
     
     <g transform="translate(20, 100)">
       <rect width="310" height="30" fill="#2196f3" rx="3"/>
-      <text x="155" y="20" text-anchor="middle" fill="#ffffff" font-size="12">
+      <text x="155" y="20" text-anchor="middle" fill="#f8fafc" font-size="12">
         • Configurar entorno de producción
       </text>
     </g>
     
     <g transform="translate(20, 135)">
       <rect width="310" height="30" fill="#2196f3" rx="3"/>
-      <text x="155" y="20" text-anchor="middle" fill="#ffffff" font-size="12">
+      <text x="155" y="20" text-anchor="middle" fill="#f8fafc" font-size="12">
         • Ejecutar pipeline CI/CD completo
       </text>
     </g>
     
     <g transform="translate(20, 170)">
       <rect width="310" height="30" fill="#2196f3" rx="3"/>
-      <text x="155" y="20" text-anchor="middle" fill="#ffffff" font-size="12">
+      <text x="155" y="20" text-anchor="middle" fill="#f8fafc" font-size="12">
         • Configurar monitoreo y alertas
       </text>
     </g>
     
     <g transform="translate(20, 210)">
       <rect width="310" height="40" fill="url(#evalGradient)" rx="5"/>
-      <text x="155" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">
+      <text x="155" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">
         2. Validation & Testing
       </text>
     </g>
@@ -72,49 +72,49 @@
   <!-- Day 49 Section -->
   <g transform="translate(550, 100)">
     <rect width="350" height="280" fill="#263238" stroke="#37474f" stroke-width="2" rx="10"/>
-    <text x="175" y="30" text-anchor="middle" fill="#ffffff" font-size="18" font-weight="bold">
+    <text x="175" y="30" text-anchor="middle" fill="#f8fafc" font-size="18" font-weight="bold">
       📅 DÍA 49 - PRESENTACIÓN
     </text>
     
     <!-- Presentation Steps -->
     <g transform="translate(20, 50)">
       <rect width="310" height="40" fill="url(#processGradient)" rx="5"/>
-      <text x="155" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">
+      <text x="155" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">
         1. Technical Presentation
       </text>
     </g>
     
     <g transform="translate(20, 100)">
       <rect width="150" height="30" fill="#9c27b0" rx="3"/>
-      <text x="75" y="20" text-anchor="middle" fill="#ffffff" font-size="11">
+      <text x="75" y="20" text-anchor="middle" fill="#f8fafc" font-size="11">
         45min Presentación
       </text>
     </g>
     
     <g transform="translate(180, 100)">
       <rect width="150" height="30" fill="#e91e63" rx="3"/>
-      <text x="75" y="20" text-anchor="middle" fill="#ffffff" font-size="11">
+      <text x="75" y="20" text-anchor="middle" fill="#f8fafc" font-size="11">
         15min Q&A
       </text>
     </g>
     
     <g transform="translate(20, 140)">
       <rect width="310" height="40" fill="url(#evalGradient)" rx="5"/>
-      <text x="155" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">
+      <text x="155" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">
         2. Live Demo & Evaluation
       </text>
     </g>
     
     <g transform="translate(20, 190)">
       <rect width="310" height="30" fill="#ff5722" rx="3"/>
-      <text x="155" y="20" text-anchor="middle" fill="#ffffff" font-size="12">
+      <text x="155" y="20" text-anchor="middle" fill="#f8fafc" font-size="12">
         • Demo en vivo del sistema completo
       </text>
     </g>
     
     <g transform="translate(20, 225)">
       <rect width="310" height="30" fill="#ff5722" rx="3"/>
-      <text x="155" y="20" text-anchor="middle" fill="#ffffff" font-size="12">
+      <text x="155" y="20" text-anchor="middle" fill="#f8fafc" font-size="12">
         • Evaluación técnica en tiempo real
       </text>
     </g>
@@ -123,73 +123,73 @@
   <!-- Evaluation Matrix -->
   <g transform="translate(100, 420)">
     <rect width="800" height="320" fill="#1e1e1e" stroke="#333333" stroke-width="2" rx="10"/>
-    <text x="400" y="30" text-anchor="middle" fill="#ffffff" font-size="20" font-weight="bold">
+    <text x="400" y="30" text-anchor="middle" fill="#f8fafc" font-size="20" font-weight="bold">
       📊 Matriz de Evaluación Final
     </text>
     
     <!-- Evaluation Categories -->
     <g transform="translate(50, 60)">
       <rect width="150" height="60" fill="#2d4a7c" stroke="#4a90e2" stroke-width="2" rx="8"/>
-      <text x="75" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Deployment</text>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Deployment</text>
       <text x="75" y="45" text-anchor="middle" fill="#4caf50" font-size="16" font-weight="bold">40%</text>
     </g>
     
     <g transform="translate(220, 60)">
       <rect width="150" height="60" fill="#7c2d4a" stroke="#e24a4a" stroke-width="2" rx="8"/>
-      <text x="75" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Monitoreo</text>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Monitoreo</text>
       <text x="75" y="45" text-anchor="middle" fill="#4caf50" font-size="16" font-weight="bold">20%</text>
     </g>
     
     <g transform="translate(390, 60)">
       <rect width="150" height="60" fill="#2d7c4a" stroke="#4ae24a" stroke-width="2" rx="8"/>
-      <text x="75" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Presentación</text>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Presentación</text>
       <text x="75" y="45" text-anchor="middle" fill="#4caf50" font-size="16" font-weight="bold">25%</text>
     </g>
     
     <g transform="translate(560, 60)">
       <rect width="150" height="60" fill="#7c4a2d" stroke="#e2a04a" stroke-width="2" rx="8"/>
-      <text x="75" y="25" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">Documentación</text>
+      <text x="75" y="25" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">Documentación</text>
       <text x="75" y="45" text-anchor="middle" fill="#4caf50" font-size="16" font-weight="bold">15%</text>
     </g>
     
     <!-- Scoring Scale -->
     <g transform="translate(50, 150)">
-      <text x="350" y="0" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">
+      <text x="350" y="0" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">
         Escala de Calificación
       </text>
       
       <rect x="0" y="20" width="120" height="30" fill="#4caf50" rx="5"/>
-      <text x="60" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">90-100: A+</text>
+      <text x="60" y="40" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">90-100: A+</text>
       
       <rect x="130" y="20" width="120" height="30" fill="#8bc34a" rx="5"/>
-      <text x="190" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">85-89: A</text>
+      <text x="190" y="40" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">85-89: A</text>
       
       <rect x="260" y="20" width="120" height="30" fill="#cddc39" rx="5"/>
-      <text x="320" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">80-84: A-</text>
+      <text x="320" y="40" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">80-84: A-</text>
       
       <rect x="390" y="20" width="120" height="30" fill="#ffc107" rx="5"/>
-      <text x="450" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">75-79: B+</text>
+      <text x="450" y="40" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">75-79: B+</text>
       
       <rect x="520" y="20" width="120" height="30" fill="#ff9800" rx="5"/>
-      <text x="580" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">70-74: B</text>
+      <text x="580" y="40" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">70-74: B</text>
       
       <rect x="650" y="20" width="120" height="30" fill="#ff5722" rx="5"/>
-      <text x="710" y="40" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">&lt;70: C</text>
+      <text x="710" y="40" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">&lt;70: C</text>
     </g>
     
     <!-- Success Criteria -->
     <g transform="translate(50, 220)">
-      <text x="350" y="0" text-anchor="middle" fill="#ffffff" font-size="16" font-weight="bold">
+      <text x="350" y="0" text-anchor="middle" fill="#f8fafc" font-size="16" font-weight="bold">
         ✅ Criterios de Éxito para Certificación
       </text>
       
       <text x="0" y="30" fill="#4caf50" font-size="14" font-weight="bold">Requisitos Obligatorios:</text>
-      <text x="0" y="50" fill="#ffffff" font-size="12">• Puntaje mínimo de 70 puntos</text>
-      <text x="0" y="70" fill="#ffffff" font-size="12">• Servidor MCP desplegado y funcionando en producción</text>
+      <text x="0" y="50" fill="#f8fafc" font-size="12">• Puntaje mínimo de 70 puntos</text>
+      <text x="0" y="70" fill="#f8fafc" font-size="12">• Servidor MCP desplegado y funcionando en producción</text>
       
       <text x="400" y="30" fill="#2196f3" font-size="14" font-weight="bold">Para Excelencia (A+):</text>
-      <text x="400" y="50" fill="#ffffff" font-size="12">• Implementación de características avanzadas</text>
-      <text x="400" y="70" fill="#ffffff" font-size="12">• Presentación técnica sobresaliente</text>
+      <text x="400" y="50" fill="#f8fafc" font-size="12">• Implementación de características avanzadas</text>
+      <text x="400" y="70" fill="#f8fafc" font-size="12">• Presentación técnica sobresaliente</text>
     </g>
   </g>
   
@@ -212,7 +212,7 @@
   <!-- Final outcome -->
   <g transform="translate(400, 760)">
     <rect width="200" height="30" fill="#4caf50" stroke="#2e7d32" stroke-width="2" rx="15"/>
-    <text x="100" y="20" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="bold">
+    <text x="100" y="20" text-anchor="middle" fill="#f8fafc" font-size="14" font-weight="bold">
       🎓 CERTIFICACIÓN MCP
     </text>
   </g>

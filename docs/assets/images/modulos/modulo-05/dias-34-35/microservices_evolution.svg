@@ -7,12 +7,12 @@
       .api-gateway { fill: #2d4a8a; stroke: #4a90e2; stroke-width: 2; }
       .connection { fill: none; stroke: #666666; stroke-width: 2; stroke-dasharray: 5,5; }
       .data-flow { fill: none; stroke: #4caf50; stroke-width: 3; marker-end: url(#arrowhead); }
-      .title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
-      .subtitle { fill: #cccccc; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
-      .service-text { fill: #ffffff; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; }
-      .benefit-text { fill: #4caf50; font-family: Arial, sans-serif; font-size: 11px; }
-      .challenge-text { fill: #ff6b6b; font-family: Arial, sans-serif; font-size: 11px; }
-      .vs-text { fill: #ffd700; font-family: Arial, sans-serif; font-size: 32px; font-weight: bold; text-anchor: middle; }
+      .title { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .subtitle { fill: #cccccc; font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .service-text { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: bold; text-anchor: middle; }
+      .benefit-text { fill: #4caf50; font-family: Inter, system-ui, sans-serif; font-size: 11px; }
+      .challenge-text { fill: #ff6b6b; font-family: Inter, system-ui, sans-serif; font-size: 11px; }
+      .vs-text { fill: #ffd700; font-family: Inter, system-ui, sans-serif; font-size: 32px; font-weight: bold; text-anchor: middle; }
     </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#4caf50" />
@@ -155,7 +155,7 @@
   <!-- Key differences box -->
   <rect fill="#3d3d3d" stroke="#888" stroke-width="2" x="400" y="650" width="400" height="120" rx="10"/>
   <text class="subtitle" x="600" y="675" fill="#ffd700">Decisión Clave: ¿Cuándo Migrar?</text>
-  <text class="service-text" x="420" y="700" font-size="11">🎯 Monolito: < 5 herramientas, 1-2 developers, MVP/prototipo</text>
+  <text class="service-text" x="420" y="700" font-size="11">🎯 Monolito: &lt; 5 herramientas, 1-2 developers, MVP/prototipo</text>
   <text class="service-text" x="420" y="720" font-size="11">🏗️ Microservicios: > 10 herramientas, multiple teams, scale requirements</text>
   <text class="service-text" x="420" y="740" font-size="11">⚖️ Híbrido: Modular monolith → selective decomposition</text>
   <text class="service-text" x="420" y="760" font-size="11">🚀 La complejidad debe justificar los beneficios</text>

@@ -1,23 +1,23 @@
 <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="800" height="400" fill="#f8f9fa"/>
+  <rect width="800" height="400" fill="#0f172a"/>
   
   <!-- JavaScript Objects Side -->
   <g transform="translate(50, 50)">
     <rect x="0" y="0" width="300" height="300" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="10"/>
-    <text x="150" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#1976d2">Mundo JavaScript/TypeScript</text>
+    <text x="150" y="25" text-anchor="middle" font-family="Inter" font-size="16" font-weight="bold" fill="#1976d2">Mundo JavaScript/TypeScript</text>
     
     <!-- User Object -->
-    <rect x="20" y="50" width="120" height="100" fill="#ffffff" stroke="#1976d2" stroke-width="1" rx="5"/>
-    <text x="80" y="70" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1976d2">User Object</text>
+    <rect x="20" y="50" width="120" height="100" fill="#0f172a" stroke="#1976d2" stroke-width="1" rx="5"/>
+    <text x="80" y="70" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="#1976d2">User Object</text>
     <text x="25" y="90" font-family="monospace" font-size="10" fill="#333">id: number</text>
     <text x="25" y="105" font-family="monospace" font-size="10" fill="#333">name: string</text>
     <text x="25" y="120" font-family="monospace" font-size="10" fill="#333">email: string</text>
     <text x="25" y="135" font-family="monospace" font-size="10" fill="#333">posts: Post[]</text>
     
     <!-- Post Object -->
-    <rect x="160" y="50" width="120" height="100" fill="#ffffff" stroke="#1976d2" stroke-width="1" rx="5"/>
-    <text x="220" y="70" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#1976d2">Post Object</text>
+    <rect x="160" y="50" width="120" height="100" fill="#0f172a" stroke="#1976d2" stroke-width="1" rx="5"/>
+    <text x="220" y="70" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="#1976d2">Post Object</text>
     <text x="165" y="90" font-family="monospace" font-size="10" fill="#333">id: number</text>
     <text x="165" y="105" font-family="monospace" font-size="10" fill="#333">title: string</text>
     <text x="165" y="120" font-family="monospace" font-size="10" fill="#333">content: string</text>
@@ -25,7 +25,7 @@
     
     <!-- Methods -->
     <rect x="20" y="180" width="260" height="80" fill="#fff3e0" stroke="#f57c00" stroke-width="1" rx="5"/>
-    <text x="150" y="200" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#f57c00">Métodos Familiares</text>
+    <text x="150" y="200" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="#f57c00">Métodos Familiares</text>
     <text x="25" y="220" font-family="monospace" font-size="10" fill="#333">user.posts.create({...})</text>
     <text x="25" y="235" font-family="monospace" font-size="10" fill="#333">user.update({...})</text>
     <text x="25" y="250" font-family="monospace" font-size="10" fill="#333">Post.findMany({...})</text>
@@ -34,19 +34,19 @@
   <!-- Database Side -->
   <g transform="translate(450, 50)">
     <rect x="0" y="0" width="300" height="300" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="2" rx="10"/>
-    <text x="150" y="25" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#7b1fa2">Mundo Base de Datos</text>
+    <text x="150" y="25" text-anchor="middle" font-family="Inter" font-size="16" font-weight="bold" fill="#7b1fa2">Mundo Base de Datos</text>
     
     <!-- Users Table -->
-    <rect x="20" y="50" width="120" height="100" fill="#ffffff" stroke="#7b1fa2" stroke-width="1" rx="5"/>
-    <text x="80" y="70" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#7b1fa2">users</text>
+    <rect x="20" y="50" width="120" height="100" fill="#0f172a" stroke="#7b1fa2" stroke-width="1" rx="5"/>
+    <text x="80" y="70" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="#7b1fa2">users</text>
     <text x="25" y="90" font-family="monospace" font-size="10" fill="#333">id (PRIMARY KEY)</text>
     <text x="25" y="105" font-family="monospace" font-size="10" fill="#333">name VARCHAR(255)</text>
     <text x="25" y="120" font-family="monospace" font-size="10" fill="#333">email VARCHAR(255)</text>
     <text x="25" y="135" font-family="monospace" font-size="10" fill="#333">created_at</text>
     
     <!-- Posts Table -->
-    <rect x="160" y="50" width="120" height="100" fill="#ffffff" stroke="#7b1fa2" stroke-width="1" rx="5"/>
-    <text x="220" y="70" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#7b1fa2">posts</text>
+    <rect x="160" y="50" width="120" height="100" fill="#0f172a" stroke="#7b1fa2" stroke-width="1" rx="5"/>
+    <text x="220" y="70" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="#7b1fa2">posts</text>
     <text x="165" y="90" font-family="monospace" font-size="10" fill="#333">id (PRIMARY KEY)</text>
     <text x="165" y="105" font-family="monospace" font-size="10" fill="#333">title VARCHAR(255)</text>
     <text x="165" y="120" font-family="monospace" font-size="10" fill="#333">content TEXT</text>
@@ -54,7 +54,7 @@
     
     <!-- SQL -->
     <rect x="20" y="180" width="260" height="80" fill="#ffebee" stroke="#d32f2f" stroke-width="1" rx="5"/>
-    <text x="150" y="200" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="#d32f2f">SQL Complejo</text>
+    <text x="150" y="200" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="#d32f2f">SQL Complejo</text>
     <text x="25" y="220" font-family="monospace" font-size="9" fill="#333">SELECT u.*, p.* FROM users u</text>
     <text x="25" y="235" font-family="monospace" font-size="9" fill="#333">LEFT JOIN posts p ON u.id = p.user_id</text>
     <text x="25" y="250" font-family="monospace" font-size="9" fill="#333">WHERE u.id = ? ORDER BY...</text>
@@ -63,7 +63,7 @@
   <!-- ORM Arrow -->
   <g transform="translate(375, 180)">
     <rect x="-30" y="-20" width="60" height="40" fill="#4caf50" rx="20"/>
-    <text x="0" y="5" text-anchor="middle" font-family="Arial" font-size="12" font-weight="bold" fill="white">ORM</text>
+    <text x="0" y="5" text-anchor="middle" font-family="Inter" font-size="12" font-weight="bold" fill="white">ORM</text>
     
     <!-- Bidirectional arrows -->
     <path d="M -60 0 L -35 0" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowhead)"/>

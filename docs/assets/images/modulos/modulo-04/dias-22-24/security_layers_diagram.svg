@@ -6,7 +6,7 @@
   </defs>
   
   <!-- Background -->
-  <rect width="800" height="600" fill="#1a1a1a"/>
+  <rect width="800" height="600" fill="#0f172a"/>
   <rect width="800" height="600" fill="url(#grid)" opacity="0.1"/>
   
   <!-- Title -->
@@ -40,13 +40,13 @@
   <text x="270" y="360" fill="#5f27cd" font-size="12">• Encryción • Hashing • Secrets</text>
   
   <!-- Data Flow Arrows -->
-  <path d="M 400 420 L 400 480" stroke="#ffffff" stroke-width="2" marker-end="url(#arrowhead)"/>
-  <text x="410" y="455" fill="#ffffff" font-size="12">Flujo de Datos</text>
+  <path d="M 400 420 L 400 480" stroke="#0f172a" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="410" y="455" fill="#f8fafc" font-size="12">Flujo de Datos</text>
   
   <!-- Arrow marker -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0f172a"/>
     </marker>
   </defs>
   

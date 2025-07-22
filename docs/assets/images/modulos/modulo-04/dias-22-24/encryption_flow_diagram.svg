@@ -13,7 +13,7 @@
   </defs>
   
   <!-- Background -->
-  <rect width="900" height="650" fill="#1a1a1a"/>
+  <rect width="900" height="650" fill="#0f172a"/>
   <rect width="900" height="650" fill="url(#grid)" opacity="0.1"/>
   
   <!-- Title -->
@@ -27,23 +27,23 @@
   
   <!-- User Input -->
   <rect x="80" y="110" width="120" height="40" fill="#ff6b6b" rx="5"/>
-  <text x="140" y="135" text-anchor="middle" fill="#ffffff" font-size="12">Entrada Usuario</text>
+  <text x="140" y="135" text-anchor="middle" fill="#f8fafc" font-size="12">Entrada Usuario</text>
   
   <!-- API Keys -->
   <rect x="220" y="110" width="120" height="40" fill="#ff6b6b" rx="5"/>
-  <text x="280" y="135" text-anchor="middle" fill="#ffffff" font-size="12">Claves API</text>
+  <text x="280" y="135" text-anchor="middle" fill="#f8fafc" font-size="12">Claves API</text>
   
   <!-- Database Creds -->
   <rect x="360" y="110" width="120" height="40" fill="#ff6b6b" rx="5"/>
-  <text x="420" y="135" text-anchor="middle" fill="#ffffff" font-size="12">Credenciales DB</text>
+  <text x="420" y="135" text-anchor="middle" fill="#f8fafc" font-size="12">Credenciales DB</text>
   
   <!-- Personal Data -->
   <rect x="500" y="110" width="120" height="40" fill="#ff6b6b" rx="5"/>
-  <text x="560" y="135" text-anchor="middle" fill="#ffffff" font-size="12">Datos Personales</text>
+  <text x="560" y="135" text-anchor="middle" fill="#f8fafc" font-size="12">Datos Personales</text>
   
   <!-- JWT Secrets -->
   <rect x="640" y="110" width="120" height="40" fill="#ff6b6b" rx="5"/>
-  <text x="700" y="135" text-anchor="middle" fill="#ffffff" font-size="12">Secrets JWT</text>
+  <text x="700" y="135" text-anchor="middle" fill="#f8fafc" font-size="12">Secrets JWT</text>
   
   <!-- Encryption Layer -->
   <rect x="50" y="200" width="800" height="120" fill="#2a2a2a" stroke="#4ecdc4" stroke-width="2" rx="10"/>
@@ -51,53 +51,53 @@
   
   <!-- Encryption Types -->
   <rect x="100" y="245" width="150" height="60" fill="url(#encryptGradient)" rx="5"/>
-  <text x="175" y="265" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">AES-256-GCM</text>
-  <text x="175" y="280" text-anchor="middle" fill="#ffffff" font-size="10">Datos en Reposo</text>
-  <text x="175" y="295" text-anchor="middle" fill="#ffffff" font-size="10">Simétrico</text>
+  <text x="175" y="265" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">AES-256-GCM</text>
+  <text x="175" y="280" text-anchor="middle" fill="#f8fafc" font-size="10">Datos en Reposo</text>
+  <text x="175" y="295" text-anchor="middle" fill="#f8fafc" font-size="10">Simétrico</text>
   
   <rect x="280" y="245" width="150" height="60" fill="url(#encryptGradient)" rx="5"/>
-  <text x="355" y="265" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">RSA-OAEP</text>
-  <text x="355" y="280" text-anchor="middle" fill="#ffffff" font-size="10">Intercambio Claves</text>
-  <text x="355" y="295" text-anchor="middle" fill="#ffffff" font-size="10">Asimétrico</text>
+  <text x="355" y="265" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">RSA-OAEP</text>
+  <text x="355" y="280" text-anchor="middle" fill="#f8fafc" font-size="10">Intercambio Claves</text>
+  <text x="355" y="295" text-anchor="middle" fill="#f8fafc" font-size="10">Asimétrico</text>
   
   <rect x="460" y="245" width="150" height="60" fill="url(#encryptGradient)" rx="5"/>
-  <text x="535" y="265" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">ChaCha20-Poly1305</text>
-  <text x="535" y="280" text-anchor="middle" fill="#ffffff" font-size="10">Datos en Tránsito</text>
-  <text x="535" y="295" text-anchor="middle" fill="#ffffff" font-size="10">Stream Cipher</text>
+  <text x="535" y="265" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">ChaCha20-Poly1305</text>
+  <text x="535" y="280" text-anchor="middle" fill="#f8fafc" font-size="10">Datos en Tránsito</text>
+  <text x="535" y="295" text-anchor="middle" fill="#f8fafc" font-size="10">Stream Cipher</text>
   
   <rect x="640" y="245" width="150" height="60" fill="url(#encryptGradient)" rx="5"/>
-  <text x="715" y="265" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="bold">Argon2id</text>
-  <text x="715" y="280" text-anchor="middle" fill="#ffffff" font-size="10">Hashing Passwords</text>
-  <text x="715" y="295" text-anchor="middle" fill="#ffffff" font-size="10">Key Derivation</text>
+  <text x="715" y="265" text-anchor="middle" fill="#f8fafc" font-size="12" font-weight="bold">Argon2id</text>
+  <text x="715" y="280" text-anchor="middle" fill="#f8fafc" font-size="10">Hashing Passwords</text>
+  <text x="715" y="295" text-anchor="middle" fill="#f8fafc" font-size="10">Key Derivation</text>
   
   <!-- Key Management -->
   <rect x="50" y="350" width="800" height="80" fill="#2a2a2a" stroke="#f7b731" stroke-width="2" rx="10"/>
   <text x="450" y="375" text-anchor="middle" fill="#f7b731" font-size="16" font-weight="bold">Gestión de Claves</text>
   
   <rect x="100" y="390" width="180" height="30" fill="#f7b731" rx="5"/>
-  <text x="190" y="410" text-anchor="middle" fill="#ffffff" font-size="11">Key Rotation Automática</text>
+  <text x="190" y="410" text-anchor="middle" fill="#f8fafc" font-size="11">Key Rotation Automática</text>
   
   <rect x="300" y="390" width="180" height="30" fill="#f7b731" rx="5"/>
-  <text x="390" y="410" text-anchor="middle" fill="#ffffff" font-size="11">Hardware Security Module</text>
+  <text x="390" y="410" text-anchor="middle" fill="#f8fafc" font-size="11">Hardware Security Module</text>
   
   <rect x="500" y="390" width="180" height="30" fill="#f7b731" rx="5"/>
-  <text x="590" y="410" text-anchor="middle" fill="#ffffff" font-size="11">Environment Variables</text>
+  <text x="590" y="410" text-anchor="middle" fill="#f8fafc" font-size="11">Environment Variables</text>
   
   <!-- Audit Layer -->
   <rect x="50" y="460" width="800" height="80" fill="#2a2a2a" stroke="#5f27cd" stroke-width="2" rx="10"/>
   <text x="450" y="485" text-anchor="middle" fill="#5f27cd" font-size="16" font-weight="bold">Auditoría y Compliance</text>
   
   <rect x="100" y="500" width="140" height="30" fill="#5f27cd" rx="5"/>
-  <text x="170" y="520" text-anchor="middle" fill="#ffffff" font-size="11">Logs Encriptados</text>
+  <text x="170" y="520" text-anchor="middle" fill="#f8fafc" font-size="11">Logs Encriptados</text>
   
   <rect x="260" y="500" width="140" height="30" fill="#5f27cd" rx="5"/>
-  <text x="330" y="520" text-anchor="middle" fill="#ffffff" font-size="11">GDPR Compliance</text>
+  <text x="330" y="520" text-anchor="middle" fill="#f8fafc" font-size="11">GDPR Compliance</text>
   
   <rect x="420" y="500" width="140" height="30" fill="#5f27cd" rx="5"/>
-  <text x="490" y="520" text-anchor="middle" fill="#ffffff" font-size="11">SOC2 Ready</text>
+  <text x="490" y="520" text-anchor="middle" fill="#f8fafc" font-size="11">SOC2 Ready</text>
   
   <rect x="580" y="500" width="140" height="30" fill="#5f27cd" rx="5"/>
-  <text x="650" y="520" text-anchor="middle" fill="#ffffff" font-size="11">Immutable Audit</text>
+  <text x="650" y="520" text-anchor="middle" fill="#f8fafc" font-size="11">Immutable Audit</text>
   
   <!-- Storage Layer -->
   <rect x="50" y="570" width="800" height="60" fill="#2a2a2a" stroke="#45b7d1" stroke-width="2" rx="10"/>

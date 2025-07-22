@@ -1,127 +1,127 @@
 <svg viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
   <!-- Fondo -->
-  <rect width="1000" height="700" fill="#f8f9fa"/>
+  <rect width="1000" height="700" fill="#0f172a"/>
   
   <!-- Título -->
-  <text x="500" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">Tipos de Transporte MCP: Comparación y Casos de Uso</text>
+  <text x="500" y="30" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">Tipos de Transporte MCP: Comparación y Casos de Uso</text>
   
   <!-- STDIO Transport -->
   <rect x="50" y="80" width="280" height="180" rx="12" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
-  <text x="190" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">STDIO Transport</text>
+  <text x="190" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">STDIO Transport</text>
   
   <!-- STDIO características -->
-  <text x="70" y="135" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Ventajas:</text>
-  <text x="70" y="150" font-family="Arial, sans-serif" font-size="11" fill="white">• Simple y directo</text>
-  <text x="70" y="165" font-family="Arial, sans-serif" font-size="11" fill="white">• Ideal para desarrollo</text>
-  <text x="70" y="180" font-family="Arial, sans-serif" font-size="11" fill="white">• Sin configuración de red</text>
-  <text x="70" y="195" font-family="Arial, sans-serif" font-size="11" fill="white">• Debugging fácil</text>
+  <text x="70" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Ventajas:</text>
+  <text x="70" y="150" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Simple y directo</text>
+  <text x="70" y="165" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Ideal para desarrollo</text>
+  <text x="70" y="180" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Sin configuración de red</text>
+  <text x="70" y="195" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Debugging fácil</text>
   
-  <text x="70" y="220" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">❌ Limitaciones:</text>
-  <text x="70" y="235" font-family="Arial, sans-serif" font-size="11" fill="white">• Una conexión a la vez</text>
-  <text x="70" y="250" font-family="Arial, sans-serif" font-size="11" fill="white">• No escalable</text>
+  <text x="70" y="220" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="white">❌ Limitaciones:</text>
+  <text x="70" y="235" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Una conexión a la vez</text>
+  <text x="70" y="250" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• No escalable</text>
   
   <!-- HTTP Transport -->
   <rect x="360" y="80" width="280" height="180" rx="12" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
-  <text x="500" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">HTTP Transport</text>
+  <text x="500" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">HTTP Transport</text>
   
   <!-- HTTP características -->
-  <text x="380" y="135" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Ventajas:</text>
-  <text x="380" y="150" font-family="Arial, sans-serif" font-size="11" fill="white">• Múltiples clientes</text>
-  <text x="380" y="165" font-family="Arial, sans-serif" font-size="11" fill="white">• REST compatible</text>
-  <text x="380" y="180" font-family="Arial, sans-serif" font-size="11" fill="white">• Caching HTTP</text>
-  <text x="380" y="195" font-family="Arial, sans-serif" font-size="11" fill="white">• Load balancing</text>
+  <text x="380" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Ventajas:</text>
+  <text x="380" y="150" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Múltiples clientes</text>
+  <text x="380" y="165" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• REST compatible</text>
+  <text x="380" y="180" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Caching HTTP</text>
+  <text x="380" y="195" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Load balancing</text>
   
-  <text x="380" y="220" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">❌ Limitaciones:</text>
-  <text x="380" y="235" font-family="Arial, sans-serif" font-size="11" fill="white">• Sin tiempo real</text>
-  <text x="380" y="250" font-family="Arial, sans-serif" font-size="11" fill="white">• Overhead HTTP</text>
+  <text x="380" y="220" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="white">❌ Limitaciones:</text>
+  <text x="380" y="235" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Sin tiempo real</text>
+  <text x="380" y="250" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Overhead HTTP</text>
   
   <!-- WebSocket Transport -->
   <rect x="670" y="80" width="280" height="180" rx="12" fill="#2ecc71" stroke="#27ae60" stroke-width="3"/>
-  <text x="810" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white">WebSocket Transport</text>
+  <text x="810" y="110" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="bold" fill="white">WebSocket Transport</text>
   
   <!-- WebSocket características -->
-  <text x="690" y="135" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Ventajas:</text>
-  <text x="690" y="150" font-family="Arial, sans-serif" font-size="11" fill="white">• Tiempo real</text>
-  <text x="690" y="165" font-family="Arial, sans-serif" font-size="11" fill="white">• Bidireccional</text>
-  <text x="690" y="180" font-family="Arial, sans-serif" font-size="11" fill="white">• Múltiples clientes</text>
-  <text x="690" y="195" font-family="Arial, sans-serif" font-size="11" fill="white">• Bajo overhead</text>
+  <text x="690" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="white">✅ Ventajas:</text>
+  <text x="690" y="150" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Tiempo real</text>
+  <text x="690" y="165" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Bidireccional</text>
+  <text x="690" y="180" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Múltiples clientes</text>
+  <text x="690" y="195" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Bajo overhead</text>
   
-  <text x="690" y="220" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="white">❌ Limitaciones:</text>
-  <text x="690" y="235" font-family="Arial, sans-serif" font-size="11" fill="white">• Más complejo</text>
-  <text x="690" y="250" font-family="Arial, sans-serif" font-size="11" fill="white">• Gestión conexiones</text>
+  <text x="690" y="220" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="white">❌ Limitaciones:</text>
+  <text x="690" y="235" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Más complejo</text>
+  <text x="690" y="250" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">• Gestión conexiones</text>
   
   <!-- Casos de Uso -->
-  <text x="500" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">Casos de Uso Recomendados</text>
+  <text x="500" y="300" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">Casos de Uso Recomendados</text>
   
   <!-- STDIO casos -->
   <rect x="50" y="330" width="280" height="120" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
-  <text x="190" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">STDIO - Desarrollo</text>
-  <text x="70" y="370" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Prototipado rápido</text>
-  <text x="70" y="385" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Tests unitarios</text>
-  <text x="70" y="400" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Scripts automatización</text>
-  <text x="70" y="415" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• CLI tools</text>
-  <text x="70" y="430" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Debugging local</text>
+  <text x="190" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">STDIO - Desarrollo</text>
+  <text x="70" y="370" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Prototipado rápido</text>
+  <text x="70" y="385" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Tests unitarios</text>
+  <text x="70" y="400" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Scripts automatización</text>
+  <text x="70" y="415" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• CLI tools</text>
+  <text x="70" y="430" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Debugging local</text>
   
   <!-- HTTP casos -->
   <rect x="360" y="330" width="280" height="120" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
-  <text x="500" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">HTTP - Producción</text>
-  <text x="380" y="370" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• APIs públicas</text>
-  <text x="380" y="385" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Integraciones web</text>
-  <text x="380" y="400" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Microservicios</text>
-  <text x="380" y="415" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Carga distribuida</text>
-  <text x="380" y="430" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Sistemas RESTful</text>
+  <text x="500" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">HTTP - Producción</text>
+  <text x="380" y="370" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• APIs públicas</text>
+  <text x="380" y="385" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Integraciones web</text>
+  <text x="380" y="400" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Microservicios</text>
+  <text x="380" y="415" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Carga distribuida</text>
+  <text x="380" y="430" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Sistemas RESTful</text>
   
   <!-- WebSocket casos -->
   <rect x="670" y="330" width="280" height="120" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
-  <text x="810" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2c3e50">WebSocket - Tiempo Real</text>
-  <text x="690" y="370" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Notificaciones push</text>
-  <text x="690" y="385" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Aplicaciones interactivas</text>
-  <text x="690" y="400" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Colaboración tiempo real</text>
-  <text x="690" y="415" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Streaming de datos</text>
-  <text x="690" y="430" font-family="Arial, sans-serif" font-size="11" fill="#34495e">• Monitoreo en vivo</text>
+  <text x="810" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="#f8fafc">WebSocket - Tiempo Real</text>
+  <text x="690" y="370" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Notificaciones push</text>
+  <text x="690" y="385" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Aplicaciones interactivas</text>
+  <text x="690" y="400" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Colaboración tiempo real</text>
+  <text x="690" y="415" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Streaming de datos</text>
+  <text x="690" y="430" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">• Monitoreo en vivo</text>
   
   <!-- Métricas de Rendimiento -->
-  <text x="500" y="490" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2c3e50">Comparación de Rendimiento</text>
+  <text x="500" y="490" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="bold" fill="#f8fafc">Comparación de Rendimiento</text>
   
   <!-- Tabla de métricas -->
   <rect x="150" y="520" width="700" height="150" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
   
   <!-- Headers -->
-  <text x="180" y="545" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">Métrica</text>
-  <text x="350" y="545" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">STDIO</text>
-  <text x="500" y="545" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">HTTP</text>
-  <text x="650" y="545" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2c3e50">WebSocket</text>
+  <text x="180" y="545" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">Métrica</text>
+  <text x="350" y="545" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">STDIO</text>
+  <text x="500" y="545" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">HTTP</text>
+  <text x="650" y="545" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold" fill="#f8fafc">WebSocket</text>
   
   <!-- Línea separadora -->
   <line x1="170" y1="555" x2="830" y2="555" stroke="#bdc3c7" stroke-width="1"/>
   
   <!-- Latencia -->
-  <text x="180" y="575" font-family="Arial, sans-serif" font-size="11" fill="#34495e">Latencia</text>
-  <text x="350" y="575" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Muy Baja (&lt;1ms)</text>
-  <text x="500" y="575" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">Media (10-50ms)</text>
-  <text x="650" y="575" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Baja (2-10ms)</text>
+  <text x="180" y="575" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">Latencia</text>
+  <text x="350" y="575" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Muy Baja (&lt;1ms)</text>
+  <text x="500" y="575" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f39c12">Media (10-50ms)</text>
+  <text x="650" y="575" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Baja (2-10ms)</text>
   
   <!-- Throughput -->
-  <text x="180" y="595" font-family="Arial, sans-serif" font-size="11" fill="#34495e">Throughput</text>
-  <text x="350" y="595" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">Limitado</text>
-  <text x="500" y="595" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Alto</text>
-  <text x="650" y="595" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Muy Alto</text>
+  <text x="180" y="595" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">Throughput</text>
+  <text x="350" y="595" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e74c3c">Limitado</text>
+  <text x="500" y="595" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Alto</text>
+  <text x="650" y="595" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Muy Alto</text>
   
   <!-- Concurrencia -->
-  <text x="180" y="615" font-family="Arial, sans-serif" font-size="11" fill="#34495e">Concurrencia</text>
-  <text x="350" y="615" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">1 Cliente</text>
-  <text x="500" y="615" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Múltiples</text>
-  <text x="650" y="615" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Múltiples</text>
+  <text x="180" y="615" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">Concurrencia</text>
+  <text x="350" y="615" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e74c3c">1 Cliente</text>
+  <text x="500" y="615" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Múltiples</text>
+  <text x="650" y="615" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Múltiples</text>
   
   <!-- Escalabilidad -->
-  <text x="180" y="635" font-family="Arial, sans-serif" font-size="11" fill="#34495e">Escalabilidad</text>
-  <text x="350" y="635" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">No escalable</text>
-  <text x="500" y="635" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">Horizontal</text>
-  <text x="650" y="635" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Vertical + Horizontal</text>
+  <text x="180" y="635" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">Escalabilidad</text>
+  <text x="350" y="635" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e74c3c">No escalable</text>
+  <text x="500" y="635" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f39c12">Horizontal</text>
+  <text x="650" y="635" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Vertical + Horizontal</text>
   
   <!-- Complejidad -->
-  <text x="180" y="655" font-family="Arial, sans-serif" font-size="11" fill="#34495e">Complejidad</text>
-  <text x="350" y="655" font-family="Arial, sans-serif" font-size="11" fill="#27ae60">Muy Simple</text>
-  <text x="500" y="655" font-family="Arial, sans-serif" font-size="11" fill="#f39c12">Media</text>
-  <text x="650" y="655" font-family="Arial, sans-serif" font-size="11" fill="#e74c3c">Alta</text>
+  <text x="180" y="655" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#64748b">Complejidad</text>
+  <text x="350" y="655" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#27ae60">Muy Simple</text>
+  <text x="500" y="655" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f39c12">Media</text>
+  <text x="650" y="655" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#e74c3c">Alta</text>
 </svg>

@@ -3,7 +3,7 @@
     <style>
       .title { font-family: 'Segoe UI', sans-serif; font-size: 18px; font-weight: bold; fill: #e0e0e0; }
       .subtitle { font-family: 'Segoe UI', sans-serif; font-size: 14px; fill: #b0b0b0; }
-      .label { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #ffffff; }
+      .label { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #0f172a; }
       .small-label { font-family: 'Segoe UI', sans-serif; font-size: 10px; fill: #cccccc; }
       .container { fill: #2d3748; stroke: #4a5568; stroke-width: 2; rx: 8; }
       .component { fill: #1a202c; stroke: #2d3748; stroke-width: 1; rx: 6; }
@@ -18,7 +18,7 @@
   </defs>
   
   <!-- Background -->
-  <rect width="1000" height="700" fill="#1a1a1a"/>
+  <rect width="1000" height="700" fill="#0f172a"/>
   
   <!-- Title -->
   <text x="500" y="30" text-anchor="middle" class="title">Arquitectura del Proyecto Final MCP Server</text>

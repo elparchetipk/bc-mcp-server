@@ -1,9 +1,9 @@
 <svg viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="900" height="600" fill="#f8f9fa"/>
+  <rect width="900" height="600" fill="#0f172a"/>
   
   <!-- Title -->
-  <text x="450" y="30" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold" fill="#333">
+  <text x="450" y="30" text-anchor="middle" font-family="Inter" font-size="18" font-weight="bold" fill="#333">
     Impacto de la Optimización en Performance de Consultas
   </text>
   
@@ -11,17 +11,17 @@
   <rect x="100" y="70" width="700" height="400" fill="white" stroke="#ddd" stroke-width="1"/>
   
   <!-- Y-axis labels (Query Time in ms) -->
-  <text x="50" y="125" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">2000ms</text>
-  <text x="50" y="175" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">1500ms</text>
-  <text x="50" y="225" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">1000ms</text>
-  <text x="50" y="275" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">500ms</text>
-  <text x="50" y="325" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">200ms</text>
-  <text x="50" y="375" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">100ms</text>
-  <text x="50" y="425" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">50ms</text>
-  <text x="50" y="465" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">0ms</text>
+  <text x="50" y="125" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">2000ms</text>
+  <text x="50" y="175" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">1500ms</text>
+  <text x="50" y="225" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">1000ms</text>
+  <text x="50" y="275" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">500ms</text>
+  <text x="50" y="325" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">200ms</text>
+  <text x="50" y="375" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">100ms</text>
+  <text x="50" y="425" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">50ms</text>
+  <text x="50" y="465" text-anchor="middle" font-family="Inter" font-size="12" fill="#666">0ms</text>
   
   <!-- Y-axis title -->
-  <text x="25" y="270" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#333" transform="rotate(-90 25 270)">
+  <text x="25" y="270" text-anchor="middle" font-family="Inter" font-size="14" font-weight="bold" fill="#333" transform="rotate(-90 25 270)">
     Tiempo de Consulta (ms)
   </text>
   
@@ -40,77 +40,77 @@
   <g>
     <!-- Bad: N+1 Query -->
     <rect x="130" y="70" width="80" height="395" fill="#ff6b6b" opacity="0.8"/>
-    <text x="170" y="60" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#d32f2f">2000ms</text>
+    <text x="170" y="60" text-anchor="middle" font-family="Inter" font-size="11" font-weight="bold" fill="#d32f2f">2000ms</text>
     
     <!-- Good: Include/Join -->
     <rect x="240" y="420" width="80" height="45" fill="#4caf50" opacity="0.8"/>
-    <text x="280" y="412" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2e7d32">45ms</text>
+    <text x="280" y="412" text-anchor="middle" font-family="Inter" font-size="11" font-weight="bold" fill="#2e7d32">45ms</text>
   </g>
   
   <!-- Bars for Pagination -->
   <g>
     <!-- Bad: Offset pagination on large dataset -->
     <rect x="370" y="220" width="80" height="245" fill="#ff6b6b" opacity="0.8"/>
-    <text x="410" y="212" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#d32f2f">1000ms</text>
+    <text x="410" y="212" text-anchor="middle" font-family="Inter" font-size="11" font-weight="bold" fill="#d32f2f">1000ms</text>
     
     <!-- Good: Cursor pagination -->
     <rect x="480" y="440" width="80" height="25" fill="#4caf50" opacity="0.8"/>
-    <text x="520" y="432" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2e7d32">25ms</text>
+    <text x="520" y="432" text-anchor="middle" font-family="Inter" font-size="11" font-weight="bold" fill="#2e7d32">25ms</text>
   </g>
   
   <!-- Bars for Search -->
   <g>
     <!-- Bad: Full table scan -->
     <rect x="610" y="170" width="80" height="295" fill="#ff6b6b" opacity="0.8"/>
-    <text x="650" y="162" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#d32f2f">1500ms</text>
+    <text x="650" y="162" text-anchor="middle" font-family="Inter" font-size="11" font-weight="bold" fill="#d32f2f">1500ms</text>
     
     <!-- Good: Indexed search -->
     <rect x="720" y="430" width="80" height="35" fill="#4caf50" opacity="0.8"/>
-    <text x="760" y="422" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#2e7d32">35ms</text>
+    <text x="760" y="422" text-anchor="middle" font-family="Inter" font-size="11" font-weight="bold" fill="#2e7d32">35ms</text>
   </g>
   
   <!-- X-axis labels -->
-  <text x="170" y="490" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">N+1 Problem</text>
-  <text x="280" y="490" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Include/Join</text>
-  <text x="410" y="490" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Offset Pagination</text>
-  <text x="520" y="490" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Cursor Pagination</text>
-  <text x="650" y="490" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Table Scan</text>
-  <text x="760" y="490" text-anchor="middle" font-family="Arial" font-size="12" fill="#333">Indexed Search</text>
+  <text x="170" y="490" text-anchor="middle" font-family="Inter" font-size="12" fill="#333">N+1 Problem</text>
+  <text x="280" y="490" text-anchor="middle" font-family="Inter" font-size="12" fill="#333">Include/Join</text>
+  <text x="410" y="490" text-anchor="middle" font-family="Inter" font-size="12" fill="#333">Offset Pagination</text>
+  <text x="520" y="490" text-anchor="middle" font-family="Inter" font-size="12" fill="#333">Cursor Pagination</text>
+  <text x="650" y="490" text-anchor="middle" font-family="Inter" font-size="12" fill="#333">Table Scan</text>
+  <text x="760" y="490" text-anchor="middle" font-family="Inter" font-size="12" fill="#333">Indexed Search</text>
   
   <!-- Legend -->
   <g transform="translate(250, 520)">
     <rect x="0" y="0" width="400" height="60" fill="white" stroke="#ddd" stroke-width="1" rx="5"/>
-    <text x="200" y="20" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#333">
+    <text x="200" y="20" text-anchor="middle" font-family="Inter" font-size="14" font-weight="bold" fill="#333">
       Impacto de la Optimización
     </text>
     
     <!-- Bad practices -->
     <rect x="20" y="30" width="15" height="15" fill="#ff6b6b"/>
-    <text x="45" y="42" font-family="Arial" font-size="12" fill="#333">Práctica No Optimizada</text>
+    <text x="45" y="42" font-family="Inter" font-size="12" fill="#333">Práctica No Optimizada</text>
     
     <!-- Good practices -->
     <rect x="220" y="30" width="15" height="15" fill="#4caf50"/>
-    <text x="245" y="42" font-family="Arial" font-size="12" fill="#333">Práctica Optimizada</text>
+    <text x="245" y="42" font-family="Inter" font-size="12" fill="#333">Práctica Optimizada</text>
   </g>
   
   <!-- Performance improvement indicators -->
   <g transform="translate(170, 350)">
     <path d="M 0 0 L 70 -250" stroke="#e91e63" stroke-width="2" marker-end="url(#arrow)"/>
-    <text x="40" y="-120" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#e91e63">
+    <text x="40" y="-120" text-anchor="middle" font-family="Inter" font-size="10" font-weight="bold" fill="#e91e63">
       44x más rápido
     </text>
   </g>
   
   <g transform="translate(410, 350)">
     <path d="M 0 0 L 70 -325" stroke="#e91e63" stroke-width="2" marker-end="url(#arrow)"/>
-    <text x="40" y="-160" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#e91e63">
+    <text x="40" y="-160" text-anchor="middle" font-family="Inter" font-size="10" font-weight="bold" fill="#e91e63">
       40x más rápido
     </text>
   </g>
   
   <g transform="translate(650, 350)">
     <path d="M 0 0 L 70 -285" stroke="#e91e63" stroke-width="2" marker-end="url(#arrow)"/>
-    <text x="40" y="-140" text-anchor="middle" font-family="Arial" font-size="10" font-weight="bold" fill="#e91e63">
+    <text x="40" y="-140" text-anchor="middle" font-family="Inter" font-size="10" font-weight="bold" fill="#e91e63">
       43x más rápido
     </text>
   </g>

@@ -6,8 +6,8 @@
       .pool { fill: #065f46; stroke: #10b981; stroke-width: 2; }
       .connection { fill: #10b981; stroke: #ffffff; stroke-width: 1; }
       .busy { fill: #dc2626; }
-      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; }
-      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: Inter, system-ui, sans-serif; font-size: 12px; }
+      .title { fill: #f1f5f9; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: bold; }
       .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
     </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">

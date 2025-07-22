@@ -1,69 +1,69 @@
 <svg viewBox="0 0 900 700" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="900" height="700" fill="#f8f9fa"/>
+  <rect width="900" height="700" fill="#0f172a"/>
   
   <!-- Title -->
-  <text x="450" y="40" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#2c3e50">
+  <text x="450" y="40" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="bold" fill="#f8fafc">
     Recursos Dinámicos: Datos Siempre Actualizados
   </text>
   
   <!-- Sistema de Datos (fuente) -->
   <rect x="50" y="100" width="150" height="120" rx="10" fill="#27ae60" stroke="#229954" stroke-width="3"/>
-  <text x="125" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+  <text x="125" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">
     Sistema de Datos
   </text>
-  <text x="125" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="125" y="150" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Base de Datos
   </text>
-  <text x="125" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="125" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     APIs Externas
   </text>
-  <text x="125" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="125" y="180" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Archivos de Config
   </text>
-  <text x="125" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="125" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Métricas en Vivo
   </text>
   
   <!-- Servidor MCP -->
   <rect x="300" y="100" width="150" height="120" rx="10" fill="#3498db" stroke="#2980b9" stroke-width="3"/>
-  <text x="375" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+  <text x="375" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">
     Servidor MCP
   </text>
-  <text x="375" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="375" y="150" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Resource Manager
   </text>
-  <text x="375" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="375" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Change Detector
   </text>
-  <text x="375" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="375" y="180" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Notification System
   </text>
-  <text x="375" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="375" y="195" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Cache Manager
   </text>
   
   <!-- Cliente MCP -->
   <rect x="550" y="100" width="150" height="120" rx="10" fill="#e74c3c" stroke="#c0392b" stroke-width="3"/>
-  <text x="625" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+  <text x="625" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">
     Cliente MCP
   </text>
-  <text x="625" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="625" y="150" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Claude
   </text>
-  <text x="625" y="165" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="625" y="165" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Otros Asistentes
   </text>
-  <text x="625" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="625" y="180" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Aplicaciones
   </text>
   
   <!-- Usuario Final -->
   <rect x="750" y="100" width="100" height="120" rx="10" fill="#9b59b6" stroke="#8e44ad" stroke-width="3"/>
-  <text x="800" y="130" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">
+  <text x="800" y="130" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="bold" fill="white">
     Usuario
   </text>
-  <text x="800" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="white">
+  <text x="800" y="150" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="11" fill="white">
     Final
   </text>
   
@@ -80,7 +80,7 @@
   <!-- Arrow markers -->
   <defs>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-      <polygon points="0 0, 10 3.5, 0 7" fill="#34495e"/>
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
     </marker>
     <marker id="notifyarrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#f39c12"/>
@@ -88,28 +88,28 @@
   </defs>
   
   <!-- Labels for flows -->
-  <text x="250" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+  <text x="250" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">
     Datos
   </text>
-  <text x="500" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+  <text x="500" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">
     Recursos
   </text>
-  <text x="725" y="185" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#34495e">
+  <text x="725" y="185" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#64748b">
     Respuestas
   </text>
   
-  <text x="250" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">
+  <text x="250" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#f39c12">
     Notificaciones
   </text>
-  <text x="500" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">
+  <text x="500" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#f39c12">
     Updates
   </text>
-  <text x="725" y="125" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#f39c12">
+  <text x="725" y="125" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10" fill="#f39c12">
     Subscriptions
   </text>
   
   <!-- Timeline of events -->
-  <text x="450" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">
+  <text x="450" y="280" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="bold" fill="#f8fafc">
     Secuencia Temporal de Actualizaciones
   </text>
   
@@ -118,95 +118,95 @@
   
   <!-- Time markers -->
   <circle cx="150" cy="330" r="8" fill="#3498db"/>
-  <text x="150" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">T0</text>
-  <text x="150" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Cliente se conecta</text>
+  <text x="150" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">T0</text>
+  <text x="150" y="365" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10">Cliente se conecta</text>
   
   <circle cx="300" cy="330" r="8" fill="#27ae60"/>
-  <text x="300" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">T1</text>
-  <text x="300" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Datos cambian</text>
+  <text x="300" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">T1</text>
+  <text x="300" y="365" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10">Datos cambian</text>
   
   <circle cx="450" cy="330" r="8" fill="#f39c12"/>
-  <text x="450" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">T2</text>
-  <text x="450" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Detección automática</text>
+  <text x="450" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">T2</text>
+  <text x="450" y="365" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10">Detección automática</text>
   
   <circle cx="600" cy="330" r="8" fill="#e74c3c"/>
-  <text x="600" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">T3</text>
-  <text x="600" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Notificación enviada</text>
+  <text x="600" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">T3</text>
+  <text x="600" y="365" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10">Notificación enviada</text>
   
   <circle cx="750" cy="330" r="8" fill="#9b59b6"/>
-  <text x="750" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold">T4</text>
-  <text x="750" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="10">Cliente actualizado</text>
+  <text x="750" y="350" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">T4</text>
+  <text x="750" y="365" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="10">Cliente actualizado</text>
   
   <!-- Event details -->
   <rect x="50" y="400" width="800" height="260" rx="8" fill="#ecf0f1" stroke="#bdc3c7" stroke-width="2"/>
   
-  <text x="450" y="430" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">
+  <text x="450" y="430" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="bold" fill="#f8fafc">
     Detalles de Implementación por Fase
   </text>
   
   <!-- Phase details -->
-  <text x="80" y="460" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#3498db">
+  <text x="80" y="460" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" fill="#3498db">
     T0 - Conexión Inicial:
   </text>
-  <text x="80" y="480" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="480" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Cliente solicita lista de recursos disponibles
   </text>
-  <text x="80" y="495" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="495" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Servidor registra cliente para notificaciones
   </text>
-  <text x="80" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="510" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Se establece canal de comunicación bidireccional
   </text>
   
-  <text x="450" y="460" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#27ae60">
+  <text x="450" y="460" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" fill="#27ae60">
     T1 - Cambio de Datos:
   </text>
-  <text x="450" y="480" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="480" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Base de datos actualizada
   </text>
-  <text x="450" y="495" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="495" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • API externa reporta nuevos datos
   </text>
-  <text x="450" y="510" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="510" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Archivo de configuración modificado
   </text>
   
-  <text x="80" y="540" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#f39c12">
+  <text x="80" y="540" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" fill="#f39c12">
     T2 - Detección Automática:
   </text>
-  <text x="80" y="560" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="560" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • File watchers detectan cambios
   </text>
-  <text x="80" y="575" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="575" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Polling APIs verifica actualizaciones
   </text>
-  <text x="80" y="590" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="590" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Database triggers notifican cambios
   </text>
   
-  <text x="450" y="540" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e74c3c">
+  <text x="450" y="540" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" fill="#e74c3c">
     T3 - Notificación Enviada:
   </text>
-  <text x="450" y="560" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="560" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Servidor genera evento de cambio
   </text>
-  <text x="450" y="575" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="575" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Notificación enviada a clientes suscritos
   </text>
-  <text x="450" y="590" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="590" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Metadatos del recurso actualizados
   </text>
   
-  <text x="80" y="620" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#9b59b6">
+  <text x="80" y="620" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="bold" fill="#9b59b6">
     T4 - Cliente Actualizado:
   </text>
-  <text x="80" y="640" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="80" y="640" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Cliente recibe notificación de cambio
   </text>
-  <text x="450" y="640" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="450" y="640" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Puede solicitar nueva versión del recurso
   </text>
-  <text x="700" y="640" font-family="Arial, sans-serif" font-size="11" fill="#2c3e50">
+  <text x="700" y="640" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#f8fafc">
     • Usuario ve datos actualizados
   </text>
 </svg>

@@ -22,10 +22,10 @@
 
   <!-- Paso 2: Cliente consulta recursos -->
   <rect x="270" y="80" width="180" height="100" rx="10" fill="url(#stepGradient2)" />
-  <text x="360" y="110" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="12" font-weight="bold">PASO 2</text>
-  <text x="360" y="130" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">Cliente consulta</text>
-  <text x="360" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">RECURSOS</text>
-  <text x="360" y="160" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10">disponibles</text>
+  <text x="360" y="110" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 2</text>
+  <text x="360" y="130" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">Cliente consulta</text>
+  <text x="360" y="145" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">RECURSOS</text>
+  <text x="360" y="160" text-anchor="middle" fill="white" font-family="Inter, system-ui, sans-serif" font-size="10">disponibles</text>
 
   <!-- Paso 2: MCP procesa - Tema Dark -->
   <rect x="270" y="80" width="180" height="100" rx="10" fill="#16a34a" stroke="#4ade80" stroke-width="2" />
@@ -36,7 +36,7 @@
 
   <!-- Paso 3: Uso de herramientas - Tema Dark -->
   <rect x="490" y="80" width="180" height="100" rx="10" fill="#f59e0b" stroke="#fbbf24" stroke-width="2" />
-  <text x="580" y="110" text-anchor="middle" fill="#0f172a" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 3</text>
+  <text x="580" y="110" text-anchor="middle" fill="#f8fafc" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="bold">PASO 3</text>
   <text x="580" y="130" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="10">Ejecuta</text>
   <text x="580" y="145" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="10">HERRAMIENTAS</text>
   <text x="580" y="160" text-anchor="middle" fill="#1e293b" font-family="Inter, system-ui, sans-serif" font-size="10">necesarias</text>

@@ -8,9 +8,9 @@
       .doc-service { fill: #9f7aea; stroke: #b794f6; stroke-width: 2; }
       .database { fill: #f56565; stroke: #fc8181; stroke-width: 2; }
       .redis { fill: #e53e3e; stroke: #feb2b2; stroke-width: 2; }
-      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 10px; }
-      .title { fill: #f7fafc; font-family: Arial, sans-serif; font-size: 12px; font-weight: bold; }
-      .flow-text { fill: #cbd5e0; font-family: Arial, sans-serif; font-size: 8px; }
+      .text { fill: #e2e8f0; font-family: Inter, system-ui, sans-serif; font-size: 10px; }
+      .title { fill: #f7fafc; font-family: Inter, system-ui, sans-serif; font-size: 12px; font-weight: bold; }
+      .flow-text { fill: #cbd5e0; font-family: Inter, system-ui, sans-serif; font-size: 8px; }
       .arrow { stroke: #cbd5e0; stroke-width: 1.5; fill: none; marker-end: url(#arrowhead); }
       .data-arrow { stroke: #68d391; stroke-width: 2; fill: none; marker-end: url(#greenarrow); }
       .auth-arrow { stroke: #4299e1; stroke-width: 2; fill: none; marker-end: url(#bluearrow); }

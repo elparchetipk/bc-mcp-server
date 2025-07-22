@@ -3,7 +3,7 @@
     <style>
       .title { font-family: 'Segoe UI', sans-serif; font-size: 20px; font-weight: bold; fill: #e0e0e0; }
       .subtitle { font-family: 'Segoe UI', sans-serif; font-size: 14px; font-weight: bold; fill: #b0b0b0; }
-      .label { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #ffffff; }
+      .label { font-family: 'Segoe UI', sans-serif; font-size: 12px; fill: #0f172a; }
       .small-label { font-family: 'Segoe UI', sans-serif; font-size: 10px; fill: #cccccc; }
       .phase { fill: #2d3748; stroke: #4a5568; stroke-width: 2; rx: 8; }
       .task { fill: #1a365d; stroke: #2b6cb0; stroke-width: 1; rx: 4; }
@@ -21,7 +21,7 @@
   </defs>
   
   <!-- Background -->
-  <rect width="1200" height="800" fill="#1a1a1a"/>
+  <rect width="1200" height="800" fill="#0f172a"/>
   
   <!-- Title -->
   <text x="600" y="30" text-anchor="middle" class="title">Flujo de Implementación y Refinamiento - Días 46-47</text>

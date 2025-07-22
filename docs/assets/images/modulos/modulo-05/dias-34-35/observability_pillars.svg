@@ -4,9 +4,9 @@
       .bg { fill: #1a1a1a; }
       .pillar { fill: #2d4a8a; stroke: #4a90e2; stroke-width: 2; }
       .foundation { fill: #333333; stroke: #666666; stroke-width: 2; }
-      .text-title { fill: #ffffff; font-family: Arial, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
-      .text-pillar { fill: #ffffff; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
-      .text-desc { fill: #cccccc; font-family: Arial, sans-serif; font-size: 12px; text-anchor: middle; }
+      .text-title { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 24px; font-weight: bold; text-anchor: middle; }
+      .text-pillar { fill: #0f172a; font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; }
+      .text-desc { fill: #cccccc; font-family: Inter, system-ui, sans-serif; font-size: 12px; text-anchor: middle; }
       .arrow { fill: none; stroke: #4a90e2; stroke-width: 2; marker-end: url(#arrowhead); }
       .connection { fill: none; stroke: #666666; stroke-width: 1; stroke-dasharray: 5,5; }
     </style>

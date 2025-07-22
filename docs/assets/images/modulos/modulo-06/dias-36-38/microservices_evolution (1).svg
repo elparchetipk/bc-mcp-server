@@ -5,8 +5,8 @@
       .monolith { fill: #2d3748; stroke: #4a5568; stroke-width: 2; }
       .microservice { fill: #2b6cb0; stroke: #3182ce; stroke-width: 2; }
       .api-gateway { fill: #d69e2e; stroke: #f6ad55; stroke-width: 2; }
-      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; }
-      .title { fill: #f7fafc; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: Inter, system-ui, sans-serif; font-size: 12px; }
+      .title { fill: #f7fafc; font-family: Inter, system-ui, sans-serif; font-size: 16px; font-weight: bold; }
       .arrow { stroke: #cbd5e0; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
     </style>
     <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">

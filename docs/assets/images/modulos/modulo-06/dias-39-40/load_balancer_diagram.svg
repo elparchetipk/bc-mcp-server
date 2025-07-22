@@ -7,8 +7,8 @@
       .healthy { fill: #059669; stroke: #10b981; stroke-width: 2; }
       .busy { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
       .moderate { fill: #f59e0b; stroke: #fbbf24; stroke-width: 2; }
-      .text { fill: #e2e8f0; font-family: Arial, sans-serif; font-size: 12px; }
-      .title { fill: #f1f5f9; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: Inter, system-ui, sans-serif; font-size: 12px; }
+      .title { fill: #f1f5f9; font-family: Inter, system-ui, sans-serif; font-size: 14px; font-weight: bold; }
       .arrow { stroke: #10b981; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
       .request { stroke: #3b82f6; stroke-width: 2; fill: none; }
     </style>

@@ -1,52 +1,52 @@
 <svg viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
   <!-- Background -->
-  <rect width="1000" height="600" fill="#1a1a1a"/>
+  <rect width="1000" height="600" fill="#0f172a"/>
   
   <!-- Title -->
-  <text x="500" y="30" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#ffffff">Pipeline CI/CD para Servidores MCP</text>
+  <text x="500" y="30" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#0f172a">Pipeline CI/CD para Servidores MCP</text>
   
   <!-- Development Stage -->
   <rect x="50" y="80" width="120" height="80" rx="10" fill="#2d3748" stroke="#4a5568" stroke-width="2"/>
-  <text x="110" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">Desarrollo</text>
-  <text x="110" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#a0aec0">Local</text>
+  <text x="110" y="115" font-family="Inter, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#f8fafc" font-weight="bold">Desarrollo</text>
+  <text x="110" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle" fill="#a0aec0">Local</text>
   
   <!-- Source Control -->
   <rect x="220" y="80" width="120" height="80" rx="10" fill="#2d3748" stroke="#4a5568" stroke-width="2"/>
-  <text x="280" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">Git Push</text>
-  <text x="280" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#a0aec0">GitHub</text>
+  <text x="280" y="115" font-family="Inter, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#f8fafc" font-weight="bold">Git Push</text>
+  <text x="280" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle" fill="#a0aec0">GitHub</text>
   
   <!-- CI Pipeline -->
   <rect x="390" y="60" width="160" height="120" rx="10" fill="#1a365d" stroke="#3182ce" stroke-width="2"/>
-  <text x="470" y="85" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">CI Pipeline</text>
+  <text x="470" y="85" font-family="Inter, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#f8fafc" font-weight="bold">CI Pipeline</text>
   
   <!-- CI Steps -->
   <rect x="400" y="100" width="140" height="20" rx="3" fill="#2d3748"/>
-  <text x="470" y="115" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ffffff">1. Lint & Format</text>
+  <text x="470" y="115" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#0f172a">1. Lint & Format</text>
   
   <rect x="400" y="125" width="140" height="20" rx="3" fill="#2d3748"/>
-  <text x="470" y="140" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ffffff">2. Unit Tests</text>
+  <text x="470" y="140" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#0f172a">2. Unit Tests</text>
   
   <rect x="400" y="150" width="140" height="20" rx="3" fill="#2d3748"/>
-  <text x="470" y="165" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ffffff">3. Build Docker</text>
+  <text x="470" y="165" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#0f172a">3. Build Docker</text>
   
   <!-- CD Pipeline -->
   <rect x="600" y="60" width="160" height="120" rx="10" fill="#22543d" stroke="#38a169" stroke-width="2"/>
-  <text x="680" y="85" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">CD Pipeline</text>
+  <text x="680" y="85" font-family="Inter, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#f8fafc" font-weight="bold">CD Pipeline</text>
   
   <!-- CD Steps -->
   <rect x="610" y="100" width="140" height="20" rx="3" fill="#2d3748"/>
-  <text x="680" y="115" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ffffff">1. Integration Tests</text>
+  <text x="680" y="115" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#0f172a">1. Integration Tests</text>
   
   <rect x="610" y="125" width="140" height="20" rx="3" fill="#2d3748"/>
-  <text x="680" y="140" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ffffff">2. Security Scan</text>
+  <text x="680" y="140" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#0f172a">2. Security Scan</text>
   
   <rect x="610" y="150" width="140" height="20" rx="3" fill="#2d3748"/>
-  <text x="680" y="165" font-family="Arial, sans-serif" font-size="11" text-anchor="middle" fill="#ffffff">3. Deploy</text>
+  <text x="680" y="165" font-family="Inter, system-ui, sans-serif" font-size="11" text-anchor="middle" fill="#0f172a">3. Deploy</text>
   
   <!-- Production -->
   <rect x="810" y="80" width="120" height="80" rx="10" fill="#742a2a" stroke="#e53e3e" stroke-width="2"/>
-  <text x="870" y="115" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff" font-weight="bold">Producción</text>
-  <text x="870" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#a0aec0">Servidor MCP</text>
+  <text x="870" y="115" font-family="Inter, system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#f8fafc" font-weight="bold">Producción</text>
+  <text x="870" y="135" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle" fill="#a0aec0">Servidor MCP</text>
   
   <!-- Arrows -->
   <defs>
@@ -63,62 +63,62 @@
   
   <!-- Environment Boxes -->
   <rect x="50" y="250" width="280" height="150" rx="10" fill="#2d3748" stroke="#4a5568" stroke-width="1"/>
-  <text x="190" y="280" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">Entorno de Desarrollo</text>
+  <text x="190" y="280" font-family="Inter, system-ui, sans-serif" font-size="16" text-anchor="middle" fill="#f8fafc" font-weight="bold">Entorno de Desarrollo</text>
   
   <rect x="370" y="250" width="280" height="150" rx="10" fill="#2a4a5a" stroke="#4a5568" stroke-width="1"/>
-  <text x="510" y="280" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">Entorno de Staging</text>
+  <text x="510" y="280" font-family="Inter, system-ui, sans-serif" font-size="16" text-anchor="middle" fill="#f8fafc" font-weight="bold">Entorno de Staging</text>
   
   <rect x="690" y="250" width="280" height="150" rx="10" fill="#4a2a2a" stroke="#4a5568" stroke-width="1"/>
-  <text x="830" y="280" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">Entorno de Producción</text>
+  <text x="830" y="280" font-family="Inter, system-ui, sans-serif" font-size="16" text-anchor="middle" fill="#f8fafc" font-weight="bold">Entorno de Producción</text>
   
   <!-- Environment Details -->
-  <text x="70" y="310" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Tests unitarios</text>
-  <text x="70" y="330" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Linting/Formatting</text>
-  <text x="70" y="350" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Build local</text>
-  <text x="70" y="370" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Pruebas manuales</text>
+  <text x="70" y="310" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Tests unitarios</text>
+  <text x="70" y="330" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Linting/Formatting</text>
+  <text x="70" y="350" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Build local</text>
+  <text x="70" y="370" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Pruebas manuales</text>
   
-  <text x="390" y="310" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Tests de integración</text>
-  <text x="390" y="330" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Tests E2E</text>
-  <text x="390" y="350" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Security scanning</text>
-  <text x="390" y="370" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Performance tests</text>
+  <text x="390" y="310" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Tests de integración</text>
+  <text x="390" y="330" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Tests E2E</text>
+  <text x="390" y="350" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Security scanning</text>
+  <text x="390" y="370" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Performance tests</text>
   
-  <text x="710" y="310" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Monitoreo 24/7</text>
-  <text x="710" y="330" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Logging avanzado</text>
-  <text x="710" y="350" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Alertas automáticas</text>
-  <text x="710" y="370" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">• Rollback automático</text>
+  <text x="710" y="310" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Monitoreo 24/7</text>
+  <text x="710" y="330" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Logging avanzado</text>
+  <text x="710" y="350" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Alertas automáticas</text>
+  <text x="710" y="370" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">• Rollback automático</text>
   
   <!-- Feedback Loop -->
   <path d="M 850 250 Q 950 200 950 120 Q 950 50 500 50 Q 200 50 110 80" stroke="#f6ad55" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
-  <text x="600" y="45" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#f6ad55">Feedback Loop Continuo</text>
+  <text x="600" y="45" font-family="Inter, system-ui, sans-serif" font-size="12" text-anchor="middle" fill="#f6ad55">Feedback Loop Continuo</text>
   
   <!-- Status Indicators -->
   <circle cx="470" cy="200" r="8" fill="#48bb78"/>
-  <text x="490" y="205" font-family="Arial, sans-serif" font-size="12" fill="#48bb78">CI ✓</text>
+  <text x="490" y="205" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#48bb78">CI ✓</text>
   
   <circle cx="680" cy="200" r="8" fill="#48bb78"/>
-  <text x="700" y="205" font-family="Arial, sans-serif" font-size="12" fill="#48bb78">CD ✓</text>
+  <text x="700" y="205" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#48bb78">CD ✓</text>
   
   <!-- Tools -->
   <rect x="50" y="450" width="900" height="100" rx="10" fill="#2d3748" stroke="#4a5568" stroke-width="1"/>
-  <text x="500" y="480" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#ffffff" font-weight="bold">Herramientas del Pipeline</text>
+  <text x="500" y="480" font-family="Inter, system-ui, sans-serif" font-size="16" text-anchor="middle" fill="#f8fafc" font-weight="bold">Herramientas del Pipeline</text>
   
-  <text x="80" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">GitHub Actions</text>
-  <text x="200" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Docker</text>
-  <text x="280" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Jest/Vitest</text>
-  <text x="380" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">ESLint</text>
-  <text x="450" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Prettier</text>
-  <text x="530" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">SonarQube</text>
-  <text x="620" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Trivy</text>
-  <text x="680" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Prometheus</text>
-  <text x="780" y="510" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Grafana</text>
+  <text x="80" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">GitHub Actions</text>
+  <text x="200" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Docker</text>
+  <text x="280" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Jest/Vitest</text>
+  <text x="380" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">ESLint</text>
+  <text x="450" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Prettier</text>
+  <text x="530" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">SonarQube</text>
+  <text x="620" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Trivy</text>
+  <text x="680" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Prometheus</text>
+  <text x="780" y="510" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Grafana</text>
   
-  <text x="80" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Playwright</text>
-  <text x="160" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Kubernetes</text>
-  <text x="260" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Terraform</text>
-  <text x="350" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">ArgoCD</text>
-  <text x="420" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Helm</text>
-  <text x="480" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">SAST</text>
-  <text x="540" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">DAST</text>
-  <text x="600" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">Slack</text>
-  <text x="660" y="530" font-family="Arial, sans-serif" font-size="12" fill="#a0aec0">PagerDuty</text>
+  <text x="80" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Playwright</text>
+  <text x="160" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Kubernetes</text>
+  <text x="260" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Terraform</text>
+  <text x="350" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">ArgoCD</text>
+  <text x="420" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Helm</text>
+  <text x="480" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">SAST</text>
+  <text x="540" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">DAST</text>
+  <text x="600" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">Slack</text>
+  <text x="660" y="530" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#a0aec0">PagerDuty</text>
 </svg>
